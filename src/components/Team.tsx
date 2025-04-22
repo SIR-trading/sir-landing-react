@@ -21,14 +21,14 @@ const Team: React.FC = () => {
     },
     {
       name: "Realtarpcity",
-      role: "Fronted dev",
+      role: "Frontend dev",
       link: "https://x.com/tarpley_travis",
       avatar: "team-avatars/tarp.jpg",
       core: true
     },
     {
       name: "Abstrucked",
-      role: "Fronted dev",
+      role: "Frontend dev",
       link: "https://x.com/abstrucked",
       avatar: "team-avatars/abstrucked.jpg",
       core: true
@@ -74,7 +74,7 @@ const Team: React.FC = () => {
       '4xl': 120
     };
 
-    const avatarSize = sizeMap[size] || 100;
+    const avatarSize = sizeMap[size] ?? 100;
 
     return (
         <Image

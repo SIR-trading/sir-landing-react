@@ -34,9 +34,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         }}
         className="absolute top-0 left-0 z-[-1] h-full w-full opacity-100"
       ></div>
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col font-inter">
         <Header />
-        <main className="content h-80 font-inter">
+        <main className="content h-80">
           <Component {...pageProps} />
         </main>
       </div>

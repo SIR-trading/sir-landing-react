@@ -2,6 +2,8 @@ import { type FC, useState } from "react";
 import Link from "next/link";
 import { cn } from "~/lib/utils";
 import Image from "next/image";
+import {MenuIcon, XIcon} from "lucide-react";
+import NavigationTail from "~/components/layout/NavigationTail";
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,14 +24,12 @@ const Header: FC = () => {
               href={"/"}
               className="flex w-full flex-auto cursor-pointer flex-row items-center justify-around md:w-50 md:justify-start"
             >
-              <div className="flex gap-x-1">
+              <div className=" md:flex flex-start">
                 <Image height={32} width={32} src="/logo.png" alt="Sir Icon" />
-                <div className="flex items-center">
-                  <h1 className="sir-shadow font-lora ml-1 inline-flex h-[32px] text-[32px] leading-[32px] text-white">
-                    SIR.TRADING
-                  </h1>
-                </div>
               </div>
+              <h1 className="sir-shadow font-lora ml-1 inline-flex h-[32px] text-[32px] leading-[32px] text-white">
+                SIR.TRADING
+              </h1>
               <div
                 className={cn("block rounded-lg md:hidden", {
                   "bg-black-russian-950": isMenuOpen,
@@ -41,7 +41,7 @@ const Header: FC = () => {
                   onClick={toggleMenu}
                   aria-label="Toggle Menu"
                 >
-                  {isMenuOpen ? "✖" : "☰"}
+                  {isMenuOpen ? <XIcon /> : <MenuIcon />}
                 </button>
               </div>
             </Link>
@@ -59,6 +59,7 @@ const Header: FC = () => {
                   </Link>
                 ))}
               </div>
+              <NavigationTail />
             </div>
           )}
           <div className="hidden w-full flex-row items-center justify-around gap-6 md:flex md:w-full">
@@ -73,6 +74,7 @@ const Header: FC = () => {
                 </Link>
               ))}
             </div>
+            <NavigationTail />
           </div>
         </nav>
       </div>

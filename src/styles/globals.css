@@ -2,13 +2,17 @@
 @import "tw-animate-css";
 @config "../../tailwind.config.js";
 
+@theme inline {
+  --font-lora: 'Bebas Neue', sans-serif;
+}
+
 @layer base {
 
 }
 
 @layer components {
   .title {
-    @apply font-['Bebas_Neue'] uppercase leading-[5rem] font-normal text-white;
+    @apply font-lora uppercase leading-[5rem] font-normal text-white;
     text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
   }
 
@@ -21,11 +25,11 @@
   }
 
   .section-header {
-    @apply font-['Bebas_Neue'] uppercase leading-8 font-normal text-rob-roy-300;
+    @apply font-lora uppercase leading-8 font-normal text-rob-roy-300;
   }
 
   .text-brand {
-    @apply font-['Bebas_Neue'] uppercase leading-4 font-normal text-white text-xl;
+    @apply font-lora uppercase leading-4 font-normal text-white text-xl;
     text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
   }
 
