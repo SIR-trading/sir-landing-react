@@ -1,6 +1,101 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@config "../../tailwind.config.js";
 
-@theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@layer base {
+
+}
+
+@layer components {
+  .title {
+    @apply font-['Bebas_Neue'] uppercase leading-[5rem] font-normal text-white;
+    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
+  }
+
+  .subtitle {
+    @apply font-normal text-blue-bell-500;
+  }
+
+  .text-base {
+    @apply font-normal text-md text-geyser-200;
+  }
+
+  .section-header {
+    @apply font-['Bebas_Neue'] uppercase leading-8 font-normal text-rob-roy-300;
+  }
+
+  .text-brand {
+    @apply font-['Bebas_Neue'] uppercase leading-4 font-normal text-white text-xl;
+    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
+  }
+
+  .text-capital {
+    @apply uppercase;
+  }
+
+  .sir-text-shadow {
+    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
+  }
+
+  .sir-text-shadow-darker {
+    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.75);
+  }
+
+  .p-header {
+    @apply text-lg font-bold;
+  }
+
+  .section-text-block {
+    @apply text-justify flex flex-col gap-[15px];
+  }
+
+  .spinner {
+    @apply rounded-full w-[50px] h-[50px] border-[16px] border-[#333333] border-t-[#f69f36] animate-spin;
+  }
+
+  .blur-gradient {
+    @apply rounded-md bg-[#F2C46A];
+    background-image: linear-gradient(90deg, rgba(122, 91, 46, 0.50) 0%, rgba(191, 155, 103, 0.50) 23.23%, rgba(255, 255, 255, 0.50) 50.56%, rgba(191, 155, 103, 0.50) 75.59%, rgba(122, 91, 46, 0.50) 100.12%);
+    filter: blur(12px);
+  }
+
+  .button-blur-gradient {
+    @apply bg-[#F2C46A];
+    background-image: linear-gradient(90deg, rgba(122, 91, 46, 0.50) 0%, rgba(191, 155, 103, 0.50) 23.23%, rgba(255, 255, 255, 0.50) 50.56%, rgba(191, 155, 103, 0.50) 75.59%, rgba(122, 91, 46, 0.50) 100.12%);
+  }
+
+  .btn-gradient {
+    @apply rounded-md bg-[#F2C46A] blur-[12px];
+    background-image: linear-gradient(90deg, rgba(122, 91, 46, 0.50) 0%, rgba(191, 155, 103, 0.50) 23.23%, rgba(255, 255, 255, 0.50) 50.56%, rgba(191, 155, 103, 0.50) 75.59%, rgba(122, 91, 46, 0.50) 100.12%);
+  }
+
+  .bullet-point {
+    @apply rounded-lg font-black text-rob-roy-300 ring-2 ring-rob-roy-300 text-center flex justify-center items-center;
+  }
+
+
+  .no-arrows::-webkit-outer-spin-button,
+  .no-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-arrows[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto px-0 sm:px-0 lg:px-0 max-w-5xl;
+  }
+
+  .content {
+    @apply flex-1;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 }
