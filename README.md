@@ -1,29 +1,92 @@
-# Create T3 App
+# SIR.trading landing page
+SIR.trading landing page repo
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Environment Variables
+The following environment variables are required to be set in a `.env` file in the root of the project:
+```dotenv
+NUXT_TESTNET_CONTRACT= {Testnet sale contract address}
+NUXT_MAINNET_CONTRACT= {Mainnet sale contract address, applies when NUXT_ENV==production}
+NUXT_ENV= {Choose from [production, staging, development]. production/development use chainId of 1, and staging is for Sepolia}
+NUXT_RPC= {Your RPC entry-point}
+NUXT_BUTERIN_CARDS= {Buterin Cards address}
+NUXT_MINED_JPEG= {Mined JPEG address}
+KV_REST_API_READ_ONLY_TOKEN= {Read-only access token for the KV store}
+KV_REST_API_TOKEN= {Read-write access token for the KV store}
+KV_REST_API_URL= {URL of the KV store's REST API endpoint}
+KV_URL= {Base URL of the KV store}
+```
+- _The contract addresses are used to interact with the contract on the respective networks_
+- _The environment variable is used to determine the network to interact with_
 
-## What's next? How do I make an app with this?
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Setup
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Make sure to install the dependencies:
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+```bash
+# npm
+npm install
 
-## Learn More
+# pnpm
+pnpm install
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+# yarn
+yarn install
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+# bun
+bun install
+```
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Development Server
 
-## How do I deploy this?
+Start the development server on `http://localhost:3000`:
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
