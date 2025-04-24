@@ -3,10 +3,8 @@ import "~/styles/globals.css";
 import { Header } from "~/components/layout/Header";
 import Bg from "../../public/background.png";
 import EvmProvider from "~/components/providers/evmProvider";
-import { headers } from "next/headers";
 import type { ReactNode } from "react";
-import { HydrateClient } from "~/trpc/server";
-import { TRPCProvider } from "~/trpc/client";
+import { TRPCReactProvider } from "~/trpc/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,7 +17,6 @@ const lora = Bebas_Neue({
 });
 
 async function RootLayout({ children }: { children: ReactNode }) {
-  const cookie = (await headers()).get("cookie");
   return (
     <html lang="en">
       <body
@@ -27,7 +24,7 @@ async function RootLayout({ children }: { children: ReactNode }) {
           backgroundImage: `url(${Bg.src})`,
           backgroundRepeat: "repeat",
         }}
-        className={`relative ${lora.className} ${inter.className} text-white`}
+        className={`relative ${lora.variable} ${inter.className} text-white`}
       >
         <div
           style={{
@@ -38,16 +35,14 @@ async function RootLayout({ children }: { children: ReactNode }) {
           }}
           className="absolute top-0 left-0 z-[-1] h-full w-full opacity-100"
         ></div>
-        <TRPCProvider>
-          <HydrateClient>
-            <EvmProvider cookie={cookie}>
-              <div className="font-inter flex min-h-screen flex-col">
-                <Header />
-                <main className="content h-80">{children}</main>
-              </div>{" "}
-            </EvmProvider>
-          </HydrateClient>
-        </TRPCProvider>
+        <TRPCReactProvider>
+          <EvmProvider>
+            <div className="font-inter flex min-h-screen flex-col">
+              <Header />
+              <main className="content h-80">{children}</main>
+            </div>{" "}
+          </EvmProvider>
+        </TRPCReactProvider>
       </body>
     </html>
   );
