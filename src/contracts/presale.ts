@@ -317,4 +317,4 @@ export const PresaleContract = {
       type: "function",
     },
   ],
-};
+} as const;

@@ -17,6 +17,14 @@ const config = {
   //   locales: ["en"],
   //   defaultLocale: "en",
   // },
+  rewrites: async () => {
+    return [
+      {
+        source: "/api/rpc",
+        destination: process.env.RPC_URL ?? "https://rpc.ankr.com/eth",
+      },
+    ];
+  },
 };
 
 export default config;

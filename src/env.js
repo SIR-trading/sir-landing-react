@@ -31,7 +31,6 @@ export const env = createEnv({
     NEXT_PUBLIC_PRESALE_CONTRACT_ADDRESS:
       process.env.NEXT_PUBLIC_PRESALE_CONTRACT_ADDRESS,
     RPC_URL: process.env.RPC_URL,
-
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

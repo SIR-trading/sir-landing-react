@@ -4,7 +4,8 @@ import "server-only";
 
 import { createPublicClient, http } from "viem";
 import { mainnet } from "viem/chains";
-import {env} from "~/env";
+import { env } from "~/env";
+import { sepolia } from "wagmi/chains";
 const getChainId = () => {
   const result: string = env.NEXT_PUBLIC_CHAIN_ID ?? "1";
   return parseInt(result);
@@ -12,10 +13,10 @@ const getChainId = () => {
 const chainId = getChainId();
 
 const chain = {
-  ...mainnet,
+  ...(chainId == mainnet.id ? mainnet : sepolia),
   // NOTE MAYBE REMOVE THIS.
   // All rpc calls are done through trpc
-  rpcUrls: { default: { http: ["/api/rpc"] } },
+  // rpcUrls: { default: { http: ["/api/rpc"] } },
   id: chainId,
 };
 const viemClient = createPublicClient({
