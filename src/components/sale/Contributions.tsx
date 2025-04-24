@@ -15,6 +15,7 @@ import {
   useWriteContract,
 } from "wagmi";
 import { useWithdrawNfts } from "~/hooks/useWithdrawNfts";
+import Bonus from "~/components/sale/Bonus";
 
 const formatNumber = (value: number, digits = 2) => {
   const factor = Math.pow(10, digits);
@@ -38,6 +39,8 @@ const dummyContributions: TContribution = {
     ids: [0, 0, 0, 0, 0],
   },
 };
+
+// const user = "0x7F0ee5770B203879F8558659d36ec514A49d03BC";
 
 const Contributions = () => {
   const { address: user, isConnected } = useAccount();
@@ -198,6 +201,12 @@ const Contributions = () => {
         <div>
           <span className="text-md font-semibold">{itemsLocked}</span>
         </div>
+      </div>
+      <div className={"mt-6"}>
+        <Bonus
+          contributions={contributions}
+          isBoostedAddress={isBoostedAddress(user)}
+        />
       </div>
     </div>
   );
