@@ -2,9 +2,7 @@ import { Inter, Bebas_Neue } from "next/font/google";
 import "~/styles/globals.css";
 import { Header } from "~/components/layout/Header";
 import Bg from "../../public/background.png";
-import EvmProvider from "~/components/providers/evmProvider";
 import type { ReactNode } from "react";
-import { TRPCReactProvider } from "~/trpc/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,14 +33,10 @@ async function RootLayout({ children }: { children: ReactNode }) {
           }}
           className="absolute top-0 left-0 z-[-1] h-full w-full opacity-100"
         ></div>
-        <TRPCReactProvider>
-          <EvmProvider>
-            <div className="font-inter flex min-h-screen flex-col">
-              <Header />
-              <main className="content h-80">{children}</main>
-            </div>{" "}
-          </EvmProvider>
-        </TRPCReactProvider>
+        <div className="font-inter flex min-h-screen flex-col">
+          <Header />
+          <main className="content h-80">{children}</main>
+        </div>{" "}
       </body>
     </html>
   );
