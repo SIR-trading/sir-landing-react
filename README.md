@@ -3,17 +3,10 @@ SIR.trading landing page repo
 
 ## Environment Variables
 The following environment variables are required to be set in a `.env` file in the root of the project:
+
 ```dotenv
-NUXT_TESTNET_CONTRACT= {Testnet sale contract address}
-NUXT_MAINNET_CONTRACT= {Mainnet sale contract address, applies when NUXT_ENV==production}
-NUXT_ENV= {Choose from [production, staging, development]. production/development use chainId of 1, and staging is for Sepolia}
-NUXT_RPC= {Your RPC entry-point}
-NUXT_BUTERIN_CARDS= {Buterin Cards address}
-NUXT_MINED_JPEG= {Mined JPEG address}
-KV_REST_API_READ_ONLY_TOKEN= {Read-only access token for the KV store}
-KV_REST_API_TOKEN= {Read-write access token for the KV store}
-KV_REST_API_URL= {URL of the KV store's REST API endpoint}
-KV_URL= {Base URL of the KV store}
+NEXT_PUBLIC_PRESALE_CONTRACT_ADDRESS='{presale contract address}'
+NEXT_PUBLIC_CHAIN_ID='{chain id}'
 ```
 - _The contract addresses are used to interact with the contract on the respective networks_
 - _The environment variable is used to determine the network to interact with_
