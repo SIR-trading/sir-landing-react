@@ -1,6 +1,7 @@
 // components/common/Team.tsx
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface TeamMember {
   name: string;
@@ -17,28 +18,28 @@ const Team: React.FC = () => {
       role: "Founder  / Smart contract dev",
       link: "https://x.com/Xatarrer",
       avatar: "team-avatars/xatarrer.jpg",
-      core: true
+      core: true,
     },
     {
       name: "Realtarpcity",
       role: "Frontend dev",
       link: "https://x.com/tarpley_travis",
       avatar: "team-avatars/tarp.jpg",
-      core: true
+      core: true,
     },
     {
       name: "Abstrucked",
       role: "Frontend dev",
       link: "https://x.com/abstrucked",
       avatar: "team-avatars/abstrucked.jpg",
-      core: true
+      core: true,
     },
     {
       name: "MrLivingstream",
       role: "UX/UI designer",
       link: "https://x.com/MrLivingstream",
       avatar: "team-avatars/MrLivingstream.jpg",
-      core: true
+      core: true,
     },
   ];
 
@@ -53,8 +54,8 @@ const Team: React.FC = () => {
       name: "@no_side666",
       role: "Smart contract analyst",
       link: "https://x.com/no_side666",
-      avatar: "team-avatars/no_side666.jpg"
-    }
+      avatar: "team-avatars/no_side666.jpg",
+    },
     // ,
     // {
     //   name: "@tokenfox",
@@ -64,65 +65,77 @@ const Team: React.FC = () => {
     // },
   ];
 
-  const goto = (link: string) => {
-    window.open(link, "_blank");
-  };
-
-  const Avatar = ({ size, src, alt }: { size: string, src: string, alt: string }) => {
+  const Avatar = ({
+    size,
+    src,
+    alt,
+  }: {
+    size: string;
+    src: string;
+    alt: string;
+  }) => {
     const sizeMap: Record<string, number> = {
-      '3xl': 100,
-      '4xl': 120
+      "3xl": 100,
+      "4xl": 120,
     };
 
     const avatarSize = sizeMap[size] ?? 100;
 
     return (
-        <Image
-            src={`/${src}`}
-            width={avatarSize}
-            height={avatarSize}
-            alt={alt}
-            className="rounded-full"
-        />
+      <Image
+        src={`/${src}`}
+        width={avatarSize}
+        height={avatarSize}
+        alt={alt}
+        className="rounded-full"
+      />
     );
   };
 
   return (
-      <div className="flex flex-col items-center justify-center gap-y-0">
-        <div className="flex flex-row items-start justify-center gap-6 flex-wrap p-1">
-          {coreTeamMembers.map((member) => (
-              <div
-                  key={member.name}
-                  className="flex flex-col items-center justify-center p-1 gap-2 flex-wrap cursor-pointer w-[150px]"
-                  onClick={() => goto(member.link)}
-              >
-                <Avatar size={member.core ? '4xl' : '3xl'} src={member.avatar} alt={member.name} />
-                <div className={`font-bold ${member.core ? 'text-[24px]' : 'text-[18px]'}`}>{member.name}</div>
-                <div>{member.role}</div>
-              </div>
-          ))}
-        </div>
-        <div className="flex flex-col md:flex-row items-end justify-center gap-1 flex-wrap p-6">
-          <div className="flex flex-col items-baseline justify-center p-0 h-full">
-            <h2 className="mb-3 sir-text-shadow text-center w-full section-header text-rob-roy-300">
-              A special thanks to
-            </h2>
-            <div className="flex flex-row items-center justify-center gap-1 p-0 flex-wrap">
-              {thanksTo.map((member) => (
-                  <div
-                      key={member.name}
-                      className="flex flex-col items-center justify-center p-1 gap-2 flex-wrap cursor-pointer w-[150px]"
-                      onClick={() => goto(member.link)}
-                  >
-                    <Avatar size="3xl" src={member.avatar} alt={member.name} />
-                    <div className="font-semibold text-[18px]">{member.name}</div>
-                    <div>{member.role}</div>
-                  </div>
-              ))}
+    <div className="flex flex-col items-center justify-center gap-y-0">
+      <div className="flex flex-row flex-wrap items-start justify-center gap-6 p-1">
+        {coreTeamMembers.map((member) => (
+          <Link
+            key={member.name}
+            className="flex w-[150px] cursor-pointer flex-col flex-wrap items-center justify-center gap-2 p-1"
+            href={member.link}
+          >
+            <Avatar
+              size={member.core ? "4xl" : "3xl"}
+              src={member.avatar}
+              alt={member.name}
+            />
+            <div
+              className={`font-bold ${member.core ? "text-[24px]" : "text-[18px]"}`}
+            >
+              {member.name}
             </div>
+            <div>{member.role}</div>
+          </Link>
+        ))}
+      </div>
+      <div className="flex flex-col flex-wrap items-end justify-center gap-1 p-6 md:flex-row">
+        <div className="flex h-full flex-col items-baseline justify-center p-0">
+          <h2 className="sir-text-shadow section-header text-rob-roy-300 mb-3 w-full text-center">
+            A special thanks to
+          </h2>
+          <div className="flex flex-row flex-wrap items-center justify-center gap-1 p-0">
+            {thanksTo.map((member) => (
+              <Link
+                key={member.name}
+                className="flex w-[150px] cursor-pointer flex-col flex-wrap items-center justify-center gap-2 p-1"
+                href={member.link}
+              >
+                <Avatar size="3xl" src={member.avatar} alt={member.name} />
+                <div className="text-[18px] font-semibold">{member.name}</div>
+                <div>{member.role}</div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
+    </div>
   );
 };
 

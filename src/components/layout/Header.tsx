@@ -1,8 +1,9 @@
+"use client";
 import { type FC, useState } from "react";
 import Link from "next/link";
 import { cn } from "~/lib/utils";
 import Image from "next/image";
-import {MenuIcon, XIcon} from "lucide-react";
+import { MenuIcon, XIcon } from "lucide-react";
 import NavigationTail from "~/components/layout/NavigationTail";
 
 const Header: FC = () => {
@@ -24,7 +25,7 @@ const Header: FC = () => {
               href={"/"}
               className="flex w-full flex-auto cursor-pointer flex-row items-center justify-around md:w-50 md:justify-start"
             >
-              <div className=" md:flex flex-start">
+              <div className="flex-start md:flex">
                 <Image height={32} width={32} src="/logo.png" alt="Sir Icon" />
               </div>
               <h1 className="sir-shadow font-lora ml-1 inline-flex h-[32px] text-[32px] leading-[32px] text-white">
