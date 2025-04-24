@@ -7,6 +7,7 @@ The following environment variables are required to be set in a `.env` file in t
 ```dotenv
 NEXT_PUBLIC_PRESALE_CONTRACT_ADDRESS='{presale contract address}'
 NEXT_PUBLIC_CHAIN_ID='{chain id}'
+RPC_URL="{mainnet rpc url}"
 ```
 - _The contract addresses are used to interact with the contract on the respective networks_
 - _The environment variable is used to determine the network to interact with_
@@ -81,5 +82,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
