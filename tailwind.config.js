@@ -43,6 +43,8 @@ export default {
         black: "900",
       },
       colors: {
+        background: "#0D0E1C",
+        grey: "#FAFAFA",
         primary: "white",
         gray: "cool",
         "dark-gray": "#0A0A0F",

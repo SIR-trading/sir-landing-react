@@ -19,17 +19,17 @@ const Header: FC = () => {
   return (
     <header className="mt-[24px] mb-[48px] w-full px-6">
       <div className="container">
-        <nav className="flex w-full flex-col items-center justify-start gap-6 text-sm font-semibold md:flex-row md:justify-center">
-          <div className="flex w-full items-center justify-between md:w-auto">
+        <nav className="flex w-full flex-col items-center justify-start gap-6 text-sm md:flex-row md:justify-center">
+          <div className="flex w-full justify-between md:w-auto">
             <Link
               href={"/"}
-              className="flex w-full flex-auto cursor-pointer flex-row items-center justify-around md:w-50 md:justify-start"
+              className="flex w-full flex-auto cursor-pointer flex-row items-center justify-around gap-2 md:w-[173px] md:justify-start"
             >
               <div className="flex-start md:flex">
                 <Image height={32} width={32} src="/logo.png" alt="Sir Icon" />
               </div>
-              <h1 className="sir-shadow font-lora ml-1 inline-flex h-[32px] text-[32px] leading-[32px] text-white">
-                SIR.TRADING
+              <h1 className="sir-shadow font-geist ml-1 inline-flex text-[20px] leading-[20px] font-semibold text-white">
+                Sir trading
               </h1>
               <div
                 className={cn("block rounded-lg md:hidden", {
@@ -54,7 +54,7 @@ const Header: FC = () => {
                   <Link
                     key={link.label}
                     href={link.to}
-                    className="text-cameo-700 dark:text-cameo-300 hover:text-gray-900 dark:hover:text-white"
+                    className="text-grey/50 hover:text-gray-900 dark:hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -69,7 +69,7 @@ const Header: FC = () => {
                 <Link
                   key={link.label}
                   href={link.to}
-                  className="text-md text-cameo-700 dark:text-cameo-300 dark:hover:text-cameo-200 relative truncate p-1 hover:bg-transparent"
+                  className="text-grey/50 relative truncate p-1 text-sm hover:bg-transparent"
                 >
                   {link.label}
                 </Link>

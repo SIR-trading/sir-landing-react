@@ -1,7 +1,6 @@
 import { Inter, Bebas_Neue } from "next/font/google";
 import "~/styles/globals.css";
 import { Header } from "~/components/layout/Header";
-import Bg from "../../public/background.png";
 import type { ReactNode } from "react";
 
 const inter = Inter({
@@ -18,18 +17,12 @@ async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body
-        style={{
-          backgroundImage: `url(${Bg.src})`,
-          backgroundRepeat: "repeat",
-        }}
-        className={`relative ${lora.variable} ${inter.className} text-white`}
+        className={`relative ${lora.variable} ${inter.className} bg-background text-white`}
       >
         <div
           style={{
             background:
-              "radial-gradient(55.25% 55.16% at 48.63% 44.84%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.02) 100%)",
-            backgroundBlendMode: "lighten",
-            boxShadow: "0px 4px 0px 0px rgba(0,0,0,0.5)",
+              "radial-gradient(53.42% 53.42% at 50% 50%, rgba(132, 42, 255, 0.2) 0%, rgba(70, 26, 136, 0.2) 36.14%, rgba(10, 11, 22, 0.2) 100%)",
           }}
           className="absolute top-0 left-0 z-[-1] h-full w-full opacity-100"
         ></div>

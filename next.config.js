@@ -3,11 +3,17 @@
  * for Docker builds.
  */
 import "./src/env.js";
+import { codeInspectorPlugin } from "code-inspector-plugin";
 
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
-
+  webpack: (config, { dev, isServer }) => {
+    config.plugins.push(
+      codeInspectorPlugin({ bundler: "webpack", editor: "webstorm" }),
+    );
+    return config;
+  },
   /**
    * If you are using `appDir` then you must comment the below `i18n` config out.
    *
