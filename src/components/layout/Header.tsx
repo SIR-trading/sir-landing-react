@@ -16,11 +16,6 @@ const links = [
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  console.log({
-    pathname,
-  });
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
@@ -69,7 +64,8 @@ const Header: FC = () => {
                     href={link.to}
                     className={cn(
                       "dark:text-grey-50 text-background dark:hover:text-white",
-                      pathname === link.to && "text-black dark:text-white",
+                      pathname.startsWith(link.to) &&
+                        "text-black dark:text-white",
                     )}
                   >
                     {link.label}
@@ -87,7 +83,8 @@ const Header: FC = () => {
                   href={link.to}
                   className={cn(
                     "dark:text-grey-50 text-section-light/75 relative truncate p-1 text-sm hover:bg-transparent hover:text-black dark:hover:text-white",
-                    pathname === link.to && "text-black dark:text-white",
+                    pathname.startsWith(link.to) &&
+                      "text-black dark:text-white",
                   )}
                 >
                   {link.label}
