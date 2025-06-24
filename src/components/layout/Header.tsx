@@ -5,14 +5,21 @@ import { cn } from "~/lib/utils";
 import Image from "next/image";
 import { MenuIcon, XIcon } from "lucide-react";
 import NavigationTail from "~/components/layout/NavigationTail";
+import { usePathname } from "next/navigation";
+
+const links = [
+  { label: "Allocations", to: "/allocations" },
+  { label: "Docs", to: "https://docs.sir.trading/" },
+  { label: "Audits", to: "/audits" },
+];
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-  const links = [
-    { label: "Docs", to: "https://docs.sir.trading/" },
-    { label: "Audit", to: "/audit" },
-  ];
+  console.log({
+    pathname,
+  });
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -60,7 +67,10 @@ const Header: FC = () => {
                   <Link
                     key={link.label}
                     href={link.to}
-                    className="dark:text-grey-50 text-background dark:hover:text-white"
+                    className={cn(
+                      "dark:text-grey-50 text-background dark:hover:text-white",
+                      pathname === link.to && "text-black dark:text-white",
+                    )}
                   >
                     {link.label}
                   </Link>
@@ -75,7 +85,10 @@ const Header: FC = () => {
                 <Link
                   key={link.label}
                   href={link.to}
-                  className="dark:text-grey-50 text-section-light/75 relative truncate p-1 text-sm hover:bg-transparent hover:text-black dark:hover:text-white"
+                  className={cn(
+                    "dark:text-grey-50 text-section-light/75 relative truncate p-1 text-sm hover:bg-transparent hover:text-black dark:hover:text-white",
+                    pathname === link.to && "text-black dark:text-white",
+                  )}
                 >
                   {link.label}
                 </Link>
