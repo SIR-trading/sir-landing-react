@@ -70,22 +70,6 @@ const Team: React.FC = () => {
   //   {name: "Pau", role: "Ambassador", link: "https://x.com/PauChan23", avatar: "team-avatars/pau.jpg"},
   // ]
 
-  const thanksTo: TeamMember[] = [
-    {
-      name: "@no_side666",
-      role: "Smart contract analyst",
-      link: "https://x.com/no_side666",
-      avatar: "team-avatars/no_side666.jpg",
-    },
-    // ,
-    // {
-    //   name: "@tokenfox",
-    //   role: "Smart contract analyst",
-    //   link: "https://x.com/tokenfox1",
-    //   avatar: "team-avatars/tokenfox.jpg"
-    // },
-  ];
-
   const Avatar = ({
     size,
     src,
@@ -126,27 +110,6 @@ const Team: React.FC = () => {
             <div className="opacity-75">{member.role}</div>
           </Link>
         ))}
-      </div>
-      <div className="flex flex-col flex-wrap items-end justify-center gap-1 p-6 md:flex-row">
-        <div className="flex h-full flex-col items-baseline justify-center p-0">
-          <h2 className="section-header mb-3 w-full text-center">
-            A special thanks to
-          </h2>
-          <div className="flex flex-row flex-wrap items-center justify-center gap-1 p-0">
-            {thanksTo.map((member) => (
-              <Link
-                key={member.name}
-                className="flex w-[150px] cursor-pointer flex-col flex-wrap items-center justify-center gap-2 p-1"
-                href={member.link}
-                target="_blank"
-              >
-                <Avatar size="3xl" src={member.avatar} alt={member.name} />
-                <div className="text-[18px] font-semibold">{member.name}</div>
-                <div>{member.role}</div>
-              </Link>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );
