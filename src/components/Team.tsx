@@ -48,6 +48,20 @@ const Team: React.FC = () => {
       avatar: "team-avatars/jaydhales.jpg",
       core: true,
     },
+    {
+      name: "RedTiger",
+      role: "Communications manager",
+      link: "https://x.com/RedTigerAuditor",
+      avatar: "team-avatars/redtiger.jpg",
+      core: true,
+    },
+    {
+      name: "Tokenbrice",
+      role: "Advisor",
+      link: "https://x.com/TokenBrice",
+      avatar: "team-avatars/tokenbrice.jpg",
+      core: true,
+    },
   ];
 
   // const minorTeamMembers = [
@@ -93,7 +107,7 @@ const Team: React.FC = () => {
         width={avatarSize}
         height={avatarSize}
         alt={alt}
-        className="rounded-full"
+        className="bg-card shadow-card rounded-full shadow-md"
       />
     );
   };
@@ -115,7 +129,7 @@ const Team: React.FC = () => {
       </div>
       <div className="flex flex-col flex-wrap items-end justify-center gap-1 p-6 md:flex-row">
         <div className="flex h-full flex-col items-baseline justify-center p-0">
-          <h2 className="sir-text-shadow section-header text-rob-roy-300 mb-3 w-full text-center">
+          <h2 className="section-header mb-3 w-full text-center">
             A special thanks to
           </h2>
           <div className="flex flex-row flex-wrap items-center justify-center gap-1 p-0">
