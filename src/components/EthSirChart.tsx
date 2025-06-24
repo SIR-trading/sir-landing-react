@@ -75,7 +75,7 @@ const EthSirChart: React.FC = () => {
   );
 
   return (
-    <div className="flex h-[250px] w-full items-center justify-center rounded-md bg-[rgba(255,255,255,0.1)] p-1 md:h-[400px] md:w-[700px] md:p-3">
+    <div className="flex h-[250px] w-full items-center justify-center rounded-md md:h-[348px] md:w-[748px] md:p-3">
       {chartData ? (
         <Line data={chartData} options={chartOptions} />
       ) : (

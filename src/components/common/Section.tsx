@@ -31,11 +31,11 @@ const Section: React.FC<SectionProps> = ({
     <section className={classes}>
       <div className="flex flex-col items-center justify-center gap-1 text-center">
         {header && (
-          <h1 className="section-header sir-text-shadow mb-[24px] text-xl font-bold">
+          <h1 className="section-header sir-text-shadow mb-[24px] text-xl">
             {header}
           </h1>
         )}
-        {children}
+        <div className={"section-main"}>{children}</div>
       </div>
     </section>
   );

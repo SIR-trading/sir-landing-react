@@ -1,4 +1,5 @@
-import { Inter, Bebas_Neue } from "next/font/google";
+import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "~/styles/globals.css";
 import { Header } from "~/components/layout/Header";
 import type { ReactNode } from "react";
@@ -7,17 +8,12 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-const lora = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-lora",
-});
 
 async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body
-        className={`relative ${lora.variable} ${inter.className} bg-background text-white`}
+        className={`relative ${GeistSans.variable} ${inter.className} bg-background text-white`}
       >
         <div
           style={{

@@ -8,7 +8,7 @@
 
 @layer components {
   .title {
-    @apply font-lora uppercase leading-[5rem] font-normal text-white;
+    @apply font-geist font-bold uppercase leading-13 text-white;
     text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
   }
 
@@ -21,11 +21,15 @@
   }
 
   .section-header {
-    @apply font-lora uppercase leading-8 font-normal text-rob-roy-300;
+    @apply font-inter leading-8 font-semibold text-white;
+  }
+
+  .section-main p {
+    @apply text-section max-w-[560px] text-md text-center;
   }
 
   .text-brand {
-    @apply font-lora uppercase leading-4 font-normal text-white text-xl;
+    @apply font-geist uppercase leading-4 font-normal text-white text-xl;
     text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
   }
 
@@ -46,7 +50,7 @@
   }
 
   .section-text-block {
-    @apply text-justify flex flex-col gap-[15px];
+    @apply text-justify flex flex-col gap-6;
   }
 
   .spinner {

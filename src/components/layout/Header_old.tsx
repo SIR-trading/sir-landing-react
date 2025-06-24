@@ -12,7 +12,7 @@ export function Header() {
           <div className="flex gap-x-1">
             <Image height={36} width={36} src="/logo.png" alt="Sir Icon" />
             <div className="flex items-center">
-              <h1 className="sir-shadow font-lora h-[34px] text-[34px] leading-[34px] font-normal text-white drop-shadow-md">
+              <h1 className="sir-shadow font-geist h-[34px] text-[34px] leading-[34px] font-normal text-white drop-shadow-md">
                 SIR.TRADING
               </h1>
             </div>

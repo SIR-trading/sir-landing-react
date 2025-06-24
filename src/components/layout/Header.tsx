@@ -54,7 +54,7 @@ const Header: FC = () => {
                   <Link
                     key={link.label}
                     href={link.to}
-                    className="text-grey/50 hover:text-gray-900 dark:hover:text-white"
+                    className="text-grey-50 hover:text-gray-900 dark:hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -69,7 +69,7 @@ const Header: FC = () => {
                 <Link
                   key={link.label}
                   href={link.to}
-                  className="text-grey/50 relative truncate p-1 text-sm hover:bg-transparent"
+                  className="text-grey-50 relative truncate p-1 text-sm hover:bg-transparent"
                 >
                   {link.label}
                 </Link>

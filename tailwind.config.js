@@ -29,7 +29,7 @@ export default {
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
-        lora: ["var(--font-lora)"],
+        geist: ["var(--font-geist-sans)"],
       },
       fontWeight: {
         thin: "100",
@@ -44,7 +44,8 @@ export default {
       },
       colors: {
         background: "#0D0E1C",
-        grey: "#FAFAFA",
+        "grey-50": "#FAFAFA80",
+        section: "#9A95E3",
         primary: "white",
         gray: "cool",
         "dark-gray": "#0A0A0F",

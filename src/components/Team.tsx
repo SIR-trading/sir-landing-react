@@ -41,6 +41,13 @@ const Team: React.FC = () => {
       avatar: "team-avatars/MrLivingstream.jpg",
       core: true,
     },
+    {
+      name: "Jaydhales",
+      role: "Frontend dev",
+      link: "https://x.com/jaydhales1",
+      avatar: "team-avatars/jaydhales.jpg",
+      core: true,
+    },
   ];
 
   // const minorTeamMembers = [
@@ -75,11 +82,10 @@ const Team: React.FC = () => {
     alt: string;
   }) => {
     const sizeMap: Record<string, number> = {
-      "3xl": 100,
-      "4xl": 120,
+      "3xl": 88,
     };
 
-    const avatarSize = sizeMap[size] ?? 100;
+    const avatarSize = sizeMap[size] ?? 88;
 
     return (
       <Image
@@ -94,24 +100,16 @@ const Team: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-0">
-      <div className="flex flex-row flex-wrap items-start justify-center gap-6 p-1">
+      <div className="flex max-w-[800px] flex-row flex-wrap items-start justify-center gap-6 p-1">
         {coreTeamMembers.map((member) => (
           <Link
             key={member.name}
-            className="flex w-[150px] cursor-pointer flex-col flex-wrap items-center justify-center gap-2 p-1"
+            className="flex flex-1 cursor-pointer flex-col flex-wrap items-center justify-center gap-1 p-1"
             href={member.link}
           >
-            <Avatar
-              size={member.core ? "4xl" : "3xl"}
-              src={member.avatar}
-              alt={member.name}
-            />
-            <div
-              className={`font-bold ${member.core ? "text-[24px]" : "text-[18px]"}`}
-            >
-              {member.name}
-            </div>
-            <div>{member.role}</div>
+            <Avatar size={"3xl"} src={member.avatar} alt={member.name} />
+            <div className={`text-[24px] font-bold`}>{member.name}</div>
+            <div className="opacity-75">{member.role}</div>
           </Link>
         ))}
       </div>
@@ -126,6 +124,7 @@ const Team: React.FC = () => {
                 key={member.name}
                 className="flex w-[150px] cursor-pointer flex-col flex-wrap items-center justify-center gap-2 p-1"
                 href={member.link}
+                target="_blank"
               >
                 <Avatar size="3xl" src={member.avatar} alt={member.name} />
                 <div className="text-[18px] font-semibold">{member.name}</div>
