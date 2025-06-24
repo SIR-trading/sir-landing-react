@@ -62,12 +62,14 @@ export default function Home() {
                 </div>
                 <div className="flex w-full flex-col items-center justify-center">
                   <EthSirChart />
-                  <p className="w-full text-xs italic">
-                    Example of simulated ETH/USDC position in SIR with perfect
-                    constant x1.5 leverage versus
+                  <p className="w-full text-[10px] italic">
+                    <span className="text-white/75">
+                      Example of simulated ETH/USDC position in SIR with perfect
+                      constant x1.5 leverage versus
+                    </span>
                     <Link
                       href="https://www.opyn.co/squeeth?ct=IT"
-                      className="underline"
+                      className="underline opacity-75"
                     >
                       {" "}
                       Squeeth from Opyn

@@ -12,8 +12,8 @@ export const useChartData = () => {
       datasets: [
         {
           label: "ETH",
-          backgroundColor: "#d7589d",
-          borderColor: "#d7589d",
+          backgroundColor: "#659ba0",
+          borderColor: "#659ba0",
           borderWidth: 2,
           pointRadius: 0,
           pointHoverRadius: 0,
@@ -30,8 +30,8 @@ export const useChartData = () => {
         },
         {
           label: "Squeeth",
-          backgroundColor: "#659ba0",
-          borderColor: "#659ba0",
+          backgroundColor: "#ff7300",
+          borderColor: "#ff7300",
           borderWidth: 2,
           pointRadius: 0,
           pointHoverRadius: 0,
