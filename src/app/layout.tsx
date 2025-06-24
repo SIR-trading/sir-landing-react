@@ -11,17 +11,11 @@ const inter = Inter({
 
 async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en">
       <body
         className={`relative ${GeistSans.variable} ${inter.className} bg-background-light dark:bg-background text-black dark:text-white`}
       >
-        <div
-          style={{
-            background:
-              "radial-gradient(53.42% 53.42% at 50% 50%, rgba(132, 42, 255, 0.2) 0%, rgba(70, 26, 136, 0.2) 36.14%, rgba(10, 11, 22, 0.2) 100%)",
-          }}
-          className="absolute top-0 left-0 z-[-1] h-full w-full opacity-100"
-        ></div>
+        <div className="gradient-bg absolute top-0 left-0 z-[-1] h-full w-full opacity-100"></div>
         <div className="font-inter flex min-h-screen flex-col">
           <Header />
           <main className="content h-80">{children}</main>

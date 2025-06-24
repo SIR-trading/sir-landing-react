@@ -3,7 +3,7 @@
 @config "../../tailwind.config.js";
 
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/*@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));*/
 
 @layer base {
 
@@ -103,5 +103,15 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+  .gradient-bg {
+    background: radial-gradient(53.42% 53.42% at 50% 50%, rgba(132, 42, 255, 0.2) 0%, rgba(70, 26, 136, 0.2) 36.14%, rgba(255, 255, 255, 0.2) 100%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .gradient-bg {
+      background: radial-gradient(53.42% 53.42% at 50% 50%, rgba(132, 42, 255, 0.2) 0%, rgba(70, 26, 136, 0.2) 36.14%, rgba(10, 11, 22, 0.2) 100%);
+    }
   }
 }
