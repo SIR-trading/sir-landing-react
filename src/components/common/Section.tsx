@@ -19,7 +19,7 @@ const Section: React.FC<SectionProps> = ({
     "rounded-lg",
     {
       "ring-2 ring-gray-800": variant === "ring",
-      "bg-black-russian-950 shadow-sir":
+      "bg-card-light dark:bg-card shadow-section":
         variant === "background" || variant === "background-p0",
       "p-3 md:p-10 my-12": variant !== "background-p0",
       "p-3 md:px-0 md:py-8 my-12": variant === "background-p0",
@@ -31,9 +31,7 @@ const Section: React.FC<SectionProps> = ({
     <section className={classes}>
       <div className="flex flex-col items-center justify-center gap-1 text-center">
         {header && (
-          <h1 className="section-header sir-text-shadow mb-[24px] text-xl">
-            {header}
-          </h1>
+          <h1 className="section-header mb-[24px] text-xl">{header}</h1>
         )}
         <div className={"section-main"}>{children}</div>
       </div>

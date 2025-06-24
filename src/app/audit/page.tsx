@@ -29,7 +29,7 @@ export default function AuditPage() {
   }, []);
 
   return (
-    <div className="bg-black-russian-950 container flex h-[calc(90vh-36px)] min-h-[500px] w-full flex-col items-center justify-center gap-12 rounded-lg">
+    <div className="bg-card-light dark:bg-card container flex h-[calc(90vh-36px)] min-h-[500px] w-full flex-col items-center justify-center gap-12 rounded-lg">
       {status === "pending" && <div>Loading...</div>}
       {status === "error" && <div>Error</div>}
       {status === "success" && (

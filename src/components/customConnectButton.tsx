@@ -37,7 +37,7 @@ export const CustomConnectButton = () => {
                 return (
                   <Button
                     variant="outline"
-                    className="rounded-full text-white"
+                    className="rounded-full text-black dark:text-white"
                     onClick={openConnectModal}
                     type="button"
                   >
@@ -61,7 +61,7 @@ export const CustomConnectButton = () => {
                 <div style={{ display: "flex", gap: 12 }}>
                   <Button
                     variant="outline"
-                    className="rounded-full text-white"
+                    className="rounded-full text-black dark:text-white"
                     onClick={openAccountModal}
                     type="button"
                   >

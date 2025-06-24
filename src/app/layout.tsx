@@ -11,9 +11,9 @@ const inter = Inter({
 
 async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body
-        className={`relative ${GeistSans.variable} ${inter.className} bg-background text-white`}
+        className={`relative ${GeistSans.variable} ${inter.className} bg-background-light dark:bg-background text-black dark:text-white`}
       >
         <div
           style={{

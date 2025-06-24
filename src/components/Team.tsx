@@ -91,7 +91,7 @@ const Team: React.FC = () => {
         width={avatarSize}
         height={avatarSize}
         alt={alt}
-        className="bg-card shadow-card rounded-full shadow-md"
+        className="bg-card shadow-section rounded-full shadow-md"
       />
     );
   };

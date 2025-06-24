@@ -1,8 +1,8 @@
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import Section from "~/components/common/Section";
 import SirHero from "~/components/common/SirHero";
-// import SirCard from "~/components/common/SirCard";
+import SirCard from "~/components/common/SirCard";
 import EthSirChart from "~/components/EthSirChart";
 import Team from "~/components/Team";
 // import Contributions from "~/components/sale/Contributions";
@@ -63,7 +63,7 @@ export default function Home() {
                 <div className="flex w-full flex-col items-center justify-center">
                   <EthSirChart />
                   <p className="w-full text-[10px] italic">
-                    <span className="text-white/75">
+                    <span className="text-black/75 dark:text-white/75">
                       Example of simulated ETH/USDC position in SIR with perfect
                       constant x1.5 leverage versus
                     </span>
@@ -91,40 +91,30 @@ export default function Home() {
               </div>
             </Section>
 
-            {/*<Section variant="background" header={"SIR: a Fee Paying Token"}>*/}
-            {/*  <div className="section-text-block flex flex-col items-center md:flex-row">*/}
-            {/*    <Image*/}
-            {/*      src="/pile_of_coins.png"*/}
-            {/*      alt="pile of coins"*/}
-            {/*      width={300}*/}
-            {/*      height={300}*/}
-            {/*      className="mx-auto h-full w-full max-w-xs object-cover md:mr-4 md:w-1/4"*/}
-            {/*    />*/}
-            {/*    <div className="section-text-block">*/}
-            {/*      <p>*/}
-            {/*        SIR is the native token of the SIR protocol. Unlike most*/}
-            {/*        DeFi tokens, the SIR token issuance is immutable and part of*/}
-            {/*        the core protocol. The SIR token is designed to have strong*/}
-            {/*        fundamentals,*/}
-            {/*        <span className="text-red-accent font-semibold">*/}
-            {/*          {" "}*/}
-            {/*          rewarding its stakers with a share of the protocol&#39;s*/}
-            {/*          generated fees*/}
-            {/*        </span>*/}
-            {/*        .*/}
-            {/*      </p>*/}
-            {/*      <p>*/}
-            {/*        The token is primarily{" "}*/}
-            {/*        <span className="text-red-accent font-semibold">*/}
-            {/*          distributed to liquidity providers*/}
-            {/*        </span>{" "}*/}
-            {/*        at a rate of 2,015 million tokens per year, in perpetuity.*/}
-            {/*        To maintain a proportional stake in the protocol, providing*/}
-            {/*        liquidity is necessary.*/}
-            {/*      </p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</Section>*/}
+            <Section variant="background" header={"SIR: a Fee Paying Token"}>
+              <div className="section-text-block">
+                <Image
+                  src="/pile_of_coins.png"
+                  alt="pile of coins"
+                  width={300}
+                  height={300}
+                  className="mx-auto h-full w-full max-w-xs object-cover md:w-1/4"
+                />
+                <p>
+                  SIR is the native token of the SIR protocol. Unlike most DeFi
+                  tokens, the SIR token issuance is immutable and part of the
+                  core protocol. The SIR token is designed to have strong
+                  fundamentals, rewarding its stakers with a share of the
+                  protocol&#39;s generated fees .
+                </p>
+                <p>
+                  The token is primarily distributed to liquidity providers at a
+                  rate of 2,015 million tokens per year, in perpetuity. To
+                  maintain a proportional stake in the protocol, providing
+                  liquidity is necessary.
+                </p>
+              </div>
+            </Section>
 
             <Section variant="background" header={"Permissionless & Trustless"}>
               <div className="section-text-block">
@@ -149,32 +139,32 @@ export default function Home() {
               </div>
             </Section>
 
-            {/*<Section variant="background-p0" header={"Gentlemen & Apes"}>*/}
-            {/*  <div className="flex w-full flex-col items-center gap-12 lg:flex-row lg:items-start lg:justify-evenly lg:gap-0">*/}
-            {/*    <SirCard image="/gentlemen_card.jpg" size="md">*/}
-            {/*      <p>*/}
-            {/*        Gentlemen{" "}*/}
-            {/*        <span className="text-red-accent font-semibold">*/}
-            {/*          provide liquidity to the protocol*/}
-            {/*        </span>*/}
-            {/*        . They earn fees for doing so, and on selected vaults, also*/}
-            {/*        rewards in the native token SIR. Their LP positions are*/}
-            {/*        tokenized in the form of an ERC-1155 called TEA.*/}
-            {/*      </p>*/}
-            {/*    </SirCard>*/}
-            {/*    <SirCard image="/ape_card.jpg" size="md">*/}
-            {/*      <p>*/}
-            {/*        Apes{" "}*/}
-            {/*        <span className="text-red-accent font-semibold">*/}
-            {/*          choose which pair they want to long, and what leverage*/}
-            {/*        </span>*/}
-            {/*        . They pay upfront fees for minting and burning, but not*/}
-            {/*        while holding their positions. APE is a leveraged ERC-20*/}
-            {/*        token that can be transferred and used in other protocols.*/}
-            {/*      </p>*/}
-            {/*    </SirCard>*/}
-            {/*  </div>*/}
-            {/*</Section>*/}
+            <Section variant="background-p0" header={"Gentlemen & Apes"}>
+              <div className="flex w-full flex-col items-center gap-12 lg:flex-row lg:items-start lg:justify-evenly lg:gap-4">
+                <SirCard image="/gentlemen_card.jpg" size="md">
+                  <p>
+                    Gentlemen{" "}
+                    <span className="font-semibold">
+                      provide liquidity to the protocol
+                    </span>
+                    . They earn fees for doing so, and on selected vaults, also
+                    rewards in the native token SIR. Their LP positions are
+                    tokenized in the form of an ERC-1155 called TEA.
+                  </p>
+                </SirCard>
+                <SirCard image="/ape_card.jpg" size="md">
+                  <p>
+                    Apes{" "}
+                    <span className="font-semibold">
+                      choose which pair they want to long, and what leverage
+                    </span>
+                    . They pay upfront fees for minting and burning, but not
+                    while holding their positions. APE is a leveraged ERC-20
+                    token that can be transferred and used in other protocols.
+                  </p>
+                </SirCard>
+              </div>
+            </Section>
 
             <Section variant="background" header={"Team"}>
               <Team />

@@ -155,7 +155,7 @@ const Contributions = () => {
         </div>
       </div>
 
-      <div className="bg-midGray flex h-full w-full flex-col items-center justify-between gap-1 rounded-lg bg-[#ffffff15] p-3 md:flex-row">
+      <div className="flex h-full w-full flex-col items-center justify-between gap-1 rounded-lg bg-[#ffffff15] p-3 md:flex-row">
         <div>Token allocation:</div>
         <div className="">
           <div className="text-md flex flex-row items-center justify-center font-semibold">
@@ -181,7 +181,7 @@ const Contributions = () => {
         </div>
       </div>
 
-      <div className="bg-midGray flex h-full w-full flex-col items-stretch justify-between gap-1 rounded-lg bg-[#ffffff15] p-3 md:flex-row">
+      <div className="flex h-full w-full flex-col items-stretch justify-between gap-1 rounded-lg bg-[#ffffff15] p-3 md:flex-row">
         <div>Number of locked NFTs:</div>
         {itemsLocked > 0 && (
           <Button

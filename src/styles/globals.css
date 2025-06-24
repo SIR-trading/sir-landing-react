@@ -2,14 +2,16 @@
 @import "tw-animate-css";
 @config "../../tailwind.config.js";
 
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @layer base {
 
 }
 
 @layer components {
   .title {
-    @apply font-geist font-bold uppercase leading-13 text-white;
-    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
+    @apply font-geist font-bold uppercase leading-13 text-black dark:text-white;
   }
 
   .subtitle {
@@ -21,15 +23,15 @@
   }
 
   .section-header {
-    @apply font-inter leading-8 font-semibold text-white;
+    @apply font-inter leading-8 font-semibold text-black dark:text-white;
   }
 
   .section-main p {
-    @apply text-section max-w-[560px] text-md text-center;
+    @apply text-section-light dark:text-section max-w-[560px] text-md text-center;
   }
 
   .text-brand {
-    @apply font-geist uppercase leading-4 font-normal text-white text-xl;
+    @apply font-geist uppercase leading-4 font-normal text-black dark:text-white text-xl;
     text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
   }
 
