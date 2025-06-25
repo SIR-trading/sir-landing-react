@@ -1,6 +1,7 @@
 import { erc20Router } from "~/server/api/routers/erc20";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 import { presaleRouter } from "~/server/api/routers/presale";
+import { nftsRouter } from "~/server/api/routers/nftsRouter";
 
 /**
  * This is the primary router for your server.
@@ -10,6 +11,7 @@ import { presaleRouter } from "~/server/api/routers/presale";
 export const appRouter = createTRPCRouter({
   presale: presaleRouter,
   erc20: erc20Router,
+  nfts: nftsRouter,
 });
 
 // export type definition of API
