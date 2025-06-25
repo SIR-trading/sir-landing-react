@@ -37,7 +37,7 @@ export const CustomConnectButton = () => {
                 return (
                   <Button
                     variant="outline"
-                    className="rounded-full text-black dark:text-white"
+                    className="cursor-pointer rounded-full text-black dark:text-white"
                     onClick={openConnectModal}
                     type="button"
                   >

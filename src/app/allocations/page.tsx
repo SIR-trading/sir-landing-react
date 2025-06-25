@@ -1,31 +1,31 @@
 "use client";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useAccount } from "wagmi";
 import Section from "~/components/common/Section";
 import SirCard from "~/components/common/SirCard";
 import Image from "next/image";
+import { api } from "~/trpc/react";
+import Allocations from "~/components/Allocations";
 
 export default function AllocationsPage() {
-  const { address, isConnected } = useAccount();
-  // const nfts = useNfts();
-  // const saleStore = useSaleStore();
+  const { address: user, isConnected } = useAccount();
 
-  const [bt, setBt] = useState<number[]>([]);
-  const [mj, setMj] = useState<number[]>([]);
+  const { data: buterinCards } = api.nfts.fetchWalletButerinCards.useQuery(
+    user,
+    {
+      enabled: isConnected,
+    },
+  );
 
-  // useEffect(() => {
-  //   if (isConnected && address) {
-  //     (async () => {
-  //       const btData = (await nfts.fetchWalletButerinCards(
-  //         address,
-  //       )) as number[];
-  //       const mjData = (await nfts.fetchWalletMinedJpeg(address)) as number[];
-  //       setBt(btData);
-  //       setMj(mjData);
-  //     })();
-  //   }
-  // }, [isConnected, address, nfts]);
+  const { data: minedJpegs } = api.nfts.fetchWalletMinedJpeg.useQuery(user, {
+    enabled: isConnected,
+  });
+
+  console.log({
+    user,
+    buterinCards,
+    minedJpegs,
+  });
 
   const bullets = [
     {
@@ -82,7 +82,7 @@ export default function AllocationsPage() {
             $0.9998; USDC $1.00; SIR $0.0005955).
           </p>
         </div>
-        {/*<Allocations />*/}
+        <Allocations />
       </Section>
 
       <Section variant="background" header="SIR Token Presale">
