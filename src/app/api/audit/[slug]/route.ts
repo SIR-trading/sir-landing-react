@@ -1,12 +1,14 @@
 // app/api/audit/route.ts
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const reqUrl = req.url.replace("http://localhost:3000/api/", "");
+
   try {
     // Get the path to the PDF file in the public folder
-    const filePath = path.join(process.cwd(), "public", "SIR_Audit_Report.pdf");
+    const filePath = path.join(process.cwd(), "public", reqUrl + ".pdf");
 
     // Read the file as buffer
     const pdfBuffer = await fs.readFile(filePath);

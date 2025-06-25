@@ -41,6 +41,27 @@ const Team: React.FC = () => {
       avatar: "team-avatars/MrLivingstream.jpg",
       core: true,
     },
+    {
+      name: "Jaydhales",
+      role: "Frontend dev",
+      link: "https://x.com/jaydhales1",
+      avatar: "team-avatars/jaydhales.jpg",
+      core: true,
+    },
+    {
+      name: "RedTiger",
+      role: "Communications manager",
+      link: "https://x.com/RedTigerAuditor",
+      avatar: "team-avatars/redtiger.jpg",
+      core: true,
+    },
+    {
+      name: "Tokenbrice",
+      role: "Advisor",
+      link: "https://x.com/TokenBrice",
+      avatar: "team-avatars/tokenbrice.jpg",
+      core: true,
+    },
   ];
 
   // const minorTeamMembers = [
@@ -48,22 +69,6 @@ const Team: React.FC = () => {
   //   {name: "0xjohn", role: "Frontend dev", link: "https://x.com/0xjooohn", avatar: "team-avatars/0xjohn.jpg"},
   //   {name: "Pau", role: "Ambassador", link: "https://x.com/PauChan23", avatar: "team-avatars/pau.jpg"},
   // ]
-
-  const thanksTo: TeamMember[] = [
-    {
-      name: "@no_side666",
-      role: "Smart contract analyst",
-      link: "https://x.com/no_side666",
-      avatar: "team-avatars/no_side666.jpg",
-    },
-    // ,
-    // {
-    //   name: "@tokenfox",
-    //   role: "Smart contract analyst",
-    //   link: "https://x.com/tokenfox1",
-    //   avatar: "team-avatars/tokenfox.jpg"
-    // },
-  ];
 
   const Avatar = ({
     size,
@@ -75,11 +80,10 @@ const Team: React.FC = () => {
     alt: string;
   }) => {
     const sizeMap: Record<string, number> = {
-      "3xl": 100,
-      "4xl": 120,
+      "3xl": 88,
     };
 
-    const avatarSize = sizeMap[size] ?? 100;
+    const avatarSize = sizeMap[size] ?? 88;
 
     return (
       <Image
@@ -87,53 +91,25 @@ const Team: React.FC = () => {
         width={avatarSize}
         height={avatarSize}
         alt={alt}
-        className="rounded-full"
+        className="bg-card shadow-section rounded-full shadow-md"
       />
     );
   };
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-0">
-      <div className="flex flex-row flex-wrap items-start justify-center gap-6 p-1">
+      <div className="flex max-w-[800px] flex-row flex-wrap items-start justify-center gap-6 p-1">
         {coreTeamMembers.map((member) => (
           <Link
             key={member.name}
-            className="flex w-[150px] cursor-pointer flex-col flex-wrap items-center justify-center gap-2 p-1"
+            className="flex flex-1 cursor-pointer flex-col flex-wrap items-center justify-center gap-1 p-1"
             href={member.link}
           >
-            <Avatar
-              size={member.core ? "4xl" : "3xl"}
-              src={member.avatar}
-              alt={member.name}
-            />
-            <div
-              className={`font-bold ${member.core ? "text-[24px]" : "text-[18px]"}`}
-            >
-              {member.name}
-            </div>
-            <div>{member.role}</div>
+            <Avatar size={"3xl"} src={member.avatar} alt={member.name} />
+            <div className={`text-[24px] font-bold`}>{member.name}</div>
+            <div className="opacity-75">{member.role}</div>
           </Link>
         ))}
-      </div>
-      <div className="flex flex-col flex-wrap items-end justify-center gap-1 p-6 md:flex-row">
-        <div className="flex h-full flex-col items-baseline justify-center p-0">
-          <h2 className="sir-text-shadow section-header text-rob-roy-300 mb-3 w-full text-center">
-            A special thanks to
-          </h2>
-          <div className="flex flex-row flex-wrap items-center justify-center gap-1 p-0">
-            {thanksTo.map((member) => (
-              <Link
-                key={member.name}
-                className="flex w-[150px] cursor-pointer flex-col flex-wrap items-center justify-center gap-2 p-1"
-                href={member.link}
-              >
-                <Avatar size="3xl" src={member.avatar} alt={member.name} />
-                <div className="text-[18px] font-semibold">{member.name}</div>
-                <div>{member.role}</div>
-              </Link>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

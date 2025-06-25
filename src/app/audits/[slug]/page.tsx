@@ -1,7 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function AuditPage() {
+export default function AuditPage({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
   const [, setPdf] = useState<string | null>(null);
   const [status, setStatus] = useState<"pending" | "success" | "error">(
     "pending",
@@ -10,7 +14,7 @@ export default function AuditPage() {
   useEffect(() => {
     const fetchPdf = async () => {
       try {
-        const response = await fetch("/api/audit");
+        const response = await fetch(`/api/audit/${slug}`);
         if (!response.ok) {
           throw new Error("Failed to fetch PDF");
         }
@@ -26,19 +30,17 @@ export default function AuditPage() {
     fetchPdf()
       .then((r) => r)
       .catch((e) => console.log(e));
-  }, []);
+  }, [slug]);
 
   return (
-    <div className="bg-black-russian-950 container flex h-[calc(90vh-36px)] min-h-[500px] w-full flex-col items-center justify-center gap-12 rounded-lg">
+    <div className="h-full min-h-[500px] w-full flex-1 px-5">
       {status === "pending" && <div>Loading...</div>}
       {status === "error" && <div>Error</div>}
       {status === "success" && (
-        <div className="h-[calc(90vh-36px)] min-h-[500px] w-full px-[20px] py-[20px]">
-          <iframe
-            className="min-h-full w-full rounded-lg"
-            src="/SIR_Audit_Report.pdf"
-          />
-        </div>
+        <iframe
+          className="min-h-full w-full rounded-lg"
+          src={`/audit/${slug}.pdf`}
+        />
       )}
     </div>
   );

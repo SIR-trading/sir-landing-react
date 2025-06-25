@@ -25,16 +25,13 @@
 // <style scoped></style>
 import { Button } from "~/components/ui/button";
 import Link from "next/link";
-import {FaDiscord, FaGithub, FaXTwitter} from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
 
 const NavigationTail = () => {
   return (
-    <div className="flex flex-col gap-6 md:gap-4 md:flex-row-reverse justify-around md:items-center">
+    <div className="flex flex-col justify-around gap-6 md:flex-row-reverse md:items-center md:gap-6">
       <div>
-        <Button
-          variant="outline"
-          asChild
-        >
+        <Button variant="outline" asChild>
           <Link
             href="https://staging.sir.trading/"
             target="_blank"
@@ -46,14 +43,14 @@ const NavigationTail = () => {
           </Link>
         </Button>
       </div>
-      <div className="flex flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-6 justify-around md:justify-center items-center">
+      <div className="flex flex-row items-center justify-around gap-2 sm:gap-3 md:justify-center md:gap-4 lg:gap-8">
         <Link
           className="flex justify-self-center"
           href="https://x.com/leveragesir"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaXTwitter className="text-white w-5 h-5" />
+          <FaXTwitter className="h-5 w-5 text-black dark:text-white" />
         </Link>
         <Link
           className="flex justify-self-center"
@@ -61,7 +58,7 @@ const NavigationTail = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaDiscord className="text-white w-6 h-6" />
+          <FaDiscord className="h-6 w-6 text-black dark:text-white" />
         </Link>
         <Link
           className="flex justify-self-center"
@@ -69,7 +66,7 @@ const NavigationTail = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaGithub className="text-white w-6 h-6" />
+          <FaGithub className="h-6 w-6 text-black dark:text-white" />
         </Link>
       </div>
     </div>

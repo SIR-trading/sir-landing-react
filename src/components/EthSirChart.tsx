@@ -31,51 +31,57 @@ ChartJS.register(
 const EthSirChart: React.FC = () => {
   const chartData = useChartData();
   const chartOptions: ChartOptions<"line"> = useMemo(
-    () => ({
-      responsive: true,
-      plugins: {
-        legend: {
-          position: "top" as const,
-          labels: {
-            color: "rgba(255, 255, 255, 1)",
-          },
-        },
-      },
-      maintainAspectRatio: false,
-      animation: {
-        duration: 1000,
-        easing: "easeInOutQuart",
-      },
-      scales: {
-        x: {
-          grid: {
-            color: "rgba(0, 0, 0, 0)",
-          },
-          ticks: {
-            callback: function (val, index) {
-              return index % 4 === 0 ? this.getLabelForValue(Number(val)) : "";
+    () =>
+      ({
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "top" as const,
+            labels: {
+              color: "rgba(255, 255, 255, 0.5)",
+              font: {
+                size: 10,
+              },
             },
-            color: "rgba(255, 255, 255, 1)",
           },
         },
-        y: {
-          grid: {
-            color: "rgba(0, 0, 0, 0)",
-          },
-          ticks: {
-            callback: function (val) {
-              return "$" + this.getLabelForValue(Number(val));
+        maintainAspectRatio: false,
+        animation: {
+          duration: 1000,
+          easing: "easeInOutQuart",
+        },
+        scales: {
+          x: {
+            grid: {
+              color: "rgba(0, 0, 0, 0)",
             },
-            color: "rgba(255, 255, 255, 1)",
+            ticks: {
+              callback: function (val, index) {
+                return index % 4 === 0
+                  ? this.getLabelForValue(Number(val))
+                  : "";
+              },
+              color: "rgba(255, 255, 255, 0.4)",
+            },
+          },
+          y: {
+            grid: {
+              color: "rgba(0, 0, 0, 0)",
+            },
+            ticks: {
+              callback: function (val) {
+                return "$" + this.getLabelForValue(Number(val));
+              },
+              color: "rgba(255, 255, 255, 0.4)",
+            },
           },
         },
-      },
-    }),
+      }) as const,
     [],
   );
 
   return (
-    <div className="flex h-[250px] w-full items-center justify-center rounded-md bg-[rgba(255,255,255,0.1)] p-1 md:h-[400px] md:w-[700px] md:p-3">
+    <div className="bg-background flex h-[250px] w-full items-center justify-center rounded-md md:h-[348px] md:w-[748px] md:p-3 dark:bg-transparent">
       {chartData ? (
         <Line data={chartData} options={chartOptions} />
       ) : (

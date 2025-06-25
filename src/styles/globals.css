@@ -2,14 +2,16 @@
 @import "tw-animate-css";
 @config "../../tailwind.config.js";
 
+
+/*@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));*/
+
 @layer base {
 
 }
 
 @layer components {
   .title {
-    @apply font-lora uppercase leading-[5rem] font-normal text-white;
-    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
+    @apply font-geist font-bold uppercase leading-13 text-black dark:text-white;
   }
 
   .subtitle {
@@ -21,11 +23,15 @@
   }
 
   .section-header {
-    @apply font-lora uppercase leading-8 font-normal text-rob-roy-300;
+    @apply font-inter leading-8 font-semibold text-black dark:text-white;
+  }
+
+  .section-main p {
+    @apply text-section-light dark:text-section max-w-[560px] text-md text-center;
   }
 
   .text-brand {
-    @apply font-lora uppercase leading-4 font-normal text-white text-xl;
+    @apply font-geist uppercase leading-4 font-normal text-black dark:text-white text-xl;
     text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
   }
 
@@ -46,7 +52,7 @@
   }
 
   .section-text-block {
-    @apply text-justify flex flex-col gap-[15px];
+    @apply text-justify flex flex-col gap-6;
   }
 
   .spinner {
@@ -97,5 +103,15 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+  .gradient-bg {
+    background: radial-gradient(53.42% 53.42% at 50% 50%, rgba(132, 42, 255, 0.2) 0%, rgba(70, 26, 136, 0.2) 36.14%, rgba(255, 255, 255, 0.2) 100%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .gradient-bg {
+      background: radial-gradient(53.42% 53.42% at 50% 50%, rgba(132, 42, 255, 0.2) 0%, rgba(70, 26, 136, 0.2) 36.14%, rgba(10, 11, 22, 0.2) 100%);
+    }
   }
 }

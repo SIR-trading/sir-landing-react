@@ -5,14 +5,14 @@ import SideNav from "./sideNav";
 // import { CustomConnectButton } from "./customConnectButton";
 export function Header() {
   return (
-    <div className="flex items-center justify-between px-[14px] py-[24px] text-white lg:mx-auto xl:w-[1250px]">
+    <div className="flex items-center justify-between px-[14px] py-[24px] text-black lg:mx-auto xl:w-[1250px] dark:text-white">
       <div className="flex gap-x-6">
         <Link href={"/"} className="flex items-center gap-x-2">
           {/* <Image src={logo} alt="Sir-Trading Logo" className="h-[60px] w-auto" /> */}
           <div className="flex gap-x-1">
             <Image height={36} width={36} src="/logo.png" alt="Sir Icon" />
             <div className="flex items-center">
-              <h1 className="sir-shadow font-lora h-[34px] text-[34px] leading-[34px] font-normal text-white drop-shadow-md">
+              <h1 className="sir-shadow font-geist h-[34px] text-[34px] leading-[34px] font-normal text-black drop-shadow-md dark:text-white">
                 SIR.TRADING
               </h1>
             </div>
