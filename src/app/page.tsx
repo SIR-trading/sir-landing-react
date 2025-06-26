@@ -85,7 +85,7 @@ export default function Home() {
         </Section>
 
         <Section variant="background" header={"SIR: a Fee Paying Token"}>
-          <div className="section-text-block">
+          <div className="section-text-block flex flex-col items-center md:flex-row">
             <Image
               src="/pile_of_coins.png"
               alt="pile of coins"
@@ -93,19 +93,21 @@ export default function Home() {
               height={300}
               className="mx-auto h-full w-full max-w-xs object-cover md:w-1/4"
             />
-            <p>
-              SIR is the native token of the SIR protocol. Unlike most DeFi
-              tokens, the SIR token issuance is immutable and part of the core
-              protocol. The SIR token is designed to have strong fundamentals,
-              rewarding its stakers with a share of the protocol&#39;s generated
-              fees .
-            </p>
-            <p>
-              The token is primarily distributed to liquidity providers at a
-              rate of 2,015 million tokens per year, in perpetuity. To maintain
-              a proportional stake in the protocol, providing liquidity is
-              necessary.
-            </p>
+            <div className="section-text-block">
+              <p>
+                SIR is the native token of the SIR protocol. Unlike most DeFi
+                tokens, the SIR token issuance is immutable and part of the core
+                protocol. The SIR token is designed to have strong fundamentals,
+                rewarding its stakers with a share of the protocol&#39;s
+                generated fees .
+              </p>
+              <p>
+                The token is primarily distributed to liquidity providers at a
+                rate of 2,015 million tokens per year, in perpetuity. To
+                maintain a proportional stake in the protocol, providing
+                liquidity is necessary.
+              </p>
+            </div>
           </div>
         </Section>
 

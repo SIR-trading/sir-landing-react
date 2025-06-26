@@ -27,7 +27,7 @@
   }
 
   .section-main p {
-    @apply text-section-light dark:text-section max-w-[560px] text-md text-center;
+    @apply text-section-light dark:text-section  text-md;
   }
 
   .text-brand {

@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "../ui/button";
-import { CustomConnectButton } from "~/components/customConnectButton";
 import { api } from "~/trpc/react";
 import { Stablecoin, type TContribution, type TToken } from "~/lib/types/data";
 import { useCallback, useEffect, useMemo } from "react";
@@ -138,11 +137,7 @@ const Contributions = () => {
   ]);
 
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-1 rounded-lg text-sm md:w-2/3 md:justify-center">
-      <div className="absolute top-4 right-4">
-        <CustomConnectButton />
-      </div>
-
+    <div className="flex w-full flex-col items-center justify-center gap-1 rounded-lg text-sm md:justify-center">
       <div className="flex h-full w-full flex-col items-stretch justify-between gap-1 rounded-lg bg-[#ffffff15] p-3 md:flex-row">
         <div>Contribution:</div>
         <div>

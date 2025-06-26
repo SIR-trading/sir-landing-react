@@ -1,13 +1,14 @@
 "use client";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Button } from "./ui/button";
+import { useDisconnect } from "wagmi";
 export const CustomConnectButton = () => {
+  const { disconnect } = useDisconnect();
   return (
     <ConnectButton.Custom>
       {({
         account,
         chain,
-        openAccountModal,
         openChainModal,
         openConnectModal,
         authenticationStatus,
@@ -37,7 +38,7 @@ export const CustomConnectButton = () => {
                 return (
                   <Button
                     variant="outline"
-                    className="rounded-full text-black dark:text-white"
+                    className="cursor-pointer text-black dark:text-white"
                     onClick={openConnectModal}
                     type="button"
                   >
@@ -49,7 +50,7 @@ export const CustomConnectButton = () => {
                 return (
                   <Button
                     variant={"outline"}
-                    className="rounded-full border-red-300 text-red-300"
+                    className="border-red-300 text-red-300"
                     onClick={openChainModal}
                     type="button"
                   >
@@ -58,17 +59,15 @@ export const CustomConnectButton = () => {
                 );
               }
               return (
-                <div style={{ display: "flex", gap: 12 }}>
+                <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                  <span>{account.displayName}</span>
                   <Button
                     variant="outline"
-                    className="rounded-full text-black dark:text-white"
-                    onClick={openAccountModal}
+                    className="text-black dark:text-white"
+                    onClick={() => disconnect()}
                     type="button"
                   >
-                    {account.displayName}
-                    {/* {account.displayBalance */}
-                    {/*   ? ` (${account.displayBalance})` */}
-                    {/*   : ""} */}
+                    Disconnect
                   </Button>
                 </div>
               );
