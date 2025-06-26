@@ -21,7 +21,7 @@ const Section: React.FC<SectionProps> = ({
       "ring-2 ring-gray-800": variant === "ring",
       "bg-card-light dark:bg-card shadow-section":
         variant === "background" || variant === "background-p0",
-      "p-3 md:p-10 my-12": variant !== "background-p0",
+      "p-3 md:py-10 md:px-16 my-12": variant !== "background-p0",
       "p-3 md:px-0 md:py-8 my-12": variant === "background-p0",
     },
     className,
