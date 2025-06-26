@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useAccount } from "wagmi";
 import Section from "~/components/common/Section";
-import SirCard from "~/components/common/SirCard";
 import Image from "next/image";
 import { api } from "~/trpc/react";
 import Allocations from "~/components/Allocations";
@@ -177,7 +176,7 @@ export default function AllocationsPage() {
               >
                 {bullet.i}
               </div>
-              <div className="text-left md:p-3">{bullet.text}</div>
+              <p className="text-left md:p-3">{bullet.text}</p>
             </div>
           ))}
         </div>
