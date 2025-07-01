@@ -19,10 +19,8 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_CHAIN_ID: z.string(),
     NEXT_PUBLIC_PRESALE_CONTRACT_ADDRESS: zAddress,
-    NEXT_PUBLIC_SALE_CONTRACT_ADDRESS: zAddress,
     NEXT_PUBLIC_BUTERIN_CARDS: zAddress,
     NEXT_PUBLIC_MINED_JPEG: zAddress,
-    NEXT_PUBLIC_MANUAL_SALE_LIMIT: z.string(),
   },
 
   /**
@@ -35,11 +33,8 @@ export const env = createEnv({
     NEXT_PUBLIC_PRESALE_CONTRACT_ADDRESS:
       process.env.NEXT_PUBLIC_PRESALE_CONTRACT_ADDRESS,
     RPC_URL: process.env.RPC_URL,
-    NEXT_PUBLIC_SALE_CONTRACT_ADDRESS:
-      process.env.NEXT_PUBLIC_SALE_CONTRACT_ADDRESS,
     NEXT_PUBLIC_BUTERIN_CARDS: process.env.NEXT_PUBLIC_BUTERIN_CARDS,
     NEXT_PUBLIC_MINED_JPEG: process.env.NEXT_PUBLIC_MINED_JPEG,
-    NEXT_PUBLIC_MANUAL_SALE_LIMIT: process.env.NEXT_PUBLIC_MANUAL_SALE_LIMIT,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
