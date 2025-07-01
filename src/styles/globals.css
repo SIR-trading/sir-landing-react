@@ -28,6 +28,10 @@
 
   .section-main p {
     @apply text-section-light dark:text-section  text-md;
+
+    strong {
+      @apply text-black dark:text-white font-semibold;
+    }
   }
 
   .text-brand {

@@ -21,7 +21,7 @@ async function RootLayout({ children }: { children: ReactNode }) {
           <Header />
           <main className="content h-80">{children}</main>
         </div>{" "}
-        <Script strategy="lazyOnload" id="theme-toggle" src="/theme.js" />
+        <Script id="theme-toggle" src="/theme.js" />
       </body>
     </html>
   );
