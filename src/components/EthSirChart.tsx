@@ -2,6 +2,7 @@
 import React, { useMemo, useRef, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import {
+  type ScriptableContext,
   Chart as ChartJS,
   Title,
   Tooltip,
@@ -27,6 +28,13 @@ ChartJS.register(
   TimeScale,
   Filler
 );
+
+/* Palettes that fit both light and dark backgrounds */
+const palette = {
+  eth: "#67c8c3",
+  sir: "#d4af37", 
+  squeeth: "#fb7185"
+};
 
 const EthSirChart: React.FC = () => {
   const chartData = useChartData();
@@ -88,13 +96,6 @@ const EthSirChart: React.FC = () => {
     []
   );
 
-  /* Palettes that fit both light and dark backgrounds */
-  const palette = {
-    eth: "#67c8c3",
-    sir: "#d4af37", 
-    squeeth: "#fb7185"
-  };
-
   /* Inject fills and border styles on first render */
   const processedData = useMemo(() => {
     if (!chartData) return chartData;
@@ -112,12 +113,11 @@ const EthSirChart: React.FC = () => {
         return {
           ...ds,
           borderColor: color,
-          backgroundColor: ctx => {
+          backgroundColor: (ctx: ScriptableContext<'line'>) => {
             const { chart } = ctx;
-            const { ctx: c } = chart;
-            const gradient = c.createLinearGradient(0, 0, 0, chart.height);
-            gradient.addColorStop(0, color + "55");
-            gradient.addColorStop(1, color + "05");
+            const gradient = chart.ctx.createLinearGradient(0, 0, 0, chart.height);
+            gradient.addColorStop(0, color + '55');
+            gradient.addColorStop(1, color + '05');
             return gradient;
           },
           tension: 0.25,
