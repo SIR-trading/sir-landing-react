@@ -5,7 +5,8 @@ import { Switch } from "~/components/ui/switch";
 const DarkModeToggle = () => {
   const [isDark, setIsDark] = useLocalStorage<boolean>(
     "isDark",
-    window.matchMedia("(prefers-color-scheme: dark)").matches,
+    typeof window !== "undefined" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches,
   );
 
   return (
