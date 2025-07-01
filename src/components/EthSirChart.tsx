@@ -49,7 +49,7 @@ const EthSirChart: React.FC = () => {
             boxWidth: 10,
             boxHeight: 10,
             padding: 12,
-            font: { size: 12, weight: "500" },
+            font: { size: 12, weight: 500 },
             color: "rgba(255,255,255,0.7)",
           },
         },
