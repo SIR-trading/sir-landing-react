@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <div className="container">
-        <SirHero image="hero_image_borderless.png">
+        <SirHero image="VaultDiagram">
           Safer leverage for
           <br />
           Long-term investors
