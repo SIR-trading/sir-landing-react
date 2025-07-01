@@ -31,9 +31,16 @@ const Header: FC = () => {
                 <Image
                   height={32}
                   width={32}
-                  src="/logo.png"
+                  src="/SIR_no_bg.svg"
                   alt="Sir Icon"
-                  className="rounded-full"
+                  className="hidden rounded-full dark:block"
+                />
+                <Image
+                  height={32}
+                  width={32}
+                  src="/SIR_outline2.svg"
+                  alt="Sir Icon"
+                  className="rounded-full dark:hidden"
                 />
               </div>
               <h1 className="sir-shadow font-geist ml-1 inline-flex text-[20px] leading-[20px] font-semibold text-black dark:text-white">
