@@ -96,7 +96,7 @@ export default function Home() {
         <Section variant="background" header={"SIR: a Fee Paying Token"}>
           <div className="section-text-block flex flex-col items-center md:flex-row">
             <Image
-              src="/pile_of_coins.png"
+              src="/gold_coins.png"
               alt="pile of coins"
               width={300}
               height={300}
