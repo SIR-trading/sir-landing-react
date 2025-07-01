@@ -10,20 +10,28 @@ type SirHeroProps = {
 const SirHero: React.FC<SirHeroProps> = ({ image, children }) => {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center p-0">
+      <div className="flex flex-col items-center justify-center p-0 py-10">
+        <h1 className="title w-full text-center text-[40px]">{children}</h1>
         {image && (
-          <div className="w-full p-0">
+          <div className="w-full rounded-xl p-4 dark:bg-transparent">
             <Image
-              src={`/${image}`}
+              src={`/${image}.svg`}
               alt="Hero Image"
               width={1024}
               height={338}
               priority
-              className="h-auto w-full"
+              className="hidden h-auto w-full dark:block"
+            />{" "}
+            <Image
+              src={`/${image}-light.svg`}
+              alt="Hero Image"
+              width={1024}
+              height={338}
+              priority
+              className="h-auto w-full dark:hidden"
             />
           </div>
         )}
-        <h1 className="title mt-3 text-center text-[44px]">{children}</h1>
       </div>
     </div>
   );

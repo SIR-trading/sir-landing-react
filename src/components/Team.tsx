@@ -98,11 +98,11 @@ const Team: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-y-0">
-      <div className="flex max-w-[800px] flex-row flex-wrap items-start justify-center gap-6 p-1">
+      <div className="flex max-w-[800px] flex-row flex-wrap items-start justify-center gap-4 p-1">
         {coreTeamMembers.map((member) => (
           <Link
             key={member.name}
-            className="flex flex-1 cursor-pointer flex-col flex-wrap items-center justify-center gap-1 p-1"
+            className="flex w-[180px] cursor-pointer flex-col flex-wrap items-center justify-center gap-1 p-1"
             href={member.link}
           >
             <Avatar size={"3xl"} src={member.avatar} alt={member.name} />

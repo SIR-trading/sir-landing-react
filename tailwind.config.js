@@ -8,7 +8,7 @@ export default {
       background: { DEFAULT: "#0D0E1C", light: "#F3EAFF" },
       "blue-bell-500": "#8f8fb7",
       "grey-50": "#FAFAFA80",
-      section: { DEFAULT: "#9A95E3", light: "#130F28" },
+      section: { DEFAULT: "#D3D1F5", light: "#130F28" },
       card: { DEFAULT: "#090522", light: "#FFFFFF" },
       primary: "white",
       "geyser-200": "#ced8e1",
