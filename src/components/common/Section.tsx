@@ -30,9 +30,7 @@ const Section: React.FC<SectionProps> = ({
   return (
     <section className={classes}>
       <div className="flex flex-col items-center justify-center gap-1 text-center">
-        {header && (
-          <h1 className="section-header mb-[24px] text-xl">{header}</h1>
-        )}
+        {header && <h1 className="section-header mb-8 text-xl">{header}</h1>}
         <div className={"section-main"}>{children}</div>
       </div>
     </section>

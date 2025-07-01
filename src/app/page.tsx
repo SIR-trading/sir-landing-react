@@ -148,9 +148,9 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section variant="background-p0" header={"Gentlemen & Apes"}>
-          <div className="section-text-block">
-            <div className="flex w-full flex-col items-center gap-12 lg:flex-row lg:items-start lg:justify-evenly lg:gap-8">
+        <Section variant="background" header={"Gentlemen & Apes"}>
+          <div className="section-text-block w-full flex-1">
+            <div className="flex w-full flex-col items-center gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-20">
               <SirCard image="/gentlemen_card.jpg" size="md">
                 <p>
                   Gentlemen <strong>provide liquidity to the protocol</strong>.
