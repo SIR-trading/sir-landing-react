@@ -43,7 +43,7 @@ const Header: FC = () => {
                   className="rounded-full dark:hidden"
                 />
               </div>
-              <h1 className="sir-shadow font-geist ml-1 inline-flex text-[20px] leading-[20px] font-semibold text-black dark:text-white">
+              <h1 className="sir-shadow font-geist inline-flex text-[20px] leading-[20px] font-semibold text-black dark:text-white">
                 Sir trading
               </h1>
               <div
