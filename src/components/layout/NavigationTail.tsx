@@ -26,7 +26,12 @@
 import { Button } from "~/components/ui/button";
 import Link from "next/link";
 import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
-import DarkModeToggle from "~/components/darkModeToggle";
+import dynamic from "next/dynamic";
+
+const DarkModeToggle = dynamic(
+  () => import("~/components/darkModeToggle"),
+  { ssr: false }
+);
 
 const NavigationTail = () => {
   return (
