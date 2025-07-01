@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import "~/styles/globals.css";
 import { Header } from "~/components/layout/Header";
 import type { ReactNode } from "react";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,6 +21,7 @@ async function RootLayout({ children }: { children: ReactNode }) {
           <Header />
           <main className="content h-80">{children}</main>
         </div>{" "}
+        <Script strategy="lazyOnload" id="theme-toggle" src="/theme.js" />
       </body>
     </html>
   );
