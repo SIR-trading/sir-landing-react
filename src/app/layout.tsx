@@ -4,6 +4,7 @@ import "~/styles/globals.css";
 import { Header } from "~/components/layout/Header";
 import type { ReactNode } from "react";
 import Script from "next/script";
+import AOSInitializer from "~/components/AOSInitializer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,6 +21,13 @@ export const metadata = {
 async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          id="theme-toggle"
+          src="/theme.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body
         className={`relative ${GeistSans.variable} ${inter.className} bg-background-light dark:bg-background text-black dark:text-white`}
       >
@@ -28,7 +36,7 @@ async function RootLayout({ children }: { children: ReactNode }) {
           <Header />
           <main className="content h-80">{children}</main>
         </div>{" "}
-        <Script id="theme-toggle" src="/theme.js" />
+        <AOSInitializer />
       </body>
     </html>
   );

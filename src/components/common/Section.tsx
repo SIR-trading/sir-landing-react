@@ -28,7 +28,7 @@ const Section: React.FC<SectionProps> = ({
   );
 
   return (
-    <section className={classes}>
+    <section className={classes} data-aos="fade-up" >
       <div className="flex flex-col items-center justify-center gap-1 text-center">
         {header && <h1 className="section-header mb-8 text-xl">{header}</h1>}
         <div className={"section-main"}>{children}</div>
