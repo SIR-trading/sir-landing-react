@@ -4,7 +4,7 @@ import fs from "fs/promises";
 import path from "path";
 
 export async function GET(req: NextRequest) {
-  const reqUrl = req.url.replace("http://localhost:3000/api/", "");
+  const reqUrl = req.url.split("api/")[1];
 
   try {
     // Get the path to the PDF file in the public folder
