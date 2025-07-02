@@ -36,27 +36,8 @@ export default function Home() {
           <div className="flex w-full flex-col items-center justify-center gap-6">
             <div className="section-text-block">
               <p>
-                SIR brings a fresh approach to leveraged investing in DeFi,
-                offering compounding returns without the usual drawbacks. Unlike
-                traditional approaches to leverage,{" "}
-                <strong>
-                  SIR does away with maintenance fees and removes{" "}
-                  <Link
-                    href="https://www.etf.com/sections/etf-basics/why-do-leveraged-etfs-decay"
-                    className="underline"
-                  >
-                    volatility decay
-                  </Link>
-                </strong>
-                .
-              </p>
-              <p>
-                Users{" "}
-                <strong>
-                  pay a fixed amount when they open or close a position
-                </strong>{" "}
-                , in contrast with many platforms that charge ongoing fees,
-                eating into long-term returns.
+                SIR offers a new way to take leverage in DeFi: <strong>compounding exposure without the usual drag</strong>.
+                Instead of funding or maintenance fees that slowly eat returns, <strong>SIR charges one fixed fee only when you open a position</strong>.
               </p>
             </div>
             <div className="flex w-full flex-col items-center justify-center">
@@ -77,17 +58,18 @@ export default function Home() {
             </div>
             <div className="section-text-block">
               <p>
-                SIR achieves these improvements by controlling its own internal
-                liquidity pools. This enables continuous virtual rebalancing,
-                ensuring steady leverage without costly external transactions.
+                The protocol maintains <strong>its own internal liquidity pools</strong>,
+                letting it update balances on-chain without the constant rebalancing trades that cause <Link
+                  href="https://www.etf.com/sections/etf-basics/why-do-leveraged-etfs-decay"
+                  className="underline"
+                >
+                  volatility decay
+                </Link> elsewhere. 
               </p>
               <p>
-                The result is{" "}
-                <strong>
-                  a safer, more efficient way to gain amplified, compounding
-                  returns{" "}
-                </strong>
-                over the long term.
+                As prices move, <strong>leverage stays mechanically constant</strong>,
+                so positions follow their target payoff without bleeding value to fees or decay.
+                The result is a <strong>safer, more efficient path to amplified, long-term returns</strong>.
               </p>
             </div>
           </div>
@@ -104,12 +86,9 @@ export default function Home() {
               <p>
                 SIR is the native token of the SIR protocol. Unlike most DeFi
                 tokens, the SIR token issuance is immutable and part of the core
-                protocol. The SIR token is designed to have strong fundamentals,
-                <strong>
-                  rewarding its stakers with a share of the protocol&#39;s
-                  generated fees{" "}
-                </strong>
-                .
+                protocol. The SIR token is designed
+                to have strong fundamentals, <strong>rewarding its stakers</strong> with
+                a share of the protocol&#39;s <strong>generated fees</strong>.
               </p>
               <p>
                 The token is primarily{" "}
@@ -141,7 +120,7 @@ export default function Home() {
               <p className="leading-relaxed">
                 SIR is designed as a DeFi primitive, focusing on being maximally
                 trustless and permissionless.{" "}
-                <strong>Like Uniswap, anyone can create a vault </strong>,
+                Like Uniswap, <strong>anyone can create a vault</strong>,
                 specifying a pair of tokens and a leverage ratio.
               </p>
             </li>
@@ -156,7 +135,7 @@ export default function Home() {
                 The protocol runs on immutable smart contracts with fixed
                 parameters, eliminating risks from unexpected changes. After its
                 beta phase, SIR&#39;s unstoppable code will be{" "}
-                <strong>completely immutable, living on Ethereum forever</strong>.
+                <strong>completely immutable</strong>, living on Ethereum forever.
               </p>
             </li>
 
