@@ -10,7 +10,7 @@ const DarkModeToggle = () => {
   );
 
   return (
-    <div>
+    <div className="border-2 border-gray-300 rounded-full p-0.5 flex justify-center items-center w-fit mx-auto">
       <Switch
         checked={isDark}
         onCheckedChange={() => {
