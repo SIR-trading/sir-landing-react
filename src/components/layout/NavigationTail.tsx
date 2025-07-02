@@ -44,7 +44,7 @@ const NavigationTail = () => {
             rel="noopener noreferrer"
           >
             <span className="font-sm font-semibold whitespace-nowrap">
-              Launch Prototype
+              Launch App
             </span>
           </Link>
         </Button>

@@ -93,16 +93,21 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section variant="background" header={"SIR: a Fee Paying Token"}>
+        {/* header={"SIR: a Fee Paying Token"} */}
+        <Section variant="background">
           <div className="section-text-block flex flex-col items-center md:flex-row">
             <Image
-              src="/gold_coins.png"
+              src="/pile_of_coins.png"
               alt="pile of coins"
               width={300}
               height={300}
               className="mx-auto h-full w-full max-w-xs object-cover md:w-1/4"
             />
             <div className="section-text-block">
+              <h1 className="section-header mb-8 text-xl text-center">
+                SIR: a Fee Paying Token
+              </h1>
+
               <p>
                 SIR is the native token of the SIR protocol. Unlike most DeFi
                 tokens, the SIR token issuance is immutable and part of the core
@@ -151,7 +156,7 @@ export default function Home() {
         <Section variant="background" header={"Gentlemen & Apes"}>
           <div className="section-text-block w-full flex-1">
             <div className="flex w-full flex-col items-center gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-20">
-              <SirCard image="/gentlemen_card.jpg" size="md">
+              <SirCard image="/gentleman_card.png" size="md">
                 <p>
                   Gentlemen <strong>provide liquidity to the protocol</strong>.
                   They earn fees for doing so, and on selected vaults, also
@@ -159,7 +164,7 @@ export default function Home() {
                   tokenized in the form of an ERC-1155 called TEA.
                 </p>
               </SirCard>
-              <SirCard image="/ape_card.jpg" size="md">
+              <SirCard image="/ape_card.png" size="md">
                 <p>
                   Apes{" "}
                   <strong>
