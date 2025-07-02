@@ -96,13 +96,6 @@ export default function Home() {
         {/* header={"SIR: a Fee Paying Token"} */}
         <Section variant="background">
           <div className="section-text-block flex flex-col items-center md:flex-row">
-            <Image
-              src="/pile_of_coins.png"
-              alt="pile of coins"
-              width={300}
-              height={300}
-              className="mx-auto h-full w-full max-w-xs object-cover md:w-1/4"
-            />
             <div className="section-text-block">
               <h1 className="section-header mb-8 text-xl text-center">
                 SIR: a Fee Paying Token
@@ -126,31 +119,61 @@ export default function Home() {
                 necessary.
               </p>
             </div>
+            <Image
+              src="/pile_of_coins.png"
+              alt="pile of coins"
+              width={300}
+              height={300}
+              className="mx-auto h-full w-full max-w-xs object-cover md:w-1/4"
+            />
           </div>
         </Section>
 
         <Section variant="background" header={"Permissionless & Trustless"}>
-          <div className="section-text-block">
-            <p>
-              SIR is designed as a DeFi primitive, focusing on being maximally
-              trustless and permissionless.{" "}
-              <strong>Like Uniswap, anyone can create a vault </strong>,
-              specifying a pair of tokens and a leverage ratio.
-            </p>
+          {/* <div className="section-text-block"> */}
+          <ol className="space-y-6 text-left">
+            <li className="flex items-center gap-4">
+              <span className="relative grid place-items-center w-15 h-15 shrink-0">
+                <span aria-hidden className="neon-badge absolute inset-0" />
+                <span className="absolute inset-0 flex items-center justify-center font-semibold">1</span>
+              </span>
 
-            <p>
-              The protocol runs on immutable smart contracts with fixed
-              parameters, eliminating risks from unexpected changes. After its
-              beta phase, SIR&#39;s unstoppable code will be{" "}
-              <strong>completely immutable, living on Ethereum forever</strong>{" "}
-              .
-            </p>
-            <p>
-              This trustless architecture, combined with reliable price oracles,
-              establishes SIR as a fundamental &#39;money lego&#39; in the DeFi
-              ecosystem.
-            </p>
-          </div>
+              <p className="leading-relaxed">
+                SIR is designed as a DeFi primitive, focusing on being maximally
+                trustless and permissionless.{" "}
+                <strong>Like Uniswap, anyone can create a vault </strong>,
+                specifying a pair of tokens and a leverage ratio.
+              </p>
+            </li>
+
+            <li className="flex items-center gap-4">
+              <span className="relative grid place-items-center w-15 h-15 shrink-0">
+                <span aria-hidden className="neon-badge absolute inset-0" />
+                <span className="absolute inset-0 flex items-center justify-center font-semibold">2</span>
+              </span>
+
+              <p className="leading-relaxed">
+                The protocol runs on immutable smart contracts with fixed
+                parameters, eliminating risks from unexpected changes. After its
+                beta phase, SIR&#39;s unstoppable code will be{" "}
+                <strong>completely immutable, living on Ethereum forever</strong>.
+              </p>
+            </li>
+
+            <li className="flex items-center gap-4">
+              <span className="relative grid place-items-center w-15 h-15 shrink-0">
+                <span aria-hidden className="neon-badge absolute inset-0" />
+                <span className="absolute inset-0 flex items-center justify-center font-semibold">3</span>
+              </span>
+
+              <p className="leading-relaxed">
+                This trustless architecture, combined with reliable price oracles,
+                establishes SIR as a <strong>fundamental <em>money lego</em></strong> in the DeFi
+                ecosystem.
+              </p>
+            </li>
+          </ol>
+          {/* </div> */}
         </Section>
 
         <Section variant="background" header={"Gentlemen & Apes"}>

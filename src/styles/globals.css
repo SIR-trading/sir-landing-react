@@ -119,23 +119,18 @@
     }
   }
 
-  /* circular neon ring */
-  .neon-ring {
-    pointer-events: none;               /* ring itself doesn’t intercept clicks */
-    position: absolute;
-    inset: 0;
-    border-radius: 9999px;
-    padding: 3px;                       /* ring thickness */
+  .neon-badge {
+    @apply relative inline-flex items-center justify-center font-semibold;
+    width: 2.5rem;   /* square badge */
+    height: 2.5rem;
+    border-radius: 0.7rem;            /* 6 px rounded */
+    padding: 2px;                       /* ring thickness */
 
     background:
-      conic-gradient(
-        from 0deg,
-        #ec2cf9 0deg   120deg,          /* magenta  →  */
-        #21d4fd 120deg 240deg,          /* cyan      →  */
-        #ff9629 240deg 360deg           /* orange        */
-      );
+      linear-gradient(135deg,#2ADBFF 0%,#2A7CFF 100%);
+    color: #fff;                        /* number colour */
 
-    /* punch a hole so the avatar shows through */
+    /* inner dark square cut-out */
     mask:
       linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
@@ -144,14 +139,5 @@
       linear-gradient(#000 0 0);
     mask-composite: exclude;
     -webkit-mask-composite: xor;
-
-    transition: transform 0.2s ease, filter 0.2s ease;
-    filter: drop-shadow(0 0 6px rgba(236 44 249 / .40));
-  }
-
-  /* hover effect (add via `group-hover:neon-ring-hover`) */
-  .neon-ring-hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 10px rgba(236 44 249 / .60));
   }
 }
