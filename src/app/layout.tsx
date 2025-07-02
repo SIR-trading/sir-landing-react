@@ -21,16 +21,21 @@ export const metadata = {
 async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          id="theme-toggle"
+          src="/theme.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body
         className={`relative ${GeistSans.variable} ${inter.className} bg-background-light dark:bg-background text-black dark:text-white`}
-      >        
+      >
         <div className="gradient-bg absolute top-0 left-0 z-[-1] h-full w-full opacity-100"></div>
         <div className="font-inter flex min-h-screen flex-col">
           <Header />
           <main className="content h-80">{children}</main>
         </div>{" "}
-        <Script id="theme-toggle" src="/theme.js" />
-                
         <AOSInitializer />
       </body>
     </html>
