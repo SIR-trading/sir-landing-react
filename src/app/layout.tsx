@@ -29,7 +29,7 @@ async function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body
-        className={`relative ${GeistSans.variable} ${inter.className} bg-background-light dark:bg-background text-black dark:text-white`}
+        className={`relative ${GeistSans.variable} ${inter.className} text-black dark:text-white`} // `bg-background-light dark:bg-background` removed
       >
         <div className="gradient-bg absolute top-0 left-0 z-[-1] h-full w-full opacity-100"></div>
         <div className="font-inter flex min-h-screen flex-col">

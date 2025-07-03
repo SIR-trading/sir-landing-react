@@ -106,7 +106,7 @@
 
   @keyframes spin {
     0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    100% { transform: rotate(330deg); }
   }
 
   .gradient-bg {
@@ -139,5 +139,74 @@
       linear-gradient(#000 0 0);
     mask-composite: exclude;
     -webkit-mask-composite: xor;
+  }
+
+  /* base = light */
+  :root{
+    --bg-main:#ffffff;
+    --neon-intensity:0.25;
+    --neon-blur:12px;
+    --line-purple:#bba6ff;
+    --line-cyan:#82e1ff;
+    --line-orange:#ffc270;
+  }
+
+  /* dark overrides */
+  html.dark{
+    --bg-main:#13152A;
+    --neon-intensity:0.35;
+    --neon-blur:8px;
+    --line-purple:#764aff;
+    --line-cyan:#00c8ff;
+    --line-orange:#ff8b00;
+  }
+
+  /* still keep the auto switch for users who never touch the toggle */
+  @media (prefers-color-scheme:dark){
+    :root:not(.light):not(.dark){      /* only if no class present */
+      --bg-main:#13152A;
+      --neon-intensity:0.35;
+      --neon-blur:8px;
+      --line-purple:#764aff;
+      --line-cyan:#00c8ff;
+      --line-orange:#ff8b00;
+    }
+  }
+
+  /* 4. backdrop element */
+  body{
+    background:var(--bg-main);
+    position:relative;       /* create stacking context */
+  }
+
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    /* three layers, same angle, different rhythms */
+    background:
+      repeating-linear-gradient(30deg,
+        transparent 0 140px,
+        var(--line-purple) 140px 143px,
+        transparent 143px 310px),
+      repeating-linear-gradient(30deg,
+        transparent 0 210px,
+        var(--line-cyan) 210px 213px,
+        transparent 213px 460px),
+      repeating-linear-gradient(30deg,
+        transparent 0 320px,
+        var(--line-orange) 320px 323px,
+        transparent 323px 650px);
+    filter:blur(var(--neon-blur)) brightness(1.4);
+    opacity:var(--neon-intensity);
+    mix-blend-mode:screen;
+    pointer-events:none;
+    animation:drift 120s linear infinite;
+}
+
+  /* 5. slow drift */
+  @keyframes drift{
+    to{background-position:2000px 0,-2000px 0;}
   }
 }
