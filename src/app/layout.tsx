@@ -21,13 +21,6 @@ export const metadata = {
 async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          id="theme-toggle"
-          src="/theme.js"
-          strategy="beforeInteractive"
-        />
-      </head>
       <body
         className={`relative ${GeistSans.variable} ${inter.className} bg-background-light dark:bg-background text-black dark:text-white`}
       >
@@ -38,6 +31,7 @@ async function RootLayout({ children }: { children: ReactNode }) {
         </div>{" "}
         <AOSInitializer />
       </body>
+      <Script id="theme-toggle" src="/theme.js" strategy="beforeInteractive" />
     </html>
   );
 }
