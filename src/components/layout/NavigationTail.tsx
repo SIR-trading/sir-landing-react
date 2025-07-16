@@ -39,7 +39,7 @@ const NavigationTail = () => {
       <div>
         <Button variant="outline" asChild>
           <Link
-            href="https://staging.sir.trading/"
+            href="https://app.sir.trading/"
             target="_blank"
             rel="noopener noreferrer"
           >
