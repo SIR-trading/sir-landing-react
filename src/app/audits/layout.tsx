@@ -5,6 +5,10 @@ import { cn } from "~/lib/utils";
 import { usePathname } from "next/navigation";
 const links = [
   {
+    label: "Custodia Security",
+    to: "/audits/custodia",
+  },
+  {
     label: "Egis Security",
     to: "/audits/egis",
   },
