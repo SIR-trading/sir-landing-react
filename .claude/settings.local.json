@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/nilga/Repos/SIR/Core/allocations/**)",
+      "Bash(cat:*)",
+      "Read(//c/Users/nilga/Desktop/**)",
+      "Bash(node -e:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

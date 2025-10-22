@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 
 const MS_PER_SECOND = 1000;
 const SECONDS_PER_HOUR = 3600;
@@ -33,7 +33,7 @@ const Timer = ({ startDate, daysDuration, noDays = false }: TimerProps) => {
     return () => clearInterval(interval);
   }, [endDate]);
 
-  const formatTime = (totalSeconds: number): string => {
+  const formatTime = useCallback((totalSeconds: number): string => {
     const days = String(Math.floor(totalSeconds / SECONDS_PER_DAY)).padStart(
       2,
       "0",
@@ -54,12 +54,12 @@ const Timer = ({ startDate, daysDuration, noDays = false }: TimerProps) => {
     return noDays
       ? `${hours}:${minutes}:${seconds}`
       : `${days}:${hours}:${minutes}:${seconds}`;
-  };
+  }, [noDays]);
 
   const timer = useMemo(() => {
     const totalSeconds = Math.floor(timeRemaining / MS_PER_SECOND);
     return formatTime(totalSeconds);
-  }, [timeRemaining, noDays]);
+  }, [timeRemaining, formatTime]);
 
   return (
     <div>
