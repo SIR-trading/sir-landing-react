@@ -27,6 +27,11 @@ import { Button } from "~/components/ui/button";
 import Link from "next/link";
 import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
 import dynamic from "next/dynamic";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "~/components/ui/hover-card";
 
 const DarkModeToggle = dynamic(
   () => import("~/components/darkModeToggle"),
@@ -37,17 +42,41 @@ const NavigationTail = () => {
   return (
     <div className="flex flex-col justify-around gap-6 md:flex-row-reverse md:items-center md:gap-6">
       <div>
-        <Button variant="outline" asChild>
-          <Link
-            href="https://app.sir.trading/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="font-sm font-semibold whitespace-nowrap">
-              Launch App
-            </span>
-          </Link>
-        </Button>
+        <HoverCard openDelay={0} closeDelay={100}>
+          <HoverCardTrigger asChild>
+            <Button variant="outline">
+              <span className="font-sm font-semibold whitespace-nowrap">
+                Launch App
+              </span>
+            </Button>
+          </HoverCardTrigger>
+          <HoverCardContent className="w-auto p-2" align="end">
+            <div className="flex flex-col gap-2">
+              <Button variant="ghost" asChild className="justify-start">
+                <Link
+                  href="https://app.sir.trading"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="font-sm font-semibold whitespace-nowrap">
+                    Ethereum
+                  </span>
+                </Link>
+              </Button>
+              <Button variant="ghost" asChild className="justify-start">
+                <Link
+                  href="https://hype.sir.trading"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="font-sm font-semibold whitespace-nowrap">
+                    HyperEVM
+                  </span>
+                </Link>
+              </Button>
+            </div>
+          </HoverCardContent>
+        </HoverCard>
       </div>
       <DarkModeToggle />
       <div className="flex flex-row items-center justify-around gap-2 sm:gap-3 md:justify-center md:gap-4 lg:gap-8">
