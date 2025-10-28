@@ -333,9 +333,9 @@ export const AllocationCardDisplay: FC<AllocationCardDisplayProps> = ({
           {
             label: "Total Allocation",
             value: (() => {
-              // Calculate daily SIR emissions: allocation% * 2015M / 100 / 12
+              // Calculate daily SIR emissions: allocation% * 2015M / 100 / 365
               const percentValue = parseFloat(allocation.allocationPerc.replace('%', ''));
-              const dailyEmission = percentValue * 2015e6 / 100 / 12;
+              const dailyEmission = percentValue * 2015e6 / 100 / 365;
               const dailyFormatted = formatSIRAmount((dailyEmission * 1e12).toString());
               return `${allocation.allocationPerc} (${dailyFormatted}/day)`;
             })(),
