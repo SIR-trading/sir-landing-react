@@ -24,33 +24,48 @@ export const AllocationMetadata = ({
     metadata.weightedHolders.remainingPercent.replace("%", "")
   );
 
+  const treasuryPercent = 8;
+  const contributorsPercent = fixedContributorsPercent - treasuryPercent;
+  const sirHoldersPercent = 12;
+  const hyperSirHoldersPercent = 2;
+
   const pieData = {
     labels: [
       "Liquidity Providers",
       "MegaETH Contributors",
-      "Weighted Holders (Ethereum + HyperEVM)",
+      "Treasury",
+      "SIR Holders",
+      "HyperSIR Holders",
     ],
     datasets: [
       {
         data: [
           metadata.lpAllocationPercent,
-          fixedContributorsPercent,
-          weightedHoldersPercent,
+          contributorsPercent,
+          treasuryPercent,
+          sirHoldersPercent,
+          hyperSirHoldersPercent,
         ],
         backgroundColor: [
           "#CC9901", // Gold for LP
           "#6A3C99", // Purple for Contributors
-          "#CC6677", // Pink for Weighted Holders
+          "#3B82F6", // Blue for Treasury
+          "#CC6677", // Pink for SIR Holders
+          "#9333EA", // Purple for HyperSIR Holders
         ],
         hoverBackgroundColor: [
           "#CC9901",
           "#6A3C99",
+          "#3B82F6",
           "#CC6677",
+          "#9333EA",
         ],
         borderColor: [
           "#CC9901",
           "#6A3C99",
+          "#3B82F6",
           "#CC6677",
+          "#9333EA",
         ],
         borderWidth: 2,
         hoverOffset: 15,
@@ -97,7 +112,9 @@ export const AllocationMetadata = ({
   const legendItems = [
     { label: "Liquidity Providers", color: "#CC9901" },
     { label: "MegaETH Contributors", color: "#6A3C99" },
-    { label: "Weighted Holders", color: "#CC6677" },
+    { label: "Treasury", color: "#3B82F6" },
+    { label: "SIR Holders", color: "#CC6677" },
+    { label: "HyperSIR Holders", color: "#9333EA" },
   ];
 
   return (
