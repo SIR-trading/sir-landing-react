@@ -14,25 +14,9 @@ interface AllocationCardDisplayProps {
 }
 
 /**
- * Format percentage value to display nicely
- */
-const formatPercentageValue = (percentage: string | number): string => {
-  const num = typeof percentage === "string" ? parseFloat(percentage) : percentage;
-  if (num === 0) return "0%";
-
-  if (num >= 10) {
-    return num.toFixed(1) + "%";
-  } else if (num >= 1) {
-    return num.toFixed(2) + "%";
-  } else {
-    return num.toFixed(3) + "%";
-  }
-};
-
-/**
  * Format number to 3 significant digits with metric suffixes (k, M, B, T)
  */
-const formatSig3 = (num: number, suffix: string = ""): string => {
+const formatSig3 = (num: number, suffix = ""): string => {
   if (num === 0) return "0" + suffix;
 
   const abs = Math.abs(num);
@@ -160,18 +144,12 @@ export const AllocationCardDisplay: FC<AllocationCardDisplayProps> = ({
   }
 
   if (isWeightedAllocation(allocation)) {
-    const TVL_SIR = 66000;
-    const TVL_HYPERSIR = 10000;
-    const TOTAL_TVL = TVL_SIR + TVL_HYPERSIR;
     const annualIssuance = 2015000000; // 2015M MegaSIR per year
 
     const ethPercentage = parseFloat(allocation.percentageBreakdown.ethereumPercentage) || 0;
     const hyperPercentage = parseFloat(allocation.percentageBreakdown.hyperEVMPercentage) || 0;
     const percValue = parseFloat(allocation.allocationPerc.replace('%', ''));
     const annualTokens = (percValue / 100) * annualIssuance;
-
-    const ethContribution = (ethPercentage * TVL_SIR) / TOTAL_TVL;
-    const hyperContribution = (hyperPercentage * TVL_HYPERSIR) / TOTAL_TVL;
 
     const ethBreakdown = allocation.sources.ethereum
       ? getBreakdownItems(allocation.sources.ethereum.breakdown)

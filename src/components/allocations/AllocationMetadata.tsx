@@ -136,15 +136,6 @@ export const AllocationMetadata = ({
         ))}
       </div>
 
-      {/* TVL Weights Info */}
-      <div className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
-        <p>
-          <strong>TVL Weights:</strong> Ethereum SIR ({metadata.tvlWeights.sir.toLocaleString()}) | HyperSIR ({metadata.tvlWeights.hyperSir.toLocaleString()})
-        </p>
-        <p className="mt-1">
-          <strong>Formula:</strong> <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">{metadata.formula}</code>
-        </p>
-      </div>
     </div>
   );
 };
