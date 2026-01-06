@@ -8,7 +8,8 @@
       "Bash(npx tsc:*)",
       "Bash(npm run build:*)",
       "Bash(timeout 15 npm run dev:*)",
-      "Bash(node generate-allocations.js:*)"
+      "Bash(node generate-allocations.js:*)",
+      "Bash(pnpm add:*)"
     ],
     "deny": [],
     "ask": []

@@ -165,8 +165,8 @@ export const AllocationCardDisplay: FC<AllocationCardDisplayProps> = ({
           <>
             <div className="rounded-lg p-2 bg-[#3B82F6]/40">
               <div className="grid grid-cols-[2fr_1fr] gap-2">
-                <div className="text-left font-medium text-[#93C5FD]">Total SIR on Ethereum</div>
-                <div className="text-right font-mono font-medium text-[#93C5FD]">
+                <div className="text-left font-medium text-black dark:text-[#93C5FD]">Total SIR on Ethereum</div>
+                <div className="text-right font-mono font-medium text-black dark:text-[#93C5FD]">
                   {formatSIRAmount(allocation.sources.ethereum.totalSIR)}
                 </div>
               </div>
@@ -179,8 +179,8 @@ export const AllocationCardDisplay: FC<AllocationCardDisplayProps> = ({
             ))}
             <div className="rounded-lg p-2 bg-[#3B82F6]/40">
               <div className="grid grid-cols-[2fr_1fr] gap-2">
-                <div className="text-left text-[#93C5FD]">% of Ethereum Holder Pool</div>
-                <div className="text-right font-mono text-[#93C5FD]">{formatSig3(ethPercentage)}%</div>
+                <div className="text-left text-black dark:text-[#93C5FD]">% of Ethereum Holder Pool</div>
+                <div className="text-right font-mono text-black dark:text-[#93C5FD]">{formatSig3(ethPercentage)}%</div>
               </div>
             </div>
           </>
@@ -196,8 +196,8 @@ export const AllocationCardDisplay: FC<AllocationCardDisplayProps> = ({
           <>
             <div className="rounded-lg p-2 bg-[#9333EA]/40">
               <div className="grid grid-cols-[2fr_1fr] gap-2">
-                <div className="text-left font-medium text-[#D8B4FE]">Total HyperSIR on HyperEVM</div>
-                <div className="text-right font-mono font-medium text-[#D8B4FE]">
+                <div className="text-left font-medium text-black dark:text-[#D8B4FE]">Total HyperSIR on HyperEVM</div>
+                <div className="text-right font-mono font-medium text-black dark:text-[#D8B4FE]">
                   {formatSIRAmount(allocation.sources.hyperevm.totalSIR)}
                 </div>
               </div>
@@ -210,8 +210,8 @@ export const AllocationCardDisplay: FC<AllocationCardDisplayProps> = ({
             ))}
             <div className="rounded-lg p-2 bg-[#9333EA]/40">
               <div className="grid grid-cols-[2fr_1fr] gap-2">
-                <div className="text-left text-[#D8B4FE]">% of HyperEVM Holder Pool</div>
-                <div className="text-right font-mono text-[#D8B4FE]">{formatSig3(hyperPercentage)}%</div>
+                <div className="text-left text-black dark:text-[#D8B4FE]">% of HyperEVM Holder Pool</div>
+                <div className="text-right font-mono text-black dark:text-[#D8B4FE]">{formatSig3(hyperPercentage)}%</div>
               </div>
             </div>
           </>
@@ -222,12 +222,12 @@ export const AllocationCardDisplay: FC<AllocationCardDisplayProps> = ({
 
         {/* Final Calculation */}
         <div className="rounded-lg p-2 bg-gray-500/20">
-          <div className="grid grid-cols-[2fr_1fr] gap-2">
-            <div className="text-left text-gray-300">
+          <div className="grid grid-cols-[2fr_1fr] gap-2 text-gray-400">
+            <div className="text-left">
               Weighted Average
-              <span className="text-xs text-gray-500 ml-1">(87% SIR, 13% HyperSIR)</span>
+              <span className="text-xs ml-1">(87% SIR, 13% HyperSIR)</span>
             </div>
-            <div className="text-right font-mono text-gray-300">
+            <div className="text-right font-mono">
               {formatSig3(parseFloat(allocation.percentageBreakdown.weightedPercentage))}%
             </div>
           </div>
