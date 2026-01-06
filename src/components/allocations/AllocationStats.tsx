@@ -13,6 +13,7 @@ import {
   type TooltipItem,
 } from "chart.js";
 import type { AddressAllocation } from "~/types/allocations";
+import { isWeightedAllocation, isFixedAllocation } from "~/types/allocations";
 
 ChartJS.register(
   CategoryScale,
@@ -32,11 +33,11 @@ export const AllocationStats: FC<AllocationStatsProps> = ({ allocations }) => {
   // Calculate top 10 allocations
   const top10 = useMemo(() => {
     return Object.entries(allocations)
-      .sort(([, a], [, b]) => b.allocation - a.allocation)
+      .sort(([, a], [, b]) => parseFloat(b.allocationPerc) - parseFloat(a.allocationPerc))
       .slice(0, 10)
       .map(([address, allocation]) => ({
         address,
-        allocation: allocation.allocation,
+        allocation: parseInt(allocation.allocation),
         percentage: allocation.allocationPerc,
       }));
   }, [allocations]);
@@ -61,21 +62,20 @@ export const AllocationStats: FC<AllocationStatsProps> = ({ allocations }) => {
     return ranges;
   }, [allocations]);
 
-  // Calculate source breakdown
-  const sourceBreakdown = useMemo(() => {
+  // Calculate type breakdown (fixed vs weighted)
+  const typeBreakdown = useMemo(() => {
     const totals = {
-      ethereum: 0,
-      hypurr: 0,
-      hyperevmContributor: 0,
-      treasury: 0,
+      fixed: 0,
+      weighted: 0,
     };
 
     Object.values(allocations).forEach((allocation) => {
-      totals.ethereum += allocation.allocationBreakdown.fromEthereum ?? 0;
-      totals.hypurr += allocation.allocationBreakdown.fromHypurr ?? 0;
-      totals.hyperevmContributor +=
-        allocation.allocationBreakdown.fromHyperEVMContributor ?? 0;
-      totals.treasury += allocation.allocationBreakdown.fromTreasury ?? 0;
+      const perc = parseFloat(allocation.allocationPerc);
+      if (isFixedAllocation(allocation)) {
+        totals.fixed += perc;
+      } else if (isWeightedAllocation(allocation)) {
+        totals.weighted += perc;
+      }
     });
 
     return totals;
@@ -185,35 +185,29 @@ export const AllocationStats: FC<AllocationStatsProps> = ({ allocations }) => {
     },
   };
 
-  // Source breakdown chart data
-  const sourceBreakdownChartData = {
-    labels: ["Ethereum", "Hypurr", "HyperEVM", "Treasury"],
+  // Type breakdown chart data
+  const typeBreakdownChartData = {
+    labels: ["Fixed Contributors", "Weighted Holders"],
     datasets: [
       {
         data: [
-          sourceBreakdown.ethereum,
-          sourceBreakdown.hypurr,
-          sourceBreakdown.hyperevmContributor,
-          sourceBreakdown.treasury,
+          typeBreakdown.fixed,
+          typeBreakdown.weighted,
         ],
         backgroundColor: [
-          "rgba(59, 130, 246, 0.8)",
-          "rgba(168, 85, 247, 0.8)",
-          "rgba(34, 197, 94, 0.8)",
-          "rgba(234, 179, 8, 0.8)",
+          "rgba(106, 60, 153, 0.8)", // Purple for fixed
+          "rgba(204, 102, 119, 0.8)", // Pink for weighted
         ],
         borderColor: [
-          "rgba(59, 130, 246, 1)",
-          "rgba(168, 85, 247, 1)",
-          "rgba(34, 197, 94, 1)",
-          "rgba(234, 179, 8, 1)",
+          "rgba(106, 60, 153, 1)",
+          "rgba(204, 102, 119, 1)",
         ],
         borderWidth: 2,
       },
     ],
   };
 
-  const sourceBreakdownChartOptions = {
+  const typeBreakdownChartOptions = {
     responsive: true,
     maintainAspectRatio: true,
     plugins: {
@@ -232,7 +226,7 @@ export const AllocationStats: FC<AllocationStatsProps> = ({ allocations }) => {
           label: function (context: TooltipItem<'pie'>) {
             const label = context.label ?? '';
             const value = context.parsed;
-            return `${label}: ${value.toLocaleString()}`;
+            return `${label}: ${value.toFixed(2)}%`;
           },
         },
       },
@@ -265,15 +259,15 @@ export const AllocationStats: FC<AllocationStatsProps> = ({ allocations }) => {
           </div>
         </div>
 
-        {/* Source Breakdown */}
+        {/* Type Breakdown */}
         <div className="rounded-lg bg-background-light dark:bg-white/5 p-4 md:p-6">
           <h3 className="mb-4 font-semibold text-black dark:text-white">
-            Total Allocation by Source
+            Allocation by Type
           </h3>
           <div className="mx-auto max-w-xs">
             <Pie
-              data={sourceBreakdownChartData}
-              options={sourceBreakdownChartOptions}
+              data={typeBreakdownChartData}
+              options={typeBreakdownChartOptions}
             />
           </div>
         </div>

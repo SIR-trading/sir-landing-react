@@ -2,6 +2,7 @@
 import { type FC, useState, useMemo, Fragment } from "react";
 import { ChevronDown, ChevronUp, Copy, ExternalLink } from "lucide-react";
 import type { AddressAllocation, SourceType } from "~/types/allocations";
+import { isWeightedAllocation, isFixedAllocation } from "~/types/allocations";
 import SourceBadge from "./SourceBadge";
 import AllocationDetailRow from "./AllocationDetailRow";
 import { cn } from "~/lib/utils";
@@ -43,12 +44,15 @@ export const AllocationTable: FC<AllocationTableProps> = ({
     if (selectedSources.length > 0) {
       entries = entries.filter(([, allocation]) => {
         return selectedSources.some((source) => {
-          if (source === "ethereum") return allocation.sources.ethereum;
-          if (source === "hypurr") return allocation.sources.hypurr;
-          if (source === "hyperevmContributor")
-            return allocation.sources.hyperevmContributor;
-          if (source === "treasury")
-            return (allocation.allocationBreakdown.fromTreasury ?? 0) > 0;
+          if (source === "ethereum" && isWeightedAllocation(allocation)) {
+            return allocation.sources.ethereum;
+          }
+          if (source === "hyperevm" && isWeightedAllocation(allocation)) {
+            return allocation.sources.hyperevm;
+          }
+          if (source === "megaethContributor") {
+            return isFixedAllocation(allocation);
+          }
           return false;
         });
       });
@@ -84,12 +88,13 @@ export const AllocationTable: FC<AllocationTableProps> = ({
 
   const getSourcesForAddress = (allocation: AddressAllocation): SourceType[] => {
     const sources: SourceType[] = [];
-    if (allocation.sources.ethereum) sources.push("ethereum");
-    if (allocation.sources.hypurr) sources.push("hypurr");
-    if (allocation.sources.hyperevmContributor)
-      sources.push("hyperevmContributor");
-    if ((allocation.allocationBreakdown.fromTreasury ?? 0) > 0)
-      sources.push("treasury");
+    if (isWeightedAllocation(allocation)) {
+      if (allocation.sources.ethereum) sources.push("ethereum");
+      if (allocation.sources.hyperevm) sources.push("hyperevm");
+    }
+    if (isFixedAllocation(allocation)) {
+      sources.push("megaethContributor");
+    }
     return sources;
   };
 
@@ -126,7 +131,7 @@ export const AllocationTable: FC<AllocationTableProps> = ({
                 Allocation %
               </th>
               <th className="p-3 text-right text-xs font-semibold text-section-light dark:text-section">
-                Amount
+                Type
               </th>
               <th className="p-3 text-left text-xs font-semibold text-section-light dark:text-section">
                 Sources
@@ -172,7 +177,7 @@ export const AllocationTable: FC<AllocationTableProps> = ({
                         <TooltipMain
                           trigger={
                             <a
-                              href={`https://hyperevmscan.io/address/${address}`}
+                              href={`https://megaexplorer.xyz/address/${address}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-gray-400 hover:text-gray-300"
@@ -180,7 +185,7 @@ export const AllocationTable: FC<AllocationTableProps> = ({
                               <ExternalLink className="h-3 w-3" />
                             </a>
                           }
-                          content="View on HyperEVM Explorer"
+                          content="View on MegaETH Explorer"
                         />
                       </div>
                     </td>
@@ -188,7 +193,7 @@ export const AllocationTable: FC<AllocationTableProps> = ({
                       {allocation.allocationPerc}
                     </td>
                     <td className="p-3 text-right font-mono text-sm text-black dark:text-white">
-                      {allocation.allocation.toLocaleString()}
+                      {allocation.type}
                     </td>
                     <td className="p-3">
                       <div className="flex flex-wrap gap-1">

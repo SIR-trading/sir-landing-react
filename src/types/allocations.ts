@@ -1,81 +1,124 @@
-// Types for HyperEVM Launch Allocations
+// Types for MegaETH Launch Allocations
 
 export interface AllocationMetadata {
   generatedAt: string;
-  totalSIR: string;
-  totalSIRRaw: string;
-  totalNFTs: number;
+  maxUint16: string;
   totalAddresses: number;
-  maxUint56: string;
-  allocationDistribution: {
-    lpAllocation: string;
-    sirHolders: string;
-    hypurrHolders: string;
-    hyperevmContributors: string;
-    treasury: string;
+  lpAllocationPercent: number;
+  contributorAllocationPercent: number;
+  fixedContributors: {
+    count: number;
+    totalBasisPoints: number;
+    percentOfTotalIssuance: string;
+    source: string;
   };
-  oldTreasury: string;
-  newTreasury: string;
-}
-
-export interface VaultEquityEntry {
-  teaBalance: string | number;
-  apeBalance: string | number;
-  teaEquitySIR: string | number;
-  apeEquitySIR: string | number;
-}
-
-export interface EthereumSource {
-  sirBalance?: string | number;
-  stakedSIR?: {
-    unlockedStake?: string | number;
-    lockedStake?: string | number;
+  weightedHolders: {
+    count: number;
+    remainingPercent: string;
   };
-  vaultEquity?: Record<string, VaultEquityEntry>;
-  unclaimedLperRewards?: string | number;
-  unclaimedContributorRewards?: string | number;
-  unissuedContributorRewards?: string | number;
-  uniswapV3Equity?: string | number;
-  uniswapV3UnclaimedFees?: string | number;
-  uniswapV3StakingRewards?: string | number;
-  totalSIR?: string | number;
-  isContract?: boolean;
+  tvlWeights: {
+    sir: number;
+    hyperSir: number;
+  };
+  totalTVL: number;
+  treasury: {
+    ethereum: string;
+    hyperevm: string;
+    megaeth: string;
+  };
+  sources: {
+    ethereumSnapshot: string;
+    hyperevmSnapshot: string;
+    megaethContributors: string;
+  };
+  formula: string;
 }
 
-export interface HypurrSource {
-  nftCount: number;
+export interface StakedSIR {
+  unlockedStake?: string;
+  lockedStake?: string;
 }
 
-export interface HyperEVMContributorSource {
-  basisPoints: number;
+export interface VaultPosition {
+  teaBalance?: string;
+  apeBalance?: string;
+  teaEquitySIR?: string;
+  apeEquitySIR?: string;
 }
 
-export interface AllocationBreakdown {
-  fromEthereum?: number;
-  fromHypurr?: number;
-  fromHyperEVMContributor?: number;
-  fromTreasury?: number;
+export interface SourceBreakdown {
+  sirBalance?: string;
+  stakedSIR?: StakedSIR;
+  vaultEquity?: Record<string, VaultPosition>;
+  unclaimedLperRewards?: string;
+  unclaimedContributorRewards?: string;
+  unissuedContributorRewards?: string;
+  uniswapV3Equity?: string;
+  uniswapV3UnclaimedFees?: string;
+  uniswapV3StakingRewards?: string;
+}
+
+export interface EthereumSourceSnapshot {
+  originalAddress: string;
+  percentage: string;
+  totalSIR: string;
+  breakdown?: SourceBreakdown;
+}
+
+export interface HyperEVMSourceSnapshot {
+  originalAddress: string;
+  percentage: string;
+  totalSIR: string;
+  breakdown?: SourceBreakdown;
 }
 
 export interface AllocationSources {
-  ethereum?: EthereumSource;
-  hypurr?: HypurrSource;
-  hyperevmContributor?: HyperEVMContributorSource;
+  ethereum?: EthereumSourceSnapshot;
+  hyperevm?: HyperEVMSourceSnapshot;
 }
 
-export interface AddressAllocation {
-  allocation: number;
-  allocationPerc: string;
-  sources: AllocationSources;
-  allocationBreakdown: AllocationBreakdown;
+export interface PercentageBreakdown {
+  ethereumPercentage: string;
+  hyperEVMPercentage: string;
+  weightedPercentage: string;
 }
+
+// Fixed allocation (e.g., contributors)
+export interface FixedAllocation {
+  allocation: string;
+  allocationPerc: string;
+  type: "fixed";
+  basisPointsOfTotal: number;
+  percentOfTotalIssuance: string;
+  percentOfContributorPool: string;
+}
+
+// Weighted allocation (e.g., token holders)
+export interface WeightedAllocation {
+  allocation: string;
+  allocationPerc: string;
+  type: "weighted";
+  sources: AllocationSources;
+  percentageBreakdown: PercentageBreakdown;
+}
+
+export type AddressAllocation = FixedAllocation | WeightedAllocation;
 
 export interface AllocationsData {
   metadata: AllocationMetadata;
   allocations: Record<string, AddressAllocation>;
 }
 
-export type SourceType = "ethereum" | "hypurr" | "hyperevmContributor" | "treasury";
+// Helper type guards
+export function isFixedAllocation(allocation: AddressAllocation): allocation is FixedAllocation {
+  return allocation.type === "fixed";
+}
+
+export function isWeightedAllocation(allocation: AddressAllocation): allocation is WeightedAllocation {
+  return allocation.type === "weighted";
+}
+
+export type SourceType = "ethereum" | "hyperevm" | "megaethContributor" | "treasury";
 
 export interface SourceInfo {
   type: SourceType;

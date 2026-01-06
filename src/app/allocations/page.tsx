@@ -8,7 +8,7 @@ import AllocationCardDisplay from "~/components/allocations/AllocationCardDispla
 import type { AllocationsData, AddressAllocation } from "~/types/allocations";
 import { Search } from "lucide-react";
 
-export default function HyperEVMAllocationsPage() {
+export default function MegaETHAllocationsPage() {
   const { address: connectedAddress, isConnected } = useAccount();
   const [allocationsData, setAllocationsData] =
     useState<AllocationsData | null>(null);
@@ -103,12 +103,12 @@ export default function HyperEVMAllocationsPage() {
   return (
     <div className="container">
       {/* Find Your Allocation Section */}
-      <Section variant="background" header="Find Your HyperEVM Allocation">
+      <Section variant="background" header="Find Your MegaETH Allocation">
         <div className="section-text-block mb-6">
           <p>
-            Enter your wallet address below to view your HyperEVM allocation details.
-            Your allocation is calculated based on your Ethereum SIR holdings, Hypurr NFTs,
-            and HyperEVM contributor status at the time of the snapshot.
+            Enter your wallet address below to view your MegaETH allocation details.
+            Your allocation is calculated based on your Ethereum SIR holdings, HyperEVM SIR holdings,
+            and MegaETH contributor status at the time of the snapshot.
           </p>
         </div>
         <div className="mx-auto w-full max-w-lg space-y-6">
@@ -151,8 +151,6 @@ export default function HyperEVMAllocationsPage() {
             <AllocationCardDisplay
               allocation={foundAllocation.allocation}
               address={foundAllocation.address}
-              showZeroValues={false}
-              totalSIRRaw={allocationsData.metadata.totalSIRRaw}
               metadata={allocationsData.metadata}
             />
           ) : (
@@ -171,7 +169,7 @@ export default function HyperEVMAllocationsPage() {
         <div className="section-text-block mb-8">
           <p>
             This page displays the <strong>token allocations</strong> for the
-            HyperEVM launch. The data represents a snapshot of all eligible
+            MegaETH launch. The data represents a snapshot of all eligible
             addresses and their respective allocations based on their holdings
             across multiple sources.
           </p>
@@ -187,7 +185,7 @@ export default function HyperEVMAllocationsPage() {
                 <span className="absolute inset-0 flex items-center justify-center font-semibold">A</span>
               </span>
               <p className="text-justify text-balance hyphens-auto md:p-3">
-                We launch on <strong>HyperEVM</strong>. SIR is issued at a{" "}
+                We launch on <strong>MegaETH</strong>. SIR is issued at a{" "}
                 <strong>constant rate forever</strong>, with most new tokens flowing to{" "}
                 <strong>liquidity providers</strong>, the core enablers whose deposits make every trade possible.
               </p>
@@ -213,7 +211,7 @@ export default function HyperEVMAllocationsPage() {
               </span>
               <p className="text-justify text-balance hyphens-auto md:p-3">
                 SIR is a <strong>revenue sharing token</strong>. Stake to receive a portion of protocol fees,
-                automatically converted and <strong>paid in HYPE</strong>; see{" "}
+                automatically converted and <strong>paid in ETH</strong>; see{" "}
                 <a href="https://docs.sir.trading/" target="_blank" className="underline">
                   the docs
                 </a>{" "}

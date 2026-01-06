@@ -4,7 +4,11 @@
       "Read(//c/Users/nilga/Repos/SIR/Core/allocations/**)",
       "Bash(cat:*)",
       "Read(//c/Users/nilga/Desktop/**)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run build:*)",
+      "Bash(timeout 15 npm run dev:*)",
+      "Bash(node generate-allocations.js:*)"
     ],
     "deny": [],
     "ask": []

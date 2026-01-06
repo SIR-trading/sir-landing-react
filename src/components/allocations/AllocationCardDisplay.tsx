@@ -1,350 +1,277 @@
 "use client";
 import { type FC } from "react";
-import type { AddressAllocation, AllocationMetadata } from "~/types/allocations";
+import type {
+  AddressAllocation,
+  AllocationMetadata,
+  SourceBreakdown,
+} from "~/types/allocations";
+import { isFixedAllocation, isWeightedAllocation } from "~/types/allocations";
 
 interface AllocationCardDisplayProps {
   allocation: AddressAllocation;
   address: string;
-  showZeroValues?: boolean;
-  totalSIRRaw?: string;
   metadata?: AllocationMetadata;
 }
 
-// Labels that should be highlighted with darker background
-const HIGHLIGHT_LABELS = [
-  "Total Allocation",
-];
+/**
+ * Format percentage value to display nicely
+ */
+const formatPercentageValue = (percentage: string | number): string => {
+  const num = typeof percentage === "string" ? parseFloat(percentage) : percentage;
+  if (num === 0) return "0%";
 
-// Calculation summary rows should use purple color
-const isCalculationRow = (label: string): boolean => {
-  return label.startsWith("From ");
+  if (num >= 10) {
+    return num.toFixed(1) + "%";
+  } else if (num >= 1) {
+    return num.toFixed(2) + "%";
+  } else {
+    return num.toFixed(3) + "%";
+  }
+};
+
+/**
+ * Format number to 3 significant digits with metric suffixes (k, M, B, T)
+ */
+const formatSig3 = (num: number, suffix: string = ""): string => {
+  if (num === 0) return "0" + suffix;
+
+  const abs = Math.abs(num);
+  let formatted: string;
+
+  if (abs >= 100) {
+    formatted = Math.round(num).toString();
+  } else if (abs >= 10) {
+    formatted = num.toFixed(1);
+  } else if (abs >= 1) {
+    formatted = num.toFixed(2);
+  } else {
+    formatted = num.toPrecision(3);
+  }
+
+  // Clean trailing zeros after decimal
+  formatted = formatted.replace(/\.0+$/, "").replace(/(\.\d*[1-9])0+$/, "$1");
+
+  return formatted + suffix;
 };
 
 /**
  * Format SIR token amounts with metric suffixes (k, M, B, T)
- * Divides by 10^12 to get actual SIR amount, then formats to 3 significant figures
+ * Input is in smallest unit, divide by 10^12 to get actual SIR amount (SIR has 12 decimals)
  */
 const formatSIRAmount = (value: string | number | undefined): string => {
-  if (!value) return "0 SIR";
+  if (!value) return "0";
 
-  // Convert to number and divide by 10^12 to get actual SIR amount
   const num = Number(value) / 1e12;
-
-  if (num === 0) return "0 SIR";
+  if (num === 0) return "0";
 
   const abs = Math.abs(num);
 
-  // Determine suffix and divisor
-  let divisor = 1;
-  let suffix = "";
+  if (abs >= 1e12) return formatSig3(num / 1e12, "T");
+  if (abs >= 1e9) return formatSig3(num / 1e9, "B");
+  if (abs >= 1e6) return formatSig3(num / 1e6, "M");
+  if (abs >= 1e3) return formatSig3(num / 1e3, "k");
 
-  if (abs >= 1e12) {
-    // Trillions and above - stack trillions (e.g., 14,600T)
-    divisor = 1e12;
-    suffix = "T";
-  } else if (abs >= 1e9) {
-    divisor = 1e9;
-    suffix = "B";
-  } else if (abs >= 1e6) {
-    divisor = 1e6;
-    suffix = "M";
-  } else if (abs >= 1e3) {
-    divisor = 1e3;
-    suffix = "k";
-  }
-
-  const scaled = num / divisor;
-
-  // Format with appropriate precision for 3 significant figures
-  let formatted: string;
-  if (Math.abs(scaled) >= 100) {
-    // 100-999 range: show no decimals (e.g., 123k)
-    formatted = Math.round(scaled).toLocaleString();
-  } else if (Math.abs(scaled) >= 10) {
-    // 10-99 range: show 1 decimal (e.g., 12.3k)
-    formatted = scaled.toFixed(1);
-  } else {
-    // 1-9 range: show 2 decimals (e.g., 1.23k)
-    formatted = scaled.toFixed(2);
-  }
-
-  // Remove trailing zeros after decimal point
-  formatted = formatted.replace(/\.0+$/, '').replace(/(\.\d*[1-9])0+$/, '$1');
-
-  return formatted + suffix + " SIR";
+  return formatSig3(num);
 };
 
-/**
- * Format percentage value to exactly 3 significant figures
- */
-const formatPercentageValue = (percentage: number): string => {
-  if (percentage === 0) return "0%";
 
-  // Use toPrecision(3) to get exactly 3 significant figures
-  const abs = Math.abs(percentage);
-  let formatted = abs.toPrecision(3);
+interface BreakdownItem {
+  label: string;
+  value: string;
+}
 
-  // toPrecision can return scientific notation for very small numbers
-  // Convert back to decimal notation if needed
-  const num = parseFloat(formatted);
+const getBreakdownItems = (breakdown: SourceBreakdown | undefined): BreakdownItem[] => {
+  if (!breakdown) return [];
 
-  // Determine appropriate decimal places to display the number properly
-  if (num >= 100) {
-    formatted = num.toFixed(0);
-  } else if (num >= 10) {
-    formatted = num.toFixed(1);
-  } else if (num >= 1) {
-    formatted = num.toFixed(2);
-  } else {
-    // For numbers less than 1, we need to preserve the significant figures
-    // Count leading zeros after decimal point
-    const str = num.toString();
-    if (str.includes('e')) {
-      // Handle scientific notation
-      formatted = num.toFixed(20); // Large number to get all decimals
-    } else {
-      formatted = str;
+  const items: BreakdownItem[] = [];
+
+  if (breakdown.sirBalance && Number(breakdown.sirBalance) > 0) {
+    items.push({ label: "Wallet Balance", value: formatSIRAmount(breakdown.sirBalance) });
+  }
+
+  if (breakdown.stakedSIR) {
+    if (breakdown.stakedSIR.unlockedStake && Number(breakdown.stakedSIR.unlockedStake) > 0) {
+      items.push({ label: "Unlocked Stake", value: formatSIRAmount(breakdown.stakedSIR.unlockedStake) });
+    }
+    if (breakdown.stakedSIR.lockedStake && Number(breakdown.stakedSIR.lockedStake) > 0) {
+      items.push({ label: "Locked Stake", value: formatSIRAmount(breakdown.stakedSIR.lockedStake) });
     }
   }
 
-  // Remove trailing zeros after decimal point
-  formatted = formatted.replace(/\.0+$/, '').replace(/(\.\d*[1-9])0+$/, '$1');
+  if (breakdown.vaultEquity) {
+    for (const [vaultId, vault] of Object.entries(breakdown.vaultEquity)) {
+      if (vault.teaEquitySIR && Number(vault.teaEquitySIR) > 0) {
+        items.push({ label: `Vault ${vaultId} TEA`, value: formatSIRAmount(vault.teaEquitySIR) });
+      }
+      if (vault.apeEquitySIR && Number(vault.apeEquitySIR) > 0) {
+        items.push({ label: `Vault ${vaultId} APE`, value: formatSIRAmount(vault.apeEquitySIR) });
+      }
+    }
+  }
 
-  return (percentage < 0 ? '-' : '') + formatted + "%";
+  if (breakdown.unclaimedLperRewards && Number(breakdown.unclaimedLperRewards) > 0) {
+    items.push({ label: "Unclaimed LP Rewards", value: formatSIRAmount(breakdown.unclaimedLperRewards) });
+  }
+
+  if (breakdown.unclaimedContributorRewards && Number(breakdown.unclaimedContributorRewards) > 0) {
+    items.push({ label: "Unclaimed Contributor Rewards", value: formatSIRAmount(breakdown.unclaimedContributorRewards) });
+  }
+  if (breakdown.unissuedContributorRewards && Number(breakdown.unissuedContributorRewards) > 0) {
+    items.push({ label: "Unissued Contributor Rewards", value: formatSIRAmount(breakdown.unissuedContributorRewards) });
+  }
+
+  if (breakdown.uniswapV3Equity && Number(breakdown.uniswapV3Equity) > 0) {
+    items.push({ label: "Uniswap V3 LP", value: formatSIRAmount(breakdown.uniswapV3Equity) });
+  }
+  if (breakdown.uniswapV3UnclaimedFees && Number(breakdown.uniswapV3UnclaimedFees) > 0) {
+    items.push({ label: "Uniswap V3 Unclaimed Fees", value: formatSIRAmount(breakdown.uniswapV3UnclaimedFees) });
+  }
+  if (breakdown.uniswapV3StakingRewards && Number(breakdown.uniswapV3StakingRewards) > 0) {
+    items.push({ label: "Uniswap V3 Staking Rewards", value: formatSIRAmount(breakdown.uniswapV3StakingRewards) });
+  }
+
+  return items;
 };
 
 export const AllocationCardDisplay: FC<AllocationCardDisplayProps> = ({
   allocation,
   address: _address,
-  showZeroValues = false,
-  totalSIRRaw,
-  metadata,
+  metadata: _metadata,
 }) => {
-  const balanceRows: Array<{ label: string; value: string }> = [];
-  const uniswapRows: Array<{ label: string; value: string }> = [];
-  const rewardRows: Array<{ label: string; value: string }> = [];
-  const otherRows: Array<{ label: string; value: string }> = [];
-  const calculationRows: Array<{ label: string; value: string }> = [];
-
-  // Note: allocationBreakdown values are uint56 proportions, not SIR amounts
-  // We don't display them as they're internal proportion values
-
-  // Add detailed Ethereum source breakdown if available
-  if (allocation.sources.ethereum) {
-    const eth = allocation.sources.ethereum;
-
-    if (showZeroValues || (eth.sirBalance && Number(eth.sirBalance) / 1e12 >= 0.001)) {
-      balanceRows.push({
-        label: "SIR Balance",
-        value: formatSIRAmount(eth.sirBalance),
-      });
-    }
-
-    if (eth.stakedSIR) {
-      if (showZeroValues || eth.stakedSIR.unlockedStake) {
-        balanceRows.push({
-          label: "Staked SIR (Unlocked)",
-          value: formatSIRAmount(eth.stakedSIR.unlockedStake),
-        });
-      }
-      if (showZeroValues || eth.stakedSIR.lockedStake) {
-        balanceRows.push({
-          label: "Staked SIR (Locked)",
-          value: formatSIRAmount(eth.stakedSIR.lockedStake),
-        });
-      }
-    }
-
-    if (eth.vaultEquity) {
-      Object.entries(eth.vaultEquity).forEach(([vaultId, vaultData]) => {
-        const totalEquity = Number(vaultData.teaEquitySIR) + Number(vaultData.apeEquitySIR);
-        if (showZeroValues || totalEquity > 0) {
-          balanceRows.push({
-            label: `SIR in Vault ${vaultId}`,
-            value: formatSIRAmount(totalEquity),
-          });
-        }
-      });
-    }
-
-    if (showZeroValues || eth.unclaimedLperRewards) {
-      balanceRows.push({
-        label: "Unclaimed LP Rewards",
-        value: formatSIRAmount(eth.unclaimedLperRewards),
-      });
-    }
-
-    if (showZeroValues || eth.uniswapV3Equity) {
-      uniswapRows.push({
-        label: "Uniswap V3 Equity",
-        value: formatSIRAmount(eth.uniswapV3Equity),
-      });
-    }
-
-    if (showZeroValues || eth.uniswapV3StakingRewards) {
-      uniswapRows.push({
-        label: "Uniswap V3 Staking Rewards",
-        value: formatSIRAmount(eth.uniswapV3StakingRewards),
-      });
-    }
-
-    if (showZeroValues || eth.uniswapV3UnclaimedFees) {
-      uniswapRows.push({
-        label: "Uniswap V3 Unclaimed Fees",
-        value: formatSIRAmount(eth.uniswapV3UnclaimedFees),
-      });
-    }
-
-    if (showZeroValues || eth.unclaimedContributorRewards) {
-      rewardRows.push({
-        label: "Unclaimed Contributor Rewards",
-        value: formatSIRAmount(eth.unclaimedContributorRewards),
-      });
-    }
-
-    if (showZeroValues || eth.unissuedContributorRewards) {
-      rewardRows.push({
-        label: "Unissued Contributor Rewards",
-        value: formatSIRAmount(eth.unissuedContributorRewards),
-      });
-    }
-  }
-
-  // Add Hypurr NFT data if available
-  if (allocation.sources.hypurr) {
-    otherRows.push({
-      label: "Hypurr NFT Count",
-      value: String(allocation.sources.hypurr.nftCount),
-    });
-  }
-
-  // Add HyperEVM Contributor data if available
-  if (allocation.sources.hyperevmContributor) {
-    otherRows.push({
-      label: "HyperEVM Contributor Basis Points",
-      value: String(allocation.sources.hyperevmContributor.basisPoints),
-    });
-  }
-
-  // Calculate allocation breakdown using metadata
-  if (metadata && totalSIRRaw) {
-    // From Ethereum SIR holdings
-    if (allocation.sources.ethereum?.totalSIR) {
-      const userSIR = Number(allocation.sources.ethereum.totalSIR);
-      const totalSIR = Number(totalSIRRaw);
-      const sirHoldersPerc = parseFloat(metadata.allocationDistribution.sirHolders.replace('%', ''));
-      const contribution = (userSIR / totalSIR) * sirHoldersPerc;
-
-      calculationRows.push({
-        label: `From Ethereum (${formatSIRAmount(userSIR)} / ${formatSIRAmount(totalSIR)} × ${metadata.allocationDistribution.sirHolders})`,
-        value: formatPercentageValue(contribution),
-      });
-    }
-
-    // From Hypurr NFTs
-    if (allocation.sources.hypurr?.nftCount) {
-      const userNFTs = allocation.sources.hypurr.nftCount;
-      const totalNFTs = metadata.totalNFTs;
-      const hypurrPerc = parseFloat(metadata.allocationDistribution.hypurrHolders.replace('%', ''));
-      const contribution = (userNFTs / totalNFTs) * hypurrPerc;
-
-      calculationRows.push({
-        label: `From Hypurr (${userNFTs} / ${totalNFTs} × ${metadata.allocationDistribution.hypurrHolders})`,
-        value: formatPercentageValue(contribution),
-      });
-    }
-
-    // From HyperEVM Contributors
-    if (allocation.sources.hyperevmContributor?.basisPoints) {
-      const basisPoints = allocation.sources.hyperevmContributor.basisPoints;
-      const contribution = basisPoints / 100; // basis points to percentage
-
-      calculationRows.push({
-        label: `From HyperEVM Contributor (${basisPoints} bp)`,
-        value: formatPercentageValue(contribution),
-      });
-    }
-  }
-
-  const renderRow = (row: { label: string; value: string }, index: number) => {
-    const isHighlight = HIGHLIGHT_LABELS.includes(row.label);
-    const isCalculation = isCalculationRow(row.label);
-
-    let bgColor = "bg-[#CC6677]/30"; // Default pink for normal rows
-    if (isHighlight) {
-      bgColor = "bg-[#CC9901]/30"; // Gold for Total Allocation
-    } else if (isCalculation) {
-      bgColor = "bg-[#6A3C99]/30"; // Purple for calculation summary rows
-    }
+  if (isFixedAllocation(allocation)) {
+    const annualIssuance = 2015000000; // 2015M MegaSIR per year
+    const percValue = parseFloat(allocation.allocationPerc.replace('%', ''));
+    const annualTokens = (percValue / 100) * annualIssuance;
 
     return (
-      <div
-        key={`${row.label}-${index}`}
-        className={`rounded-lg p-2 ${bgColor}`}
-      >
-        <div className="grid grid-cols-[2fr_1fr] gap-2">
-          <div className="text-left">{row.label}</div>
-          <div className="text-right">{row.value}</div>
+      <div className="animated-height text-sm w-full space-y-1">
+        <div className="rounded-lg p-2 bg-[#CC9901]/30">
+          <div className="grid grid-cols-[2fr_1fr] gap-2">
+            <div className="text-left font-semibold">Total Allocation</div>
+            <div className="text-right font-mono font-semibold">{allocation.allocationPerc}</div>
+          </div>
+        </div>
+        <div className="grid grid-cols-[2fr_1fr] gap-2 px-2 py-1 text-gray-400">
+          <div className="text-left">Annual MegaSIR</div>
+          <div className="text-right font-mono">{formatSIRAmount(annualTokens * 1e12)}</div>
         </div>
       </div>
     );
-  };
+  }
 
-  return (
-    <div className="animated-height text-sm w-full space-y-4">
-      {/* Balance Section */}
-      {balanceRows.length > 0 && (
-        <div className="space-y-1">
-          {balanceRows.map((row, index) => renderRow(row, index))}
-        </div>
-      )}
+  if (isWeightedAllocation(allocation)) {
+    const TVL_SIR = 66000;
+    const TVL_HYPERSIR = 10000;
+    const TOTAL_TVL = TVL_SIR + TVL_HYPERSIR;
+    const annualIssuance = 2015000000; // 2015M MegaSIR per year
 
-      {/* Uniswap V3 Section */}
-      {uniswapRows.length > 0 && (
-        <div className="space-y-1">
-          {uniswapRows.map((row, index) => renderRow(row, index))}
-        </div>
-      )}
+    const ethPercentage = parseFloat(allocation.percentageBreakdown.ethereumPercentage) || 0;
+    const hyperPercentage = parseFloat(allocation.percentageBreakdown.hyperEVMPercentage) || 0;
+    const percValue = parseFloat(allocation.allocationPerc.replace('%', ''));
+    const annualTokens = (percValue / 100) * annualIssuance;
 
-      {/* Rewards Section */}
-      {rewardRows.length > 0 && (
-        <div className="space-y-1">
-          {rewardRows.map((row, index) => renderRow(row, index))}
-        </div>
-      )}
+    const ethContribution = (ethPercentage * TVL_SIR) / TOTAL_TVL;
+    const hyperContribution = (hyperPercentage * TVL_HYPERSIR) / TOTAL_TVL;
 
-      {/* Other Sources Section */}
-      {otherRows.length > 0 && (
-        <div className="space-y-1">
-          {otherRows.map((row, index) => renderRow(row, index))}
-        </div>
-      )}
+    const ethBreakdown = allocation.sources.ethereum
+      ? getBreakdownItems(allocation.sources.ethereum.breakdown)
+      : [];
+    const hyperBreakdown = allocation.sources.hyperevm
+      ? getBreakdownItems(allocation.sources.hyperevm.breakdown)
+      : [];
 
-      {/* Calculation Breakdown Section */}
-      {calculationRows.length > 0 && (
-        <div className="space-y-1">
-          {calculationRows.map((row, index) => renderRow(row, index))}
-        </div>
-      )}
-
-      {/* Total Allocation - At Bottom */}
-      <div className="pt-2">
-        {renderRow(
-          {
-            label: "Total Allocation",
-            value: (() => {
-              // Calculate daily SIR emissions: allocation% * 2015M / 100 / 365
-              const percentValue = parseFloat(allocation.allocationPerc.replace('%', ''));
-              const dailyEmission = percentValue * 2015e6 / 100 / 365;
-              const dailyFormatted = formatSIRAmount((dailyEmission * 1e12).toString());
-              return `${allocation.allocationPerc} (${dailyFormatted}/day)`;
-            })(),
-          },
-          999
+    return (
+      <div className="animated-height text-sm w-full space-y-1">
+        {/* SIR Section */}
+        {allocation.sources.ethereum && (
+          <>
+            <div className="rounded-lg p-2 bg-[#3B82F6]/40">
+              <div className="grid grid-cols-[2fr_1fr] gap-2">
+                <div className="text-left font-medium text-[#93C5FD]">Total SIR on Ethereum</div>
+                <div className="text-right font-mono font-medium text-[#93C5FD]">
+                  {formatSIRAmount(allocation.sources.ethereum.totalSIR)}
+                </div>
+              </div>
+            </div>
+            {ethBreakdown.map((item, idx) => (
+              <div key={idx} className="grid grid-cols-[2fr_1fr] gap-2 text-xs px-3 py-1 text-gray-400">
+                <div className="text-left">{item.label}</div>
+                <div className="text-right font-mono">{item.value}</div>
+              </div>
+            ))}
+            <div className="rounded-lg p-2 bg-[#3B82F6]/40">
+              <div className="grid grid-cols-[2fr_1fr] gap-2">
+                <div className="text-left text-[#93C5FD]">% of Ethereum Holder Pool</div>
+                <div className="text-right font-mono text-[#93C5FD]">{formatSig3(ethPercentage)}%</div>
+              </div>
+            </div>
+          </>
         )}
+
+        {/* Spacer between sections */}
+        {allocation.sources.ethereum && allocation.sources.hyperevm && (
+          <div className="h-2" />
+        )}
+
+        {/* HyperSIR Section */}
+        {allocation.sources.hyperevm && (
+          <>
+            <div className="rounded-lg p-2 bg-[#9333EA]/40">
+              <div className="grid grid-cols-[2fr_1fr] gap-2">
+                <div className="text-left font-medium text-[#D8B4FE]">Total HyperSIR on HyperEVM</div>
+                <div className="text-right font-mono font-medium text-[#D8B4FE]">
+                  {formatSIRAmount(allocation.sources.hyperevm.totalSIR)}
+                </div>
+              </div>
+            </div>
+            {hyperBreakdown.map((item, idx) => (
+              <div key={idx} className="grid grid-cols-[2fr_1fr] gap-2 text-xs px-3 py-1 text-gray-400">
+                <div className="text-left">{item.label}</div>
+                <div className="text-right font-mono">{item.value}</div>
+              </div>
+            ))}
+            <div className="rounded-lg p-2 bg-[#9333EA]/40">
+              <div className="grid grid-cols-[2fr_1fr] gap-2">
+                <div className="text-left text-[#D8B4FE]">% of HyperEVM Holder Pool</div>
+                <div className="text-right font-mono text-[#D8B4FE]">{formatSig3(hyperPercentage)}%</div>
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* Spacer before results */}
+        <div className="h-2" />
+
+        {/* Final Calculation */}
+        <div className="rounded-lg p-2 bg-gray-500/20">
+          <div className="grid grid-cols-[2fr_1fr] gap-2">
+            <div className="text-left text-gray-300">
+              Weighted Average
+              <span className="text-xs text-gray-500 ml-1">(87% SIR, 13% HyperSIR)</span>
+            </div>
+            <div className="text-right font-mono text-gray-300">
+              {formatSig3(parseFloat(allocation.percentageBreakdown.weightedPercentage))}%
+            </div>
+          </div>
+        </div>
+        <div className="rounded-lg p-2 bg-[#CC9901]/30">
+          <div className="grid grid-cols-[2fr_1fr] gap-2">
+            <div className="text-left font-semibold">
+              Total Allocation
+              <span className="text-xs font-normal text-gray-500 ml-1">(of 15% MegaSIR for holders)</span>
+            </div>
+            <div className="text-right font-mono font-semibold">{allocation.allocationPerc}</div>
+          </div>
+        </div>
+        <div className="grid grid-cols-[2fr_1fr] gap-2 px-2 py-1 text-gray-400">
+          <div className="text-left">Annual MegaSIR</div>
+          <div className="text-right font-mono">{formatSIRAmount(annualTokens * 1e12)}</div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  return null;
 };
 
 export default AllocationCardDisplay;

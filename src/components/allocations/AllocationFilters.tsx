@@ -17,8 +17,8 @@ export const AllocationFilters: FC<AllocationFiltersProps> = ({
 }) => {
   const sources: SourceType[] = [
     "ethereum",
-    "hypurr",
-    "hyperevmContributor",
+    "hyperevm",
+    "megaethContributor",
     "treasury",
   ];
 

@@ -12,67 +12,48 @@ interface AllocationMetadataProps {
 
 export const AllocationMetadata = ({
   metadata,
-  allocationsData,
+  allocationsData: _allocationsData,
 }: AllocationMetadataProps) => {
-  // Get treasury allocation from the newTreasury address
-  const treasuryAllocation = allocationsData.allocations[metadata.newTreasury];
-  const treasuryActualPercentage = treasuryAllocation
-    ? parseFloat(treasuryAllocation.allocationPerc.replace('%', ''))
-    : 0;
+  // Parse the fixed contributors percentage (e.g., "15%" -> 15)
+  const fixedContributorsPercent = parseFloat(
+    metadata.fixedContributors.percentOfTotalIssuance.replace("%", "")
+  );
 
-  // Calculate the "Remainder" percentage
-  const treasuryRemainderPercentage = 100 -
-    (parseFloat(metadata.allocationDistribution.lpAllocation) +
-      parseFloat(metadata.allocationDistribution.sirHolders) +
-      parseFloat(metadata.allocationDistribution.hypurrHolders) +
-      parseFloat(metadata.allocationDistribution.hyperevmContributors));
-
-  // The difference between actual treasury and remainder is what was taken from SIR holders
-  const treasuryExtraFromSirHolders = treasuryActualPercentage - treasuryRemainderPercentage;
-
-  // Adjust SIR holders percentage
-  const sirHoldersPercentage = parseFloat(metadata.allocationDistribution.sirHolders) - treasuryExtraFromSirHolders;
+  // Parse the weighted holders percentage (e.g., "15%" -> 15)
+  const weightedHoldersPercent = parseFloat(
+    metadata.weightedHolders.remainingPercent.replace("%", "")
+  );
 
   const pieData = {
     labels: [
       "Liquidity Providers",
-      "SIR Holders",
-      "Hypurr Holders",
-      "HyperEVM Contributors",
-      "Treasury",
+      "MegaETH Contributors",
+      "Weighted Holders (Ethereum + HyperEVM)",
     ],
     datasets: [
       {
         data: [
-          parseFloat(metadata.allocationDistribution.lpAllocation),
-          sirHoldersPercentage,
-          parseFloat(metadata.allocationDistribution.hypurrHolders),
-          parseFloat(metadata.allocationDistribution.hyperevmContributors),
-          treasuryActualPercentage,
+          metadata.lpAllocationPercent,
+          fixedContributorsPercent,
+          weightedHoldersPercent,
         ],
         backgroundColor: [
-          "#CC9901", // Gold for LP (Liquidity providers)
-          "#CC6677", // Pink for SIR Holders (Presale)
-          "#117733", // Green for Hypurr Holders (Compensation fund)
-          "#6A3C99", // Purple for HyperEVM Contributors (Team & Contributors)
-          "#882255", // Magenta for Treasury
+          "#CC9901", // Gold for LP
+          "#6A3C99", // Purple for Contributors
+          "#CC6677", // Pink for Weighted Holders
         ],
         hoverBackgroundColor: [
-          "#CC9901", // Same as backgroundColor - no color change on hover
-          "#CC6677",
-          "#117733",
+          "#CC9901",
           "#6A3C99",
-          "#882255",
+          "#CC6677",
         ],
         borderColor: [
           "#CC9901",
-          "#CC6677",
-          "#117733",
           "#6A3C99",
-          "#882255",
+          "#CC6677",
         ],
         borderWidth: 2,
-        hoverOffset: 15, // Increase size on hover
+        hoverOffset: 15,
       },
     ],
   };
@@ -96,7 +77,7 @@ export const AllocationMetadata = ({
     responsive: true,
     maintainAspectRatio: true,
     layout: {
-      padding: 20, // Add padding to prevent clipping when hover offset expands
+      padding: 20,
     },
     plugins: {
       legend: {
@@ -106,7 +87,7 @@ export const AllocationMetadata = ({
         callbacks: {
           label: function (context: TooltipItem<'pie'>) {
             const value = context.parsed ?? 0;
-            return `${value.toFixed(2)}%`;
+            return `${value.toFixed(0)}%`;
           },
         },
       },
@@ -115,10 +96,8 @@ export const AllocationMetadata = ({
 
   const legendItems = [
     { label: "Liquidity Providers", color: "#CC9901" },
-    { label: "SIR Holders", color: "#CC6677" },
-    { label: "Hypurr Holders", color: "#117733" },
-    { label: "HyperEVM Contributors", color: "#6A3C99" },
-    { label: "Treasury", color: "#882255" },
+    { label: "MegaETH Contributors", color: "#6A3C99" },
+    { label: "Weighted Holders", color: "#CC6677" },
   ];
 
   return (
@@ -155,6 +134,16 @@ export const AllocationMetadata = ({
             <span className="text-sm text-gray-600 dark:text-gray-400">{item.label}</span>
           </div>
         ))}
+      </div>
+
+      {/* TVL Weights Info */}
+      <div className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
+        <p>
+          <strong>TVL Weights:</strong> Ethereum SIR ({metadata.tvlWeights.sir.toLocaleString()}) | HyperSIR ({metadata.tvlWeights.hyperSir.toLocaleString()})
+        </p>
+        <p className="mt-1">
+          <strong>Formula:</strong> <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">{metadata.formula}</code>
+        </p>
       </div>
     </div>
   );

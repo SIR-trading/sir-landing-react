@@ -16,13 +16,13 @@ const SOURCE_CONFIG: Record<
     color: "text-blue-400",
     bgColor: "bg-blue-500/20 border-blue-500/40",
   },
-  hypurr: {
-    label: "Hypurr",
+  hyperevm: {
+    label: "HyperEVM",
     color: "text-purple-400",
     bgColor: "bg-purple-500/20 border-purple-500/40",
   },
-  hyperevmContributor: {
-    label: "HyperEVM",
+  megaethContributor: {
+    label: "MegaETH",
     color: "text-green-400",
     bgColor: "bg-green-500/20 border-green-500/40",
   },
