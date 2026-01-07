@@ -6,7 +6,8 @@ type PlayerCard = {
   image: string;
   tagline: string;
   description: string;
-  learnMoreLink?: string;
+  ctaLink?: string;
+  ctaText?: string;
 };
 
 const players: PlayerCard[] = [
@@ -15,28 +16,38 @@ const players: PlayerCard[] = [
     image: "/gentleman_card.webp",
     tagline: "Provide liquidity.",
     description: "Earn fees + SIR rewards.",
-    learnMoreLink: "https://docs.sir.trading/protocol-overview/liquidity-and-leverage",
+    ctaLink: "https://app.sir.trading/liquidity",
+    ctaText: "Start earning",
   },
   {
     name: "Traders",
     image: "/trader_card.webp",
     tagline: "Take leverage.",
-    description: "Pay once, hold forever.",
-    learnMoreLink: "https://docs.sir.trading/protocol-overview/readme/take-on-leverage-and-forget",
+    description: "Pay once, convex returns.",
+    ctaLink: "https://app.sir.trading/",
+    ctaText: "Start trading",
+  },
+  {
+    name: "Patrons",
+    image: "/patron_card.webp",
+    tagline: "Stake SIR.",
+    description: "Earn protocol revenue.",
+    ctaLink: "https://app.sir.trading/stake",
+    ctaText: "Stake now",
   },
 ];
 
 const PlayerCards: React.FC = () => {
   return (
     <section className="w-full bg-background px-4 py-24">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         {/* Section header */}
         <div className="mb-16 text-center" data-aos="fade-up">
           <h2 className="section-header-new">Choose Your Role</h2>
         </div>
 
         {/* Cards grid */}
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {players.map((player, index) => (
             <div
               key={player.name}
@@ -73,14 +84,14 @@ const PlayerCards: React.FC = () => {
                 </p>
                 <p className="mb-6 text-text-secondary">{player.description}</p>
 
-                {player.learnMoreLink && (
+                {player.ctaLink && (
                   <Link
-                    href={player.learnMoreLink}
+                    href={player.ctaLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm text-text-secondary transition-colors duration-300 hover:text-accent"
                   >
-                    Learn more
+                    {player.ctaText ?? "Learn more"}
                     <svg
                       className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
