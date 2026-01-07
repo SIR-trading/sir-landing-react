@@ -49,12 +49,12 @@ const Hero: React.FC<HeroProps> = ({
           <div className="mb-8 h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent" />
 
           {/* Headline */}
-          <h1 className="mb-6 font-geist text-4xl font-bold tracking-tight text-text-primary drop-shadow-lg md:text-6xl lg:text-7xl whitespace-nowrap">
+          <h1 className="mb-6 font-geist text-4xl font-bold tracking-tight text-text-primary drop-shadow-lg md:text-6xl lg:text-7xl">
             {headline}
           </h1>
 
           {/* Subheadline */}
-          <p className="mb-10 text-lg text-text-primary/90 drop-shadow-md md:text-xl whitespace-nowrap">
+          <p className="mb-10 text-lg text-text-primary/90 drop-shadow-md md:text-xl">
             {subheadline}
           </p>
 
