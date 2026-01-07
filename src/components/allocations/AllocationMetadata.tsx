@@ -47,25 +47,25 @@ export const AllocationMetadata = ({
           hyperSirHoldersPercent,
         ],
         backgroundColor: [
-          "#CC9901", // Gold for LP
-          "#6A3C99", // Purple for Contributors
-          "#3B82F6", // Blue for Treasury
-          "#CC6677", // Pink for SIR Holders
-          "#9333EA", // Purple for HyperSIR Holders
+          "#D4A44C", // Amber gold for LP
+          "#8B5CF6", // Purple for Contributors
+          "#2D4A3E", // Forest green for Treasury
+          "#722F37", // Burgundy for SIR Holders
+          "#4A8B8B", // Teal for HyperSIR Holders
         ],
         hoverBackgroundColor: [
-          "#CC9901",
-          "#6A3C99",
-          "#3B82F6",
-          "#CC6677",
-          "#9333EA",
+          "#E8B85A",
+          "#A78BFA",
+          "#3D6454",
+          "#8B3D47",
+          "#5FA3A3",
         ],
         borderColor: [
-          "#CC9901",
-          "#6A3C99",
-          "#3B82F6",
-          "#CC6677",
-          "#9333EA",
+          "#D4A44C",
+          "#8B5CF6",
+          "#2D4A3E",
+          "#722F37",
+          "#4A8B8B",
         ],
         borderWidth: 2,
         hoverOffset: 15,
@@ -79,9 +79,9 @@ export const AllocationMetadata = ({
     datasets: [
       {
         data: [100],
-        backgroundColor: ["#CC9901"],
-        hoverBackgroundColor: ["#CC9901"],
-        borderColor: ["#CC9901"],
+        backgroundColor: ["#D4A44C"],
+        hoverBackgroundColor: ["#E8B85A"],
+        borderColor: ["#D4A44C"],
         borderWidth: 2,
         hoverOffset: 15,
       },
@@ -110,11 +110,11 @@ export const AllocationMetadata = ({
   };
 
   const legendItems = [
-    { label: "Liquidity Providers", color: "#CC9901" },
-    { label: "MegaETH Contributors", color: "#6A3C99" },
-    { label: "Treasury", color: "#3B82F6" },
-    { label: "SIR Holders", color: "#CC6677" },
-    { label: "HyperSIR Holders", color: "#9333EA" },
+    { label: "Liquidity Providers", color: "#D4A44C" },
+    { label: "MegaETH Contributors", color: "#8B5CF6" },
+    { label: "Treasury", color: "#2D4A3E" },
+    { label: "SIR Holders", color: "#722F37" },
+    { label: "HyperSIR Holders", color: "#4A8B8B" },
   ];
 
   return (

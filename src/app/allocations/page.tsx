@@ -226,7 +226,7 @@ export default function MegaETHAllocationsPage() {
           <p className="mt-8 text-center text-sm text-text-secondary">
             See{" "}
             <a
-              href="https://docs.sir.trading/"
+              href="https://docs.sir.trading/protocol-overview/sir-a-dividend-paying-token"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:underline"
