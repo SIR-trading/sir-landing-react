@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-01-07T11:39:43.882Z",
+    "generatedAt": "2026-01-07T23:23:57.077Z",
     "maxUint16": "65535",
     "totalAddresses": 171,
     "lpAllocationPercent": 69,
@@ -110,7 +110,7 @@
       "percentOfTotalIssuance": "1%",
       "percentOfContributorPool": "3.33%"
     },
-    "0xf1EC35fD93753a9E56df611234933B0A5b3c6aB0": {
+    "0x00ACf1f79Ff43b1FF5b4ff28b537CBf27445869f": {
       "allocation": "2184",
       "allocationPerc": "1.0%",
       "type": "fixed",
