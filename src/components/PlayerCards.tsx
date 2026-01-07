@@ -12,14 +12,14 @@ type PlayerCard = {
 const players: PlayerCard[] = [
   {
     name: "Gentlemen",
-    image: "/gentleman_card.png",
+    image: "/gentleman_card.webp",
     tagline: "Provide liquidity.",
     description: "Earn fees + SIR rewards.",
     learnMoreLink: "https://docs.sir.trading/protocol-overview/liquidity-and-leverage",
   },
   {
     name: "Traders",
-    image: "/ape_card.png",
+    image: "/trader_card.webp",
     tagline: "Take leverage.",
     description: "Pay once, hold forever.",
     learnMoreLink: "https://docs.sir.trading/protocol-overview/readme/take-on-leverage-and-forget",
@@ -53,7 +53,11 @@ const PlayerCards: React.FC = () => {
                   src={player.image}
                   alt={player.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className={`object-cover transition-transform duration-700 group-hover:scale-[1.08] ${
+                    player.name === "Gentlemen"
+                      ? "object-[center_15%]"
+                      : ""
+                  }`}
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background-elevated via-transparent to-transparent" />

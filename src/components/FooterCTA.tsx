@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaXTwitter, FaDiscord, FaGithub } from "react-icons/fa6";
 
 const socialLinks = [
@@ -68,16 +69,19 @@ const FooterCTA: React.FC = () => {
         {/* Footer */}
         <footer className="pt-8">
           <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
-            {/* Logo with gold underline */}
-            <div className="relative flex items-center gap-2">
-              <div className="relative inline-block">
-                <span className="font-geist text-xl font-bold text-text-primary">
-                  SIR
-                </span>
-                <span className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-accent via-gold-bright to-accent" />
-              </div>
-              <span className="text-text-secondary">Trading</span>
-            </div>
+            {/* Logo - matching header */}
+            <Link href="/" className="flex items-center gap-x-2">
+              <Image
+                height={32}
+                width={32}
+                src="/SIR_outline_white.svg"
+                alt="Sir Icon"
+                className="rounded-full"
+              />
+              <span className="font-geist text-lg font-semibold text-text-primary">
+                Sir trading
+              </span>
+            </Link>
 
             {/* Links */}
             <nav className="flex items-center gap-8">

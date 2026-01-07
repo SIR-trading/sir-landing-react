@@ -1,6 +1,5 @@
 import Hero from "~/components/Hero";
 import ValueGrid from "~/components/ValueGrid";
-import HowItWorks from "~/components/HowItWorks";
 import PlayerCards from "~/components/PlayerCards";
 import Testimonials from "~/components/Testimonials";
 import FooterCTA from "~/components/FooterCTA";
@@ -23,11 +22,8 @@ export default function Home() {
         heroImage="/hero.webp"
       />
 
-      {/* Value proposition - 3 pillars */}
+      {/* Value proposition - 4 pillars */}
       <ValueGrid />
-
-      {/* How it works - Vault diagram */}
-      <HowItWorks />
 
       {/* Gentleman & Trader cards */}
       <PlayerCards />
