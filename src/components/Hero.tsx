@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({
             alt="Gentleman's Club"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-left"
           />
           {/* Gradient overlays for text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
@@ -49,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({
           <div className="mb-8 h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent" />
 
           {/* Headline */}
-          <h1 className="mb-6 font-geist text-4xl font-bold tracking-tight text-text-primary drop-shadow-lg md:text-6xl lg:text-7xl">
+          <h1 className="mb-6 font-geist text-4xl font-bold tracking-tight text-text-primary drop-shadow-lg md:text-6xl lg:text-7xl lg:whitespace-nowrap">
             {headline}
           </h1>
 
