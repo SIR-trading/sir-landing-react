@@ -2,9 +2,6 @@
 @import "tw-animate-css";
 @config "../../tailwind.config.js";
 
-
-@custom-variant dark (&:where(.dark, .dark *));
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -46,7 +43,7 @@
 
   /* Legacy title - remove uppercase */
   .title {
-    @apply font-geist font-bold leading-13 text-black dark:text-white;
+    @apply font-geist font-bold leading-13 text-text-primary;
     letter-spacing: -0.02em;
   }
 
@@ -59,20 +56,20 @@
   }
 
   .section-header {
-    @apply font-inter leading-8 font-semibold text-black dark:text-white;
+    @apply font-inter leading-8 font-semibold text-text-primary;
     letter-spacing: -0.01em;
   }
 
   .section-main p {
-    @apply text-section-light dark:text-section  text-md;
+    @apply text-text-secondary text-md;
 
     strong {
-      @apply text-black dark:text-white font-semibold;
+      @apply text-text-primary font-semibold;
     }
   }
 
   .text-brand {
-    @apply font-geist uppercase leading-4 font-normal text-black dark:text-white text-xl;
+    @apply font-geist uppercase leading-4 font-normal text-text-primary text-xl;
     text-shadow: 0 4px 0 rgba(0, 0, 0, 0.50);
   }
 
@@ -147,13 +144,7 @@
   }
 
   .gradient-bg {
-    background: radial-gradient(53.42% 53.42% at 50% 50%, rgba(132, 42, 255, 0.2) 0%, rgba(70, 26, 136, 0.2) 36.14%, rgba(255, 255, 255, 0.2) 100%);
-  }
-
-  html.dark {
-    .gradient-bg {
-      background: radial-gradient(53.42% 53.42% at 50% 50%, rgba(132, 42, 255, 0.2) 0%, rgba(70, 26, 136, 0.2) 36.14%, rgba(10, 11, 22, 0.2) 100%);
-    }
+    background: radial-gradient(53.42% 53.42% at 50% 50%, rgba(132, 42, 255, 0.2) 0%, rgba(70, 26, 136, 0.2) 36.14%, rgba(10, 11, 22, 0.2) 100%);
   }
 
   .neon-badge {

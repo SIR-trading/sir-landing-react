@@ -12,7 +12,7 @@ const navItemVariants = cva(
     variants: {
       theme: {
         light: "text-white hover:text-gold data-[active=true]:text-gold",
-        dark: "hover:text-white",
+        
       },
     },
     defaultVariants: {

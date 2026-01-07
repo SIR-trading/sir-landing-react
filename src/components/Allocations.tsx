@@ -187,8 +187,8 @@ export default function Allocations() {
               key={f.label}
               className={`rounded-lg p-2 ${
                 HIGHLIGHT_LABELS.includes(f.label)
-                  ? "bg-background-light dark:bg-white/15"
-                  : "bg-background-light/50 dark:bg-white/5"
+                  ? "bg-white/15"
+                  : "bg-white/5"
               }`}
             >
               <div className="grid grid-cols-[2fr_1fr] gap-2">

@@ -18,7 +18,9 @@
       "WebFetch(domain:cap.app)",
       "WebFetch(domain:www.showdown.game)",
       "WebFetch(domain:x.com)",
-      "WebFetch(domain:thecryptoanalyst.medium.com)"
+      "WebFetch(domain:thecryptoanalyst.medium.com)",
+      "Bash(curl:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

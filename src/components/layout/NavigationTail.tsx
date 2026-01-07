@@ -50,7 +50,7 @@ const NavigationTail = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaXTwitter className="h-5 w-5 text-black dark:text-white" />
+          <FaXTwitter className="h-5 w-5 text-text-primary" />
         </Link>
         <Link
           className="flex justify-self-center"
@@ -58,7 +58,7 @@ const NavigationTail = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaDiscord className="h-6 w-6 text-black dark:text-white" />
+          <FaDiscord className="h-6 w-6 text-text-primary" />
         </Link>
         <Link
           className="flex justify-self-center"
@@ -66,7 +66,7 @@ const NavigationTail = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaGithub className="h-6 w-6 text-black dark:text-white" />
+          <FaGithub className="h-6 w-6 text-text-primary" />
         </Link>
       </div>
     </div>

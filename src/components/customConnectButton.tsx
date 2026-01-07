@@ -38,7 +38,7 @@ export const CustomConnectButton = () => {
                 return (
                   <Button
                     variant="outline"
-                    className="cursor-pointer text-black dark:text-white"
+                    className="cursor-pointer text-text-primary"
                     onClick={openConnectModal}
                     type="button"
                   >
@@ -63,7 +63,7 @@ export const CustomConnectButton = () => {
                   <span>{account.displayName}</span>
                   <Button
                     variant="outline"
-                    className="text-black dark:text-white"
+                    className="text-text-primary"
                     onClick={() => disconnect()}
                     type="button"
                   >

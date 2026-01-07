@@ -29,7 +29,7 @@ export default function Home() {
       {/* How it works - Vault diagram */}
       <HowItWorks />
 
-      {/* Gentleman & Ape cards */}
+      {/* Gentleman & Trader cards */}
       <PlayerCards />
 
       {/* Testimonials */}

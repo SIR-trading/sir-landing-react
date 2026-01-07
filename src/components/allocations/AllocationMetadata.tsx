@@ -122,7 +122,7 @@ export const AllocationMetadata = ({
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-6">
         {/* First chart - Current allocation */}
         <div className="flex flex-col items-center max-w-sm w-full">
-          <h4 className="text-center font-semibold text-black dark:text-white mb-4">
+          <h4 className="text-center font-semibold text-text-primary mb-4">
             First Three Years
           </h4>
           <Pie data={pieData} options={chartOptions} />
@@ -130,7 +130,7 @@ export const AllocationMetadata = ({
 
         {/* Second chart - After 3 years */}
         <div className="flex flex-col items-center max-w-sm w-full">
-          <h4 className="text-center font-semibold text-black dark:text-white mb-4">
+          <h4 className="text-center font-semibold text-text-primary mb-4">
             After Three Years
           </h4>
           <Pie data={pieDataAfterThreeYears} options={chartOptions} />
@@ -148,7 +148,7 @@ export const AllocationMetadata = ({
                 borderColor: item.color
               }}
             ></div>
-            <span className="text-sm text-gray-600 dark:text-gray-400">{item.label}</span>
+            <span className="text-sm text-text-muted">{item.label}</span>
           </div>
         ))}
       </div>

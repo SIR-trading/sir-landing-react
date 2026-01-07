@@ -71,7 +71,7 @@ export default function MegaETHAllocationsPage() {
         <Section variant="background">
           <div className="flex flex-col items-center justify-center py-20">
             <div className="spinner" />
-            <p className="mt-4 text-section-light dark:text-section">
+            <p className="mt-4 text-text-secondary">
               Loading allocations data...
             </p>
           </div>
@@ -122,7 +122,7 @@ export default function MegaETHAllocationsPage() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Select or enter an address"
-                className="w-full rounded border border-gray-700 bg-transparent p-2 pl-9 text-sm text-black dark:text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none"
+                className="w-full rounded border border-gray-700 bg-transparent p-2 pl-9 text-sm text-text-primary placeholder-gray-400 focus:border-blue-500 focus:outline-none"
               />
             </div>
 
@@ -227,11 +227,11 @@ export default function MegaETHAllocationsPage() {
       {/* Footer */}
       <Section variant="background">
         <div className="section-text-block text-center">
-          <p className="text-sm text-section-light dark:text-section">
+          <p className="text-sm text-text-secondary">
             <strong>Generation Time:</strong>{" "}
             {new Date(allocationsData.metadata.generatedAt).toLocaleString()}
           </p>
-          <p className="mt-4 text-xs text-section-light dark:text-section">
+          <p className="mt-4 text-xs text-text-secondary">
             <strong>Disclaimer:</strong> This snapshot represents allocations at
             a specific point in time. Please verify your allocation details
             carefully. For questions or concerns, please contact the team.

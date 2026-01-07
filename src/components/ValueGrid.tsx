@@ -84,7 +84,7 @@ const ValueGrid: React.FC = () => {
           className="mb-12 text-center text-lg text-text-secondary md:text-xl"
           data-aos="fade-up"
         >
-          The best of perps and options — without the worst of either.
+          The best of perps and options, without the worst of either.
         </p>
 
         <div className="grid gap-8 md:grid-cols-3">

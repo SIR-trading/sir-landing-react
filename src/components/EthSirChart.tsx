@@ -146,7 +146,7 @@ const EthSirChart: React.FC = () => {
   return (
     <div
       ref={wrapperRef}
-      className="relative w-[100%] md:w-[80%] rounded-md bg-background/80 dark:bg-white/10"
+      className="relative w-[100%] md:w-[80%] rounded-md bg-white/10"
     >
       {processedData ? (
         <Line data={processedData} options={chartOptions} />

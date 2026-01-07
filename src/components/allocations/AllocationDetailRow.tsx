@@ -84,7 +84,7 @@ const getBreakdownItems = (breakdown: SourceBreakdown | undefined): BreakdownIte
         items.push({ label: `Vault ${vaultId} TEA Equity`, value: formatSIRAmount(vault.teaEquitySIR) });
       }
       if (vault.apeEquitySIR && Number(vault.apeEquitySIR) > 0) {
-        items.push({ label: `Vault ${vaultId} APE Equity`, value: formatSIRAmount(vault.apeEquitySIR) });
+        items.push({ label: `Vault ${vaultId} Leverage Equity`, value: formatSIRAmount(vault.apeEquitySIR) });
       }
     }
   }
@@ -123,7 +123,7 @@ export const AllocationDetailRow: FC<AllocationDetailRowProps> = ({
 
   if (isFixedAllocation(allocation)) {
     return (
-      <div className="space-y-6 rounded-lg bg-background-light dark:bg-background p-6">
+      <div className="space-y-6 rounded-lg bg-background p-6">
         {/* Fixed Contributor Details */}
         <div className="space-y-3">
           <h4 className="text-sm font-semibold text-green-400">
@@ -231,10 +231,10 @@ export const AllocationDetailRow: FC<AllocationDetailRowProps> = ({
     };
 
     return (
-      <div className="space-y-6 rounded-lg bg-background-light dark:bg-background p-6">
+      <div className="space-y-6 rounded-lg bg-background p-6">
         {/* TVL Weight Explanation */}
         <div className="space-y-3">
-          <h4 className="text-sm font-semibold text-black dark:text-white">
+          <h4 className="text-sm font-semibold text-text-primary">
             How This Allocation Is Calculated
           </h4>
           <div className="rounded-lg bg-gray-500/10 border border-gray-500/30 p-4">
@@ -257,7 +257,7 @@ export const AllocationDetailRow: FC<AllocationDetailRowProps> = ({
 
         {/* Allocation Breakdown Chart */}
         <div>
-          <h4 className="mb-4 text-sm font-semibold text-black dark:text-white">
+          <h4 className="mb-4 text-sm font-semibold text-text-primary">
             Weighted Contribution Breakdown
           </h4>
           <div className="h-48">

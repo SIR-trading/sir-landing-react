@@ -18,7 +18,7 @@ const players: PlayerCard[] = [
     learnMoreLink: "https://docs.sir.trading/gentlemen",
   },
   {
-    name: "Apes",
+    name: "Traders",
     image: "/ape_card.png",
     tagline: "Take leverage.",
     description: "Pay once, hold forever.",

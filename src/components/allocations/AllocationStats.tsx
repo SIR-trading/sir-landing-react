@@ -236,8 +236,8 @@ export const AllocationStats: FC<AllocationStatsProps> = ({ allocations }) => {
   return (
     <div className="space-y-6">
       {/* Top 10 Allocations */}
-      <div className="rounded-lg bg-background-light dark:bg-white/5 p-4 md:p-6">
-        <h3 className="mb-4 font-semibold text-black dark:text-white">
+      <div className="rounded-lg bg-white/5 p-4 md:p-6">
+        <h3 className="mb-4 font-semibold text-text-primary">
           Top 10 Allocations
         </h3>
         <div className="h-64 md:h-80">
@@ -247,8 +247,8 @@ export const AllocationStats: FC<AllocationStatsProps> = ({ allocations }) => {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
         {/* Allocation Distribution */}
-        <div className="rounded-lg bg-background-light dark:bg-white/5 p-4 md:p-6">
-          <h3 className="mb-4 font-semibold text-black dark:text-white">
+        <div className="rounded-lg bg-white/5 p-4 md:p-6">
+          <h3 className="mb-4 font-semibold text-text-primary">
             Allocation Distribution
           </h3>
           <div className="mx-auto max-w-xs">
@@ -260,8 +260,8 @@ export const AllocationStats: FC<AllocationStatsProps> = ({ allocations }) => {
         </div>
 
         {/* Type Breakdown */}
-        <div className="rounded-lg bg-background-light dark:bg-white/5 p-4 md:p-6">
-          <h3 className="mb-4 font-semibold text-black dark:text-white">
+        <div className="rounded-lg bg-white/5 p-4 md:p-6">
+          <h3 className="mb-4 font-semibold text-text-primary">
             Allocation by Type
           </h3>
           <div className="mx-auto max-w-xs">

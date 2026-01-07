@@ -7,8 +7,8 @@ const HowItWorks: React.FC = () => {
         {/* Section header */}
         <div className="mb-12 text-center" data-aos="fade-up">
           <h2 className="section-header-new mb-4">How It Works</h2>
-          <p className="mx-auto max-w-2xl text-lg text-text-secondary">
-            Internal liquidity pools. Mechanically constant leverage.
+          <p className="mx-auto max-w-3xl text-lg text-text-secondary">
+            Constant leverage up to a price threshold through best-effort convexity. LPs earn fees and SIR token rewards.
           </p>
         </div>
 
@@ -21,7 +21,6 @@ const HowItWorks: React.FC = () => {
           {/* Warm glow effect behind the diagram */}
           <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-b from-accent/10 via-transparent to-transparent blur-3xl" />
 
-          {/* Dark mode diagram */}
           <div className="rounded-xl border border-border bg-background-elevated/50 p-6 backdrop-blur-sm md:p-10">
             <Image
               src="/VaultDiagram.svg"
@@ -29,15 +28,7 @@ const HowItWorks: React.FC = () => {
               width={1024}
               height={400}
               priority
-              className="hidden h-auto w-full dark:block"
-            />
-            <Image
-              src="/VaultDiagram-light.svg"
-              alt="SIR Vault Architecture"
-              width={1024}
-              height={400}
-              priority
-              className="h-auto w-full dark:hidden"
+              className="h-auto w-full"
             />
           </div>
         </div>

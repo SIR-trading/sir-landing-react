@@ -25,34 +25,25 @@ const Header: FC = () => {
           <div className="flex w-full justify-between md:w-auto">
             <Link
               href={"/"}
-              className="flex w-full flex-auto cursor-pointer flex-row items-center justify-around gap-2 md:w-[173px] md:justify-start"
+              className="flex items-center gap-x-2"
             >
-              <div className="flex-start md:flex">
+              <div className="flex gap-x-1">
                 <Image
-                  height={32}
-                  width={32}
-                  src="/SIR_no_bg.svg"
+                  height={40}
+                  width={40}
+                  src="/SIR_outline_white.svg"
                   alt="Sir Icon"
-                  className="hidden rounded-full dark:block"
+                  className="rounded-full"
                 />
-                <Image
-                  height={32}
-                  width={32}
-                  src="/SIR_outline2.svg"
-                  alt="Sir Icon"
-                  className="rounded-full dark:hidden"
-                />
-              </div>
-              {/* Logo text with warm gold underline */}
-              <div className="relative inline-block">
-                <h1 className="font-geist text-[20px] leading-[20px] font-semibold text-text-primary">
-                  SIR
-                </h1>
-                <span className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-accent via-gold-bright to-accent" />
+                <div className="flex items-center">
+                  <h1 className="ml-1 font-geist text-[20px] font-semibold leading-[20px] whitespace-nowrap">
+                    Sir trading
+                  </h1>
+                </div>
               </div>
               <div
                 className={cn("block rounded-lg md:hidden", {
-                  "dark:bg-card": isMenuOpen,
+                  "bg-card": isMenuOpen,
                   "bg-transparent": !isMenuOpen,
                 })}
               >
@@ -67,16 +58,16 @@ const Header: FC = () => {
             </Link>
           </div>
           {isMenuOpen && (
-            <div className="bg-card-light dark:bg-card flex w-full flex-auto flex-col items-center justify-between gap-4 rounded-lg p-4 md:hidden">
+            <div className="bg-card flex w-full flex-auto flex-col items-center justify-between gap-4 rounded-lg p-4 md:hidden">
               <div className="flex flex-col items-center gap-2">
                 {links.map((link) => (
                   <Link
                     key={link.label}
                     href={link.to}
                     className={cn(
-                      "dark:text-grey-50 text-background dark:hover:text-white",
+                      "text-text-secondary hover:text-text-primary",
                       pathname.startsWith(link.to) &&
-                        "text-black dark:text-white",
+                        "text-text-primary",
                     )}
                   >
                     {link.label}
@@ -87,7 +78,7 @@ const Header: FC = () => {
             </div>
           )}
           <div className="hidden w-full flex-row items-center justify-around gap-6 md:flex md:w-full">
-            <div className="flex w-full flex-row items-center gap-3">
+            <div className="flex w-full flex-row items-center gap-3 ml-8">
               {links.map((link) => (
                 <Link
                   key={link.label}
