@@ -19,6 +19,25 @@ const values: ValueItem[] = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    ),
+    title: "No Liquidations",
+    description: "Sleep easy, always",
+  },
+  {
+    icon: (
+      <svg
+        className="h-10 w-10"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
           d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
         <line
@@ -51,7 +70,7 @@ const values: ValueItem[] = [
         />
       </svg>
     ),
-    title: "No Volatility Decay",
+    title: "No Volatility Decay*",
     description: "Your gains stay yours",
   },
   {
@@ -70,8 +89,8 @@ const values: ValueItem[] = [
         />
       </svg>
     ),
-    title: "Constant Leverage",
-    description: "Always at your target",
+    title: "Constant Leverage*",
+    description: "Perfect leverage, always",
   },
 ];
 
@@ -87,7 +106,7 @@ const ValueGrid: React.FC = () => {
           The best of perps and options, without the worst of either.
         </p>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {values.map((value, index) => (
             <div
               key={index}
@@ -112,6 +131,19 @@ const ValueGrid: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Footnote */}
+        <p className="mt-8 text-center text-sm text-text-secondary" data-aos="fade-up">
+          * Up to a price threshold determined by liquidity.{" "}
+          <a
+            href="https://x.com/leveragesir/status/2006818915112947772"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:underline"
+          >
+            Learn about best-effort convexity →
+          </a>
+        </p>
       </div>
     </section>
   );

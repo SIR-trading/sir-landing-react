@@ -15,14 +15,14 @@ const players: PlayerCard[] = [
     image: "/gentleman_card.png",
     tagline: "Provide liquidity.",
     description: "Earn fees + SIR rewards.",
-    learnMoreLink: "https://docs.sir.trading/gentlemen",
+    learnMoreLink: "https://docs.sir.trading/protocol-overview/liquidity-and-leverage",
   },
   {
     name: "Traders",
     image: "/ape_card.png",
     tagline: "Take leverage.",
     description: "Pay once, hold forever.",
-    learnMoreLink: "https://docs.sir.trading/apes",
+    learnMoreLink: "https://docs.sir.trading/protocol-overview/readme/take-on-leverage-and-forget",
   },
 ];
 
@@ -32,7 +32,7 @@ const PlayerCards: React.FC = () => {
       <div className="mx-auto max-w-5xl">
         {/* Section header */}
         <div className="mb-16 text-center" data-aos="fade-up">
-          <h2 className="section-header-new">Choose Your Path</h2>
+          <h2 className="section-header-new">Choose Your Role</h2>
         </div>
 
         {/* Cards grid */}

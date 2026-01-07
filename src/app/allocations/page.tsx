@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import { useAccount } from "wagmi";
-import Section from "~/components/common/Section";
 import { CustomConnectButton } from "~/components/customConnectButton";
 import AllocationMetadata from "~/components/allocations/AllocationMetadata";
 import AllocationCardDisplay from "~/components/allocations/AllocationCardDisplay";
@@ -16,14 +15,12 @@ export default function MegaETHAllocationsPage() {
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Auto-populate search with connected wallet
   useEffect(() => {
     if (isConnected && connectedAddress) {
       setSearchTerm(connectedAddress);
     }
   }, [isConnected, connectedAddress]);
 
-  // Fetch allocations data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -45,7 +42,6 @@ export default function MegaETHAllocationsPage() {
     void fetchData();
   }, []);
 
-  // Find the allocation for the searched address
   const foundAllocation = useMemo<{
     address: string;
     allocation: AddressAllocation;
@@ -67,66 +63,81 @@ export default function MegaETHAllocationsPage() {
 
   if (loading) {
     return (
-      <div className="container">
-        <Section variant="background">
+      <main className="min-h-screen bg-background px-4 py-24">
+        <div className="mx-auto max-w-4xl">
           <div className="flex flex-col items-center justify-center py-20">
-            <div className="spinner" />
-            <p className="mt-4 text-text-secondary">
-              Loading allocations data...
-            </p>
+            <div className="h-12 w-12 animate-spin rounded-full border-4 border-accent/20 border-t-accent" />
+            <p className="mt-6 text-text-secondary">Loading allocations data...</p>
           </div>
-        </Section>
-      </div>
+        </div>
+      </main>
     );
   }
 
   if (error || !allocationsData) {
     return (
-      <div className="container">
-        <Section variant="background">
+      <main className="min-h-screen bg-background px-4 py-24">
+        <div className="mx-auto max-w-4xl">
           <div className="flex flex-col items-center justify-center py-20">
-            <p className="text-red-500">
-              {error ?? "Failed to load allocations data"}
-            </p>
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-500/10">
+              <svg className="h-8 w-8 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </div>
+            <p className="mb-4 text-red-400">{error ?? "Failed to load allocations data"}</p>
             <button
               onClick={() => window.location.reload()}
-              className="mt-4 rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+              className="rounded-lg border border-accent/50 bg-accent/10 px-6 py-2 text-accent transition-all duration-300 hover:bg-accent/20"
             >
-              Retry
+              Try Again
             </button>
           </div>
-        </Section>
-      </div>
+        </div>
+      </main>
     );
   }
 
   return (
-    <div className="container">
-      {/* Find Your Allocation Section */}
-      <Section variant="background" header="Find Your MegaETH Allocation">
-        <div className="section-text-block mb-6">
-          <p>
-            Enter your wallet address below to view your MegaETH allocation details.
-            Your allocation is calculated based on your Ethereum SIR holdings, HyperEVM SIR holdings,
-            and MegaETH contributor status at the time of the snapshot.
+    <main className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="w-full bg-background-darker px-4 py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mb-6 h-px w-24 mx-auto bg-gradient-to-r from-transparent via-accent to-transparent" />
+          <h1 className="mb-4 font-geist text-4xl font-bold text-text-primary md:text-5xl">
+            MegaSIR Allocations
+          </h1>
+          <p className="text-lg text-text-secondary">
+            Find your allocation for the MegaETH launch
           </p>
         </div>
-        <div className="mx-auto w-full max-w-lg space-y-6">
-          {/* Search Form */}
-          <div className="flex flex-col items-center gap-4">
-            {/* Search Bar */}
-            <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+      </section>
+
+      {/* Search Section */}
+      <section className="w-full bg-background px-4 py-16">
+        <div className="mx-auto max-w-2xl">
+          <div className="rounded-xl border border-border bg-background-elevated p-8">
+            <h2 className="mb-6 text-center text-xl font-semibold text-text-primary">
+              Find Your Allocation
+            </h2>
+
+            <p className="mb-6 text-center text-sm text-text-secondary">
+              Enter your wallet address to view your allocation details based on your
+              Ethereum SIR, HyperEVM SIR holdings, and MegaETH contributor status.
+            </p>
+
+            {/* Search Input */}
+            <div className="relative mb-4">
+              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-text-muted" />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Select or enter an address"
-                className="w-full rounded border border-gray-700 bg-transparent p-2 pl-9 text-sm text-text-primary placeholder-gray-400 focus:border-blue-500 focus:outline-none"
+                placeholder="Enter wallet address (0x...)"
+                className="w-full rounded-lg border border-border bg-background px-4 py-3 pl-12 text-text-primary placeholder-text-muted transition-all duration-300 focus:border-accent/50 focus:outline-none focus:ring-2 focus:ring-accent/20"
               />
             </div>
 
-            {/* Wallet Connection Toggle */}
+            {/* Wallet Toggle */}
             {isConnected && (
               <button
                 type="button"
@@ -137,116 +148,142 @@ export default function MegaETHAllocationsPage() {
                     setSearchTerm(connectedAddress ?? "");
                   }
                 }}
-                className="text-xs text-gray-500 underline"
+                className="mb-6 w-full text-center text-sm text-accent hover:underline"
               >
                 {searchTerm === connectedAddress
-                  ? "Don't use connected wallet"
+                  ? "Clear connected wallet"
                   : "Use connected wallet"}
               </button>
             )}
+
+            {/* Results */}
+            {foundAllocation ? (
+              <AllocationCardDisplay
+                allocation={foundAllocation.allocation}
+                address={foundAllocation.address}
+                metadata={allocationsData.metadata}
+              />
+            ) : (
+              <div className="flex flex-col items-center gap-4 rounded-lg border border-border bg-background py-8 text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10">
+                  <Search className="h-6 w-6 text-accent" />
+                </div>
+                <p className="text-text-secondary">
+                  {!searchTerm
+                    ? `Enter an address${!isConnected ? " or connect your wallet" : ""}`
+                    : "No allocation found for this address"}
+                </p>
+                {!isConnected && <CustomConnectButton />}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="w-full bg-background-darker px-4 py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="mb-12 text-center text-2xl font-bold text-text-primary md:text-3xl">
+            How Allocations Work
+          </h2>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                step: "A",
+                title: "Launch on MegaETH",
+                description:
+                  "SIR is issued at a constant rate forever, with most new tokens flowing to liquidity providers.",
+              },
+              {
+                step: "B",
+                title: "Claim Anytime",
+                description:
+                  "Claim at any time over a three year window without dilution. Your percentage share is fixed.",
+              },
+              {
+                step: "C",
+                title: "Revenue Sharing",
+                description:
+                  "Stake SIR to receive a portion of protocol fees, automatically converted and paid in ETH.",
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="group rounded-xl border border-border bg-background-elevated p-6 transition-all duration-300 hover:border-accent/30"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-lg font-bold text-accent">
+                  {item.step}
+                </div>
+                <h3 className="mb-2 text-lg font-semibold text-text-primary">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-text-secondary">{item.description}</p>
+              </div>
+            ))}
           </div>
 
-          {/* Allocation Display */}
-          {foundAllocation ? (
-            <AllocationCardDisplay
-              allocation={foundAllocation.allocation}
-              address={foundAllocation.address}
-              metadata={allocationsData.metadata}
-            />
-          ) : (
-            <div className="flex flex-col gap-4 py-4 text-center lg:p-8">
-              {!searchTerm
-                ? `Select an address${!isConnected ? " or connect wallet" : ""}`
-                : "Wallet not found!"}
-              {!isConnected && <CustomConnectButton />}
-            </div>
-          )}
-        </div>
-      </Section>
-
-      {/* Allocations Pie Chart Section */}
-      <Section variant="background" header="Allocations Pie Chart">
-        <div className="section-text-block mb-8">
-          <p>
-            This page displays the <strong>token allocations</strong> for the
-            MegaETH launch. The data represents a snapshot of all eligible
-            addresses and their respective allocations based on their holdings
-            across multiple sources.
+          <p className="mt-8 text-center text-sm text-text-secondary">
+            See{" "}
+            <a
+              href="https://docs.sir.trading/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline"
+            >
+              the docs
+            </a>{" "}
+            for full distribution mechanics.
           </p>
         </div>
+      </section>
 
-        {/* Next Steps */}
-        <div className="section-main mb-12">
-          <div className="flex w-full flex-col items-center gap-8 md:flex-row md:items-start md:justify-evenly md:gap-6">
-            {/* Step A */}
-            <div className="flex flex-col flex-1 basis-0">
-              <span className="relative grid place-items-center w-15 h-15 shrink-0 mx-auto">
-                <span aria-hidden="true" className="neon-badge absolute inset-0"></span>
-                <span className="absolute inset-0 flex items-center justify-center font-semibold">A</span>
-              </span>
-              <p className="text-justify text-balance hyphens-auto md:p-3">
-                We launch on <strong>MegaETH</strong>. SIR is issued at a{" "}
-                <strong>constant rate forever</strong>, with most new tokens flowing to{" "}
-                <strong>liquidity providers</strong>, the core enablers whose deposits make every trade possible.
-              </p>
-            </div>
+      {/* Pie Chart Section */}
+      <section className="w-full bg-background px-4 py-20">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-4 text-center text-2xl font-bold text-text-primary md:text-3xl">
+            Token Distribution
+          </h2>
+          <p className="mb-12 text-center text-text-secondary">
+            Allocation breakdown for the MegaETH launch based on snapshot data
+          </p>
 
-            {/* Step B */}
-            <div className="flex flex-col flex-1 basis-0">
-              <span className="relative grid place-items-center w-15 h-15 shrink-0 mx-auto">
-                <span aria-hidden="true" className="neon-badge absolute inset-0"></span>
-                <span className="absolute inset-0 flex items-center justify-center font-semibold">B</span>
-              </span>
-              <p className="text-justify text-balance hyphens-auto md:p-3">
-                If you have an allocation, you can <strong>claim at any time over a three year window without dilution</strong>.
-                Your percentage share is fixed, so the timing of your claim does not change what you earn.
-              </p>
-            </div>
-
-            {/* Step C */}
-            <div className="flex flex-col flex-1 basis-0">
-              <span className="relative grid place-items-center w-15 h-15 shrink-0 mx-auto">
-                <span aria-hidden="true" className="neon-badge absolute inset-0"></span>
-                <span className="absolute inset-0 flex items-center justify-center font-semibold">C</span>
-              </span>
-              <p className="text-justify text-balance hyphens-auto md:p-3">
-                SIR is a <strong>revenue sharing token</strong>. Stake to receive a portion of protocol fees,
-                automatically converted and <strong>paid in ETH</strong>; see{" "}
-                <a href="https://docs.sir.trading/" target="_blank" className="underline">
-                  the docs
-                </a>{" "}
-                for the full distribution mechanics.
-              </p>
-            </div>
+          <div className="rounded-xl border border-border bg-background-elevated p-8">
+            <AllocationMetadata
+              metadata={allocationsData.metadata}
+              allocationsData={allocationsData}
+            />
           </div>
         </div>
+      </section>
 
-        <AllocationMetadata metadata={allocationsData.metadata} allocationsData={allocationsData} />
-      </Section>
+      {/* Footer Section */}
+      <section className="w-full bg-background-darker px-4 py-12">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mb-6 h-px w-full max-w-xs mx-auto bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
 
-      {/* Footer */}
-      <Section variant="background">
-        <div className="section-text-block text-center">
-          <p className="text-sm text-text-secondary">
-            <strong>Generation Time:</strong>{" "}
+          <p className="mb-2 text-sm text-text-secondary">
+            <span className="text-text-muted">Snapshot:</span>{" "}
             {new Date(allocationsData.metadata.generatedAt).toLocaleString()}
           </p>
-          <p className="mt-4 text-xs text-text-secondary">
-            <strong>Disclaimer:</strong> This snapshot represents allocations at
-            a specific point in time. Please verify your allocation details
-            carefully. For questions or concerns, please contact the team.
+
+          <p className="mb-6 text-xs text-text-muted">
+            This snapshot represents allocations at a specific point in time.
+            Please verify your allocation details carefully.
           </p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="/allocations/allocations.json"
-              download
-              className="text-sm text-blue-500 hover:text-blue-400 underline"
-            >
-              Download Full Data (JSON)
-            </a>
-          </div>
+
+          <a
+            href="/allocations/allocations.json"
+            download
+            className="inline-flex items-center gap-2 text-sm text-accent hover:underline"
+          >
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download Full Data (JSON)
+          </a>
         </div>
-      </Section>
-    </div>
+      </section>
+    </main>
   );
 }
