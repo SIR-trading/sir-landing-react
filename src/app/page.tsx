@@ -20,7 +20,7 @@ export default function Home() {
         subheadline="No liquidations. A one-time fee. Convex returns."
         ctaText="Launch App"
         ctaLink="https://app.sir.trading"
-        heroImage="/hero.png"
+        heroImage="/hero.webp"
       />
 
       {/* Value proposition - 3 pillars */}
