@@ -26,12 +26,6 @@
 import { Button } from "~/components/ui/button";
 import Link from "next/link";
 import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
-import dynamic from "next/dynamic";
-
-const DarkModeToggle = dynamic(
-  () => import("~/components/darkModeToggle"),
-  { ssr: false }
-);
 
 const NavigationTail = () => {
   return (
@@ -49,7 +43,6 @@ const NavigationTail = () => {
           </Link>
         </Button>
       </div>
-      <DarkModeToggle />
       <div className="flex flex-row items-center justify-around gap-2 sm:gap-3 md:justify-center md:gap-4 lg:gap-8">
         <Link
           className="flex justify-self-center"

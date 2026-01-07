@@ -26,7 +26,7 @@ export const AllocationMetadata = ({
 
   const treasuryPercent = 8;
   const contributorsPercent = fixedContributorsPercent - treasuryPercent;
-  const sirHoldersPercent = 12;
+  const sirHoldersPercent = 13;
   const hyperSirHoldersPercent = 2;
 
   const pieData = {

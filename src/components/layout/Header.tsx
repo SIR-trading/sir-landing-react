@@ -19,8 +19,8 @@ const Header: FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="mt-[24px] mb-[48px] w-full px-6">
-      <div className="container">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-4 backdrop-blur-md bg-background/90 border-b border-accent/10">
+      <div className="container mx-auto max-w-5xl">
         <nav className="flex w-full flex-col items-center justify-start gap-6 text-sm md:flex-row md:justify-center">
           <div className="flex w-full justify-between md:w-auto">
             <Link
@@ -43,9 +43,13 @@ const Header: FC = () => {
                   className="rounded-full dark:hidden"
                 />
               </div>
-              <h1 className="sir-shadow font-geist inline-flex text-[20px] leading-[20px] font-semibold text-black dark:text-white">
-                Sir trading
-              </h1>
+              {/* Logo text with warm gold underline */}
+              <div className="relative inline-block">
+                <h1 className="font-geist text-[20px] leading-[20px] font-semibold text-text-primary">
+                  SIR
+                </h1>
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-accent via-gold-bright to-accent" />
+              </div>
               <div
                 className={cn("block rounded-lg md:hidden", {
                   "dark:bg-card": isMenuOpen,
@@ -89,9 +93,8 @@ const Header: FC = () => {
                   key={link.label}
                   href={link.to}
                   className={cn(
-                    "dark:text-grey-50 text-section-light/75 relative truncate p-1 text-sm hover:bg-transparent hover:text-black dark:hover:text-white",
-                    pathname.startsWith(link.to) &&
-                      "text-black dark:text-white",
+                    "text-text-secondary relative truncate p-1 text-sm hover:bg-transparent hover:text-accent transition-colors duration-200",
+                    pathname.startsWith(link.to) && "text-text-primary",
                   )}
                 >
                   {link.label}

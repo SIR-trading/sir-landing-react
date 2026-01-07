@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "generatedAt": "2026-01-06T21:12:53.672Z",
+    "generatedAt": "2026-01-07T11:39:43.882Z",
     "maxUint16": "65535",
     "totalAddresses": 171,
-    "lpAllocationPercent": 70,
-    "contributorAllocationPercent": 30,
+    "lpAllocationPercent": 69,
+    "contributorAllocationPercent": 31,
     "fixedContributors": {
       "count": 5,
       "totalBasisPoints": 1600,
@@ -13,13 +13,13 @@
     },
     "weightedHolders": {
       "count": 4582,
-      "remainingPercent": "14%"
+      "remainingPercent": "15%"
     },
     "tvlWeights": {
-      "sir": 66000,
-      "hyperSir": 10000
+      "sir": 76000,
+      "hyperSir": 12000
     },
-    "totalTVL": 76000,
+    "totalTVL": 88000,
     "treasury": {
       "ethereum": "0x686748764c5C7Aa06FEc784E60D14b650bF79129",
       "hyperevm": "0x5f84c79389a4d44A38a3bF81f9B8c1179e615cc8",
@@ -50,7 +50,7 @@
       "percentOfContributorPool": "16.67%"
     },
     "0x7F1CA9Fe9C3728f5c632e5564b2BfF5585BE1748": {
-      "allocation": "4683",
+      "allocation": "4680",
       "allocationPerc": "2.1%",
       "type": "weighted",
       "sources": {
@@ -91,7 +91,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "10.506699139612867038",
         "hyperEVMPercentage": "8.07609041083319132",
-        "weightedPercentage": "10.186882201615541285"
+        "weightedPercentage": "10.175252494779274894"
       }
     },
     "0x6186290B28D511bFF971631c916244A9fC539cfE": {
@@ -119,8 +119,8 @@
       "percentOfContributorPool": "3.33%"
     },
     "0x36D11126eBc59cb962AE8ddD3bcD0741b4e337Dc": {
-      "allocation": "2087",
-      "allocationPerc": "0.96%",
+      "allocation": "2086",
+      "allocationPerc": "0.95%",
       "type": "weighted",
       "sources": {
         "ethereum": {
@@ -146,12 +146,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "4.666092750196586",
         "hyperEVMPercentage": "3.712229429930144579",
-        "weightedPercentage": "4.540584418582580549"
+        "weightedPercentage": "4.536020479251162169"
       }
     },
     "0x81695c4A090caAbE58973e76ce970ccB473cD6e3": {
-      "allocation": "1886",
-      "allocationPerc": "0.86%",
+      "allocation": "1894",
+      "allocationPerc": "0.87%",
       "type": "weighted",
       "sources": {
         "ethereum": {
@@ -204,11 +204,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "3.70216268350885416",
         "hyperEVMPercentage": "6.749301106953936251",
-        "weightedPercentage": "4.103101949751628119"
+        "weightedPercentage": "4.117681559433183536"
       }
     },
     "0xFc3C962FAD2C1cC77f1a0d46e7B8a2De79A21774": {
-      "allocation": "1722",
+      "allocation": "1720",
       "allocationPerc": "0.79%",
       "type": "weighted",
       "sources": {
@@ -236,11 +236,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "3.89715265515535339",
         "hyperEVMPercentage": "2.748830899582888461",
-        "weightedPercentage": "3.746057687316871162"
+        "weightedPercentage": "3.740563324850017263"
       }
     },
     "0xd11f322ad85730Eab11ef61eE9100feE84b63739": {
-      "allocation": "1605",
+      "allocation": "1604",
       "allocationPerc": "0.73%",
       "type": "weighted",
       "sources": {
@@ -270,11 +270,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "3.587839049017678362",
         "hyperEVMPercentage": "2.864685301412351744",
-        "weightedPercentage": "3.492687240122240649"
+        "weightedPercentage": "3.489227174344224732"
       }
     },
     "0x7c578237563AAf26F5c2B28241A30388900C31eC": {
-      "allocation": "1602",
+      "allocation": "1597",
       "allocationPerc": "0.73%",
       "type": "weighted",
       "sources": {
@@ -310,7 +310,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "3.85794812711395526",
         "hyperEVMPercentage": "1.031603155340398523",
-        "weightedPercentage": "3.486060630827960952"
+        "weightedPercentage": "3.472537449144833886"
       }
     },
     "0x6665E62eF6F6Db29D5F8191fBAC472222C2cc80F": {
@@ -344,7 +344,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "2.464081972292209828",
         "hyperEVMPercentage": "1.967429227189957661",
-        "weightedPercentage": "2.398732926884018753"
+        "weightedPercentage": "2.396356597960084532"
       }
     },
     "0x30E14c4b4768F9B5F520a2F6214d2cCc21255fDa": {
@@ -384,11 +384,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "2.420542651133053134",
         "hyperEVMPercentage": "2.098882810692164868",
-        "weightedPercentage": "2.378218987917146783"
+        "weightedPercentage": "2.376679945618386552"
       }
     },
     "0x0e52b591Cbc9AB81c806F303DE8d9a3B0Dc4ea5C": {
-      "allocation": "881",
+      "allocation": "880",
       "allocationPerc": "0.40%",
       "type": "weighted",
       "sources": {
@@ -441,11 +441,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.978376665582254198",
         "hyperEVMPercentage": "1.507498854775525266",
-        "weightedPercentage": "1.916419058897158285"
+        "weightedPercentage": "1.914166055017700252"
       }
     },
     "0xfdcc69463b0106888D1CA07CE118A64AdF9fe458": {
-      "allocation": "845",
+      "allocation": "844",
       "allocationPerc": "0.39%",
       "type": "weighted",
       "sources": {
@@ -475,11 +475,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.888336341586385224",
         "hyperEVMPercentage": "1.507729106001192908",
-        "weightedPercentage": "1.838256442167280971"
+        "weightedPercentage": "1.83643535491567718"
       }
     },
     "0x0ae44FC0e1c6E86e5dE1Ace32057a44BfE85C9EA": {
-      "allocation": "825",
+      "allocation": "824",
       "allocationPerc": "0.38%",
       "type": "weighted",
       "sources": {
@@ -539,11 +539,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.907767383513118094",
         "hyperEVMPercentage": "1.056272546026291849",
-        "weightedPercentage": "1.795728589106956745"
+        "weightedPercentage": "1.791654451128550878"
       }
     },
     "0x5000Ff6Cc1864690d947B864B9FB0d603E8d1F1A": {
-      "allocation": "682",
+      "allocation": "680",
       "allocationPerc": "0.31%",
       "type": "weighted",
       "sources": {
@@ -591,11 +591,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.660479134541509446",
         "hyperEVMPercentage": "0.329856709331365803",
-        "weightedPercentage": "1.485397236487543177"
+        "weightedPercentage": "1.479030622012853494"
       }
     },
     "0x83C08b5C096d598b7e51acD6A7E844Bf011e5700": {
-      "allocation": "647",
+      "allocation": "646",
       "allocationPerc": "0.30%",
       "type": "weighted",
       "sources": {
@@ -625,7 +625,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.515509808520415484",
         "hyperEVMPercentage": "0.705062377429286454",
-        "weightedPercentage": "1.408871988640003769"
+        "weightedPercentage": "1.404994249735261525"
       }
     },
     "0xC58D3aE892A104D663B01194f2EE325CfB5187f2": {
@@ -663,11 +663,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.351663056296212024",
         "hyperEVMPercentage": "1.079226029075180316",
-        "weightedPercentage": "1.315816079030286799"
+        "weightedPercentage": "1.314512552584253154"
       }
     },
     "0x26610e89A8B825F23E89e58879cE97D791aD4438": {
-      "allocation": "553",
+      "allocation": "552",
       "allocationPerc": "0.25%",
       "type": "weighted",
       "sources": {
@@ -699,11 +699,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.248148102423386846",
         "hyperEVMPercentage": "0.910440087160289803",
-        "weightedPercentage": "1.203712837257189866"
+        "weightedPercentage": "1.202097009432964521"
       }
     },
     "0xe52a4EaeA658AB94437165CacA01a37A64c0f18e": {
-      "allocation": "512",
+      "allocation": "511",
       "allocationPerc": "0.23%",
       "type": "weighted",
       "sources": {
@@ -734,11 +734,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.144624531166315966",
         "hyperEVMPercentage": "0.913313980288442202",
-        "weightedPercentage": "1.114188932366595733"
+        "weightedPercentage": "1.11308218331933318"
       }
     },
     "0xE24d295154c2D78A7A860E809D57598E551813Bd": {
-      "allocation": "462",
+      "allocation": "461",
       "allocationPerc": "0.21%",
       "type": "weighted",
       "sources": {
@@ -772,7 +772,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.02163807971639098",
         "hyperEVMPercentage": "0.89461041518072896",
-        "weightedPercentage": "1.004923913330119661"
+        "weightedPercentage": "1.004316125461527977"
       }
     },
     "0xF61DD58087160120c39b3DC312aB201cA8dCdD8f": {
@@ -810,7 +810,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "1.01906440641790128",
         "hyperEVMPercentage": "0.672959851774554003",
-        "weightedPercentage": "0.97352433343851348"
+        "weightedPercentage": "0.97186833078471756"
       }
     },
     "0x79C1134a1dFdF7e0d58E58caFC84a514991372e6": {
@@ -840,7 +840,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.886687212554971099",
         "hyperEVMPercentage": "0.70796927901456963",
-        "weightedPercentage": "0.863171694983865642"
+        "weightedPercentage": "0.862316585254007262"
       }
     },
     "0xFe202706E36F31aFBaf4b4543C2A8bBa4ddB2deE": {
@@ -870,7 +870,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.845974681029352934",
         "hyperEVMPercentage": "0.675462639485614512",
-        "weightedPercentage": "0.823538886089387352"
+        "weightedPercentage": "0.822723039000661331"
       }
     },
     "0x18e17dd452Ef58F91E45fD20Eb2F839ac13AA648": {
@@ -904,7 +904,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.823600539052909306",
         "hyperEVMPercentage": "0.657598160399583924",
-        "weightedPercentage": "0.801758120809050703"
+        "weightedPercentage": "0.800963851054728572"
       }
     },
     "0x8D2a097607da5E2E3d599c72EC50FD0704a4D37f": {
@@ -943,7 +943,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.804298909137521636",
         "hyperEVMPercentage": "0.690320077321107373",
-        "weightedPercentage": "0.789301694424835548"
+        "weightedPercentage": "0.788756341162556054"
       }
     },
     "0x1A519D7f13F485818bef6dA1c3a08D8Bf4D0a9A4": {
@@ -973,7 +973,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.7457968407945416",
         "hyperEVMPercentage": "0.595476335048126189",
-        "weightedPercentage": "0.726017826880539572"
+        "weightedPercentage": "0.725298590010939498"
       }
     },
     "0x3424cd7D170949636C300e62674a3DFB7706Fc35": {
@@ -1003,12 +1003,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.669715173574010262",
         "hyperEVMPercentage": "0.557901223558810084",
-        "weightedPercentage": "0.655002811729904975"
+        "weightedPercentage": "0.654467816753755692"
       }
     },
     "0xA9aBEe56A0Ee419816698f1721dFFF14e3ECC0Fa": {
-      "allocation": "289",
-      "allocationPerc": "0.13%",
+      "allocation": "298",
+      "allocationPerc": "0.14%",
       "type": "weighted",
       "sources": {
         "ethereum": {
@@ -1052,12 +1052,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.624759749078218776",
         "hyperEVMPercentage": "0.498835105376937376",
-        "weightedPercentage": "0.608190717012260697"
+        "weightedPercentage": "0.607588206755316766"
       }
     },
     "0x8B77edDCa6A168D90f456BE6b8E00877D4fd6048": {
-      "allocation": "274",
-      "allocationPerc": "0.13%",
+      "allocation": "273",
+      "allocationPerc": "0.12%",
       "type": "weighted",
       "sources": {
         "ethereum": {
@@ -1101,7 +1101,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.682827542567142573",
         "hyperEVMPercentage": "0.035993553924733753",
-        "weightedPercentage": "0.597717807219457201"
+        "weightedPercentage": "0.594622907752268643"
       }
     },
     "0xaC4Cb8282d291a74e8C881620E3AFaF6dE98d6aE": {
@@ -1131,7 +1131,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.566500902474142349",
         "hyperEVMPercentage": "0.452318731798917127",
-        "weightedPercentage": "0.551476932648454819"
+        "weightedPercentage": "0.550930606472975273"
       }
     },
     "0x6ab791754298D6D6d7C182DC1572126B4eD24897": {
@@ -1165,7 +1165,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.560114360134690923",
         "hyperEVMPercentage": "0.447219441189589321",
-        "weightedPercentage": "0.545259765536651238"
+        "weightedPercentage": "0.544719598460358886"
       }
     },
     "0x78086Ad810f8F99A0B6c92a9A6c8857d3c665622": {
@@ -1199,12 +1199,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.450953601733658547",
         "hyperEVMPercentage": "0.360060787803693396",
-        "weightedPercentage": "0.438994020953399974"
+        "weightedPercentage": "0.438559127106845117"
       }
     },
     "0x1CF2B8c64AEd32bFf2Ae80e701681316d3212aFd": {
-      "allocation": "189",
-      "allocationPerc": "0.087%",
+      "allocation": "196",
+      "allocationPerc": "0.090%",
       "type": "weighted",
       "sources": {
         "hyperevm": {
@@ -1223,7 +1223,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "3.126805409236928472",
-        "weightedPercentage": "0.411421764373280062"
+        "weightedPercentage": "0.4263825558050357"
       }
     },
     "0xb4D502361a3c6f823EEb9A99Af09E110382206ee": {
@@ -1265,7 +1265,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.426113128706535507",
         "hyperEVMPercentage": "0.306622650049806454",
-        "weightedPercentage": "0.410390697304334315"
+        "weightedPercentage": "0.409818972526072454"
       }
     },
     "0xE19618C08F74b7e80278Ec14b63797419dACCDf8": {
@@ -1296,11 +1296,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.406146024018126483",
         "hyperEVMPercentage": "0.324284486939048093",
-        "weightedPercentage": "0.395374769139300379"
+        "weightedPercentage": "0.394983087143706702"
       }
     },
     "0xca4aD39F872E89Ef23eABd5716363Fc22513E147": {
-      "allocation": "177",
+      "allocation": "176",
       "allocationPerc": "0.081%",
       "type": "weighted",
       "sources": {
@@ -1326,7 +1326,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.395614016907365648",
         "hyperEVMPercentage": "0.315875278622169857",
-        "weightedPercentage": "0.38512207765931357"
+        "weightedPercentage": "0.38474055259574804"
       }
     },
     "0xEdA726014938d2E6Ed51c7d5A53193cf9713cdF7": {
@@ -1360,7 +1360,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.393718127219543709",
         "hyperEVMPercentage": "0.314361518598710608",
-        "weightedPercentage": "0.383276468190486722"
+        "weightedPercentage": "0.382896771498521013"
       }
     },
     "0x241F1A461Da47Ccd40B48c38340896A9948A4725": {
@@ -1404,7 +1404,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.360853706410820273",
         "hyperEVMPercentage": "0.282014106151536515",
-        "weightedPercentage": "0.35048007479775662"
+        "weightedPercentage": "0.350102851830008851"
       }
     },
     "0x7DF76FDEedE91d3cB80e4a86158dD9f6D206c98E": {
@@ -1439,12 +1439,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.282786183357474112",
         "hyperEVMPercentage": "0.416035194559282138",
-        "weightedPercentage": "0.300318947989290957"
+        "weightedPercentage": "0.30095650306681157"
       }
     },
     "0x75d4bdBf6593ed463e9625694272a0FF9a6D346F": {
-      "allocation": "137",
-      "allocationPerc": "0.063%",
+      "allocation": "136",
+      "allocationPerc": "0.062%",
       "type": "weighted",
       "sources": {
         "ethereum": {
@@ -1469,12 +1469,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.330108779686725236",
         "hyperEVMPercentage": "0.088232437921834475",
-        "weightedPercentage": "0.298282945243976451"
+        "weightedPercentage": "0.297125642173331041"
       }
     },
     "0xde3697dDA384ce178d04D8879F7a66423F72A326": {
-      "allocation": "133",
-      "allocationPerc": "0.061%",
+      "allocation": "132",
+      "allocationPerc": "0.060%",
       "type": "weighted",
       "sources": {
         "ethereum": {
@@ -1503,7 +1503,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.297280790253737087",
         "hyperEVMPercentage": "0.237361793155640154",
-        "weightedPercentage": "0.289396711688198016"
+        "weightedPercentage": "0.289110017922178414"
       }
     },
     "0x65665e10EB86D72b02067863342277EA2DF78516": {
@@ -1533,7 +1533,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.283250451235593492",
         "hyperEVMPercentage": "0.226159365894656078",
-        "weightedPercentage": "0.275738466322312253"
+        "weightedPercentage": "0.275465303234556571"
       }
     },
     "0x03eAB50f733c4DbeaE6B120755776eE7c931243C": {
@@ -1567,11 +1567,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.272317155626724664",
         "hyperEVMPercentage": "0.224912278131814046",
-        "weightedPercentage": "0.266079671745815372"
+        "weightedPercentage": "0.265852854150145943"
       }
     },
     "0x9b9AE2dF9Fc756023df3Aa93B8EB34B200110324": {
-      "allocation": "116",
+      "allocation": "115",
       "allocationPerc": "0.053%",
       "type": "weighted",
       "sources": {
@@ -1600,32 +1600,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.277756023544040686",
         "hyperEVMPercentage": "0.089102554901758941",
-        "weightedPercentage": "0.252933198722687824"
-      }
-    },
-    "0x476e48a832C593EE17317c008870a8aa4E649610": {
-      "allocation": "115",
-      "allocationPerc": "0.053%",
-      "type": "weighted",
-      "sources": {
-        "ethereum": {
-          "originalAddress": "0x476e48a832C593EE17317c008870a8aa4E649610",
-          "percentage": "0.288800232396479849",
-          "totalSIR": "9245161290322580932",
-          "breakdown": {
-            "sirBalance": "9245161290322580932"
-          }
-        }
-      },
-      "percentageBreakdown": {
-        "ethereumPercentage": "0.288800232396479849",
-        "hyperEVMPercentage": "0.0",
-        "weightedPercentage": "0.250800201817995658"
+        "weightedPercentage": "0.252030550547365902"
       }
     },
     "0x32cf4d1df6fb7bB173183CF8b51EF9499c803634": {
-      "allocation": "115",
-      "allocationPerc": "0.053%",
+      "allocation": "114",
+      "allocationPerc": "0.052%",
       "type": "weighted",
       "sources": {
         "ethereum": {
@@ -1654,7 +1634,27 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.256966508865938226",
         "hyperEVMPercentage": "0.205173133698561311",
-        "weightedPercentage": "0.250151591080757052"
+        "weightedPercentage": "0.249903775888568646"
+      }
+    },
+    "0x476e48a832C593EE17317c008870a8aa4E649610": {
+      "allocation": "114",
+      "allocationPerc": "0.052%",
+      "type": "weighted",
+      "sources": {
+        "ethereum": {
+          "originalAddress": "0x476e48a832C593EE17317c008870a8aa4E649610",
+          "percentage": "0.288800232396479849",
+          "totalSIR": "9245161290322580932",
+          "breakdown": {
+            "sirBalance": "9245161290322580932"
+          }
+        }
+      },
+      "percentageBreakdown": {
+        "ethereumPercentage": "0.288800232396479849",
+        "hyperEVMPercentage": "0.0",
+        "weightedPercentage": "0.249418382524232596"
       }
     },
     "0xa485B739e99334f4B92B04da2122e2923a054688": {
@@ -1710,7 +1710,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.239203307044350689",
         "hyperEVMPercentage": "0.266334586504321772",
-        "weightedPercentage": "0.242773212236452147"
+        "weightedPercentage": "0.242903026970710382"
       }
     },
     "0xaEA8C6444a5E4EfD738a6eC51F3D0ED0928C110B": {
@@ -1739,7 +1739,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.233583288727970642",
         "hyperEVMPercentage": "0.186502963128298939",
-        "weightedPercentage": "0.227388509043803312"
+        "weightedPercentage": "0.227163244328015409"
       }
     },
     "0x1ff241abaD54DEcB967Bd0f57c2a584C7d1ca8BD": {
@@ -1769,7 +1769,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.226600360988474794",
         "hyperEVMPercentage": "0.180927492717645856",
-        "weightedPercentage": "0.220590773058102565"
+        "weightedPercentage": "0.220372242587907211"
       }
     },
     "0xBA5EDc0d2Ae493C9574328d77dc36eEF19F699e2": {
@@ -1803,7 +1803,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.224586072614225888",
         "hyperEVMPercentage": "0.17931919807822339",
-        "weightedPercentage": "0.218629904912120296"
+        "weightedPercentage": "0.218413316995680092"
       }
     },
     "0xB25e55e36CC998a546639365272F88FE2ce50753": {
@@ -1844,7 +1844,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.214146998128035631",
         "hyperEVMPercentage": "0.139371602860981682",
-        "weightedPercentage": "0.204308130329739058"
+        "weightedPercentage": "0.20395035331889191"
       }
     },
     "0x02fEb744cA516FD6E41D940Ae2d0F7Cb6FCB1ac3": {
@@ -1889,37 +1889,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.204748153978042858",
         "hyperEVMPercentage": "0.135196796071919278",
-        "weightedPercentage": "0.195596659516710808"
-      }
-    },
-    "0xe59813A4a120288dbf42630C051e3921E5dAbCd8": {
-      "allocation": "84",
-      "allocationPerc": "0.038%",
-      "type": "weighted",
-      "sources": {
-        "ethereum": {
-          "originalAddress": "0xe59813A4a120288dbf42630C051e3921E5dAbCd8",
-          "percentage": "0.188833634158047449",
-          "totalSIR": "6044999999972976000",
-          "breakdown": {
-            "unclaimedContributorRewards": "891478017499819848",
-            "unissuedContributorRewards": "5153521982473156152"
-          }
-        },
-        "hyperevm": {
-          "originalAddress": "0xe59813A4a120288dbf42630C051e3921E5dAbCd8",
-          "percentage": "0.150772910599639042",
-          "totalSIR": "2970196550775936000",
-          "breakdown": {
-            "unclaimedContributorRewards": "158593388647344912",
-            "unissuedContributorRewards": "2811603162128591088"
-          }
-        }
-      },
-      "percentageBreakdown": {
-        "ethereumPercentage": "0.188833634158047449",
-        "hyperEVMPercentage": "0.150772910599639042",
-        "weightedPercentage": "0.183825644216151605"
+        "weightedPercentage": "0.195263877899935097"
       }
     },
     "0x80BfB857770a802f7eF375921AD5E83c76214a2d": {
@@ -1967,7 +1937,37 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.178672322426133009",
         "hyperEVMPercentage": "0.215544526847587332",
-        "weightedPercentage": "0.183523928271061209"
+        "weightedPercentage": "0.183700350301785871"
+      }
+    },
+    "0xe59813A4a120288dbf42630C051e3921E5dAbCd8": {
+      "allocation": "84",
+      "allocationPerc": "0.038%",
+      "type": "weighted",
+      "sources": {
+        "ethereum": {
+          "originalAddress": "0xe59813A4a120288dbf42630C051e3921E5dAbCd8",
+          "percentage": "0.188833634158047449",
+          "totalSIR": "6044999999972976000",
+          "breakdown": {
+            "unclaimedContributorRewards": "891478017499819848",
+            "unissuedContributorRewards": "5153521982473156152"
+          }
+        },
+        "hyperevm": {
+          "originalAddress": "0xe59813A4a120288dbf42630C051e3921E5dAbCd8",
+          "percentage": "0.150772910599639042",
+          "totalSIR": "2970196550775936000",
+          "breakdown": {
+            "unclaimedContributorRewards": "158593388647344912",
+            "unissuedContributorRewards": "2811603162128591088"
+          }
+        }
+      },
+      "percentageBreakdown": {
+        "ethereumPercentage": "0.188833634158047449",
+        "hyperEVMPercentage": "0.150772910599639042",
+        "weightedPercentage": "0.183643535490991757"
       }
     },
     "0xAA7A9d80971E58641442774C373C94AaFee87d66": {
@@ -2002,11 +2002,11 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.164345181470171983",
         "hyperEVMPercentage": "0.131220274732674372",
-        "weightedPercentage": "0.159986641109974928"
+        "weightedPercentage": "0.15982814873324049"
       }
     },
     "0x05e41899688b67fFB901f885a9041282a7F7c903": {
-      "allocation": "73",
+      "allocation": "72",
       "allocationPerc": "0.033%",
       "type": "weighted",
       "sources": {
@@ -2031,7 +2031,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.177224635692397447",
         "hyperEVMPercentage": "0.037495779859080656",
-        "weightedPercentage": "0.158839259924855763"
+        "weightedPercentage": "0.158170700806036066"
       }
     },
     "0xa47bEA3BBfC9a9655E1Cad064217d7Eb0dcDc579": {
@@ -2060,7 +2060,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.134019866393481915",
         "hyperEVMPercentage": "0.10700723641814149",
-        "weightedPercentage": "0.130465572975673964"
+        "weightedPercentage": "0.130336325942299129"
       }
     },
     "0xA6f4fa9840Aa6825446c820aF6d5eCcf9f78BA05": {
@@ -2091,7 +2091,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.132577073204262478",
         "hyperEVMPercentage": "0.105855248163526894",
-        "weightedPercentage": "0.129061043593639374"
+        "weightedPercentage": "0.128933187971434898"
       }
     },
     "0x3E0c233A3682122C7bC5AD86Cc56cfc13a910C28": {
@@ -2138,7 +2138,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.139206778467193831",
         "hyperEVMPercentage": "0.0611144816595137",
-        "weightedPercentage": "0.128931476255656971"
+        "weightedPercentage": "0.128557828902510176"
       }
     },
     "0x13E009E182bc7ee1F64fE5Ac09DA2Db33c02e3be": {
@@ -2169,7 +2169,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.13543776015889062",
         "hyperEVMPercentage": "0.037740570342493889",
-        "weightedPercentage": "0.122582866761996313"
+        "weightedPercentage": "0.122115416093018338"
       }
     },
     "0xA6a49d09321f701AB4295e5eB115E65EcF9b83B5": {
@@ -2216,7 +2216,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.119606484246322631",
         "hyperEVMPercentage": "0.105888910033319094",
-        "weightedPercentage": "0.117801540270927428"
+        "weightedPercentage": "0.117735905944549421"
       }
     },
     "0x0D5f69C67DAE06ce606246A8bd88B552d1DdE140": {
@@ -2251,7 +2251,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.118747259943935968",
         "hyperEVMPercentage": "0.070087515147719175",
-        "weightedPercentage": "0.112344661944433758"
+        "weightedPercentage": "0.112111840198997314"
       }
     },
     "0x8D677d312F2CA04dF98eB22ce886bE8E7804280d": {
@@ -2286,7 +2286,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.110878572429037425",
         "hyperEVMPercentage": "0.081517334162353652",
-        "weightedPercentage": "0.10701525160447377"
+        "weightedPercentage": "0.106874767210853274"
       }
     },
     "0xa233f74638Bd28A24CC2Ce23475eea7dC76881AC": {
@@ -2320,7 +2320,33 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.098280353232036619",
         "hyperEVMPercentage": "0.078471269046979081",
-        "weightedPercentage": "0.095673894786634311"
+        "weightedPercentage": "0.095579114479528772"
+      }
+    },
+    "0x053E6294400a9268E35Df445624F58087C7F388f": {
+      "allocation": "42",
+      "allocationPerc": "0.019%",
+      "type": "weighted",
+      "sources": {
+        "hyperevm": {
+          "originalAddress": "0x053E6294400a9268E35Df445624F58087C7F388f",
+          "percentage": "0.679879394681181565",
+          "totalSIR": "13393489752200294895",
+          "breakdown": {
+            "stakedSIR": {
+              "unlockedStake": "5394526959303700148",
+              "lockedStake": "4080447810097540112"
+            },
+            "unclaimedLperRewards": "3319003884154831331",
+            "unclaimedContributorRewards": "27288324070962528",
+            "unissuedContributorRewards": "572222774573260776"
+          }
+        }
+      },
+      "percentageBreakdown": {
+        "ethereumPercentage": "0.0",
+        "hyperEVMPercentage": "0.679879394681181565",
+        "weightedPercentage": "0.092710826547433849"
       }
     },
     "0x40FEfD52714f298b9EaD6760753aAA720438D4bB": {
@@ -2350,7 +2376,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.094416817077546043",
         "hyperEVMPercentage": "0.075386455295017036",
-        "weightedPercentage": "0.091912822106160647"
+        "weightedPercentage": "0.091821767743564814"
       }
     },
     "0x16fD74300dcDc02E9b1E594f293c6EfFB299a3fc": {
@@ -2380,33 +2406,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.094416817077546043",
         "hyperEVMPercentage": "0.075386455295017036",
-        "weightedPercentage": "0.091912822106160647"
-      }
-    },
-    "0x053E6294400a9268E35Df445624F58087C7F388f": {
-      "allocation": "41",
-      "allocationPerc": "0.019%",
-      "type": "weighted",
-      "sources": {
-        "hyperevm": {
-          "originalAddress": "0x053E6294400a9268E35Df445624F58087C7F388f",
-          "percentage": "0.679879394681181565",
-          "totalSIR": "13393489752200294895",
-          "breakdown": {
-            "stakedSIR": {
-              "unlockedStake": "5394526959303700148",
-              "lockedStake": "4080447810097540112"
-            },
-            "unclaimedLperRewards": "3319003884154831331",
-            "unclaimedContributorRewards": "27288324070962528",
-            "unissuedContributorRewards": "572222774573260776"
-          }
-        }
-      },
-      "percentageBreakdown": {
-        "ethereumPercentage": "0.0",
-        "hyperEVMPercentage": "0.679879394681181565",
-        "weightedPercentage": "0.089457815089629153"
+        "weightedPercentage": "0.091821767743564814"
       }
     },
     "0xF77259F9584d6C1EECAA4C77AfbAccEA63d7E226": {
@@ -2461,7 +2461,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.087802190861669504",
         "hyperEVMPercentage": "0.092778185110101905",
-        "weightedPercentage": "0.088456926946989556"
+        "weightedPercentage": "0.088480735531910285"
       }
     },
     "0xbe1E110f4A2fD54622CD516e86b29f619ad994bF": {
@@ -2495,12 +2495,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.090092526856497967",
         "hyperEVMPercentage": "0.071933755644479077",
-        "weightedPercentage": "0.087703214854916534"
+        "weightedPercentage": "0.087616330782131754"
       }
     },
     "0x98ccC3f58988f55A66420F69Cb9987f10F1D6052": {
-      "allocation": "38",
-      "allocationPerc": "0.017%",
+      "allocation": "40",
+      "allocationPerc": "0.018%",
       "type": "weighted",
       "sources": {
         "hyperevm": {
@@ -2520,7 +2520,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.640435902069899382",
-        "weightedPercentage": "0.08426788185130255"
+        "weightedPercentage": "0.087332168464077188"
       }
     },
     "0x065297f5C6fE2a91DEe1934B419800CF43a0DFBF": {
@@ -2549,7 +2549,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.084604630630261388",
         "hyperEVMPercentage": "0.067551982818432983",
-        "weightedPercentage": "0.082360861181336597"
+        "weightedPercentage": "0.08227926956501206"
       }
     },
     "0x32dd21D4Ad7A68322E1104baDB61c4c1363E6101": {
@@ -2583,7 +2583,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0804030742174832",
         "hyperEVMPercentage": "0.09036364135525",
-        "weightedPercentage": "0.081713675156663042"
+        "weightedPercentage": "0.081761333372633218"
       }
     },
     "0x078a4afb6A3cC50e67600945AB7f0f222B170761": {
@@ -2629,59 +2629,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.047479465457748978",
         "hyperEVMPercentage": "0.283577392256020329",
-        "weightedPercentage": "0.07854498214173205"
-      }
-    },
-    "0x17A779123dbC283eb0e0e87602cc783bdb1DC55a": {
-      "allocation": "35",
-      "allocationPerc": "0.016%",
-      "type": "weighted",
-      "sources": {
-        "ethereum": {
-          "originalAddress": "0x17A779123dbC283eb0e0e87602cc783bdb1DC55a",
-          "percentage": "0.057072502604089917",
-          "totalSIR": "1827022393433497111",
-          "breakdown": {
-            "stakedSIR": {
-              "unlockedStake": "915491042444403041",
-              "lockedStake": "330171042629237981"
-            },
-            "vaultEquity": {
-              "6": {
-                "teaBalance": "13342813662471177338977",
-                "apeBalance": "0",
-                "teaEquitySIR": "510954220815459",
-                "apeEquitySIR": "0"
-              },
-              "16": {
-                "teaBalance": "76127622662003278765246",
-                "apeBalance": "242209715820020015",
-                "teaEquitySIR": "31268998170324982",
-                "apeEquitySIR": "515355569598372072"
-              }
-            },
-            "unclaimedLperRewards": "34224786370343576"
-          }
-        },
-        "hyperevm": {
-          "originalAddress": "0x17A779123dbC283eb0e0e87602cc783bdb1DC55a",
-          "percentage": "0.212286969564899098",
-          "totalSIR": "4182011359127061483",
-          "breakdown": {
-            "stakedSIR": {
-              "unlockedStake": "875014588036592597",
-              "lockedStake": "826313210400035086"
-            },
-            "unclaimedLperRewards": "1753383187849998558",
-            "unclaimedContributorRewards": "24424994836324110",
-            "unissuedContributorRewards": "702875378004111132"
-          }
-        }
-      },
-      "percentageBreakdown": {
-        "ethereumPercentage": "0.057072502604089917",
-        "hyperEVMPercentage": "0.212286969564899098",
-        "weightedPercentage": "0.077495458783143756"
+        "weightedPercentage": "0.079674637293876889"
       }
     },
     "0xFfe296bbbc86dFaC056B42c6180d9f8b4cB412aa": {
@@ -2737,7 +2685,59 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.056502409959562268",
         "hyperEVMPercentage": "0.215966389757291588",
-        "weightedPercentage": "0.077484512564526652"
+        "weightedPercentage": "0.078247498113798084"
+      }
+    },
+    "0x17A779123dbC283eb0e0e87602cc783bdb1DC55a": {
+      "allocation": "35",
+      "allocationPerc": "0.016%",
+      "type": "weighted",
+      "sources": {
+        "ethereum": {
+          "originalAddress": "0x17A779123dbC283eb0e0e87602cc783bdb1DC55a",
+          "percentage": "0.057072502604089917",
+          "totalSIR": "1827022393433497111",
+          "breakdown": {
+            "stakedSIR": {
+              "unlockedStake": "915491042444403041",
+              "lockedStake": "330171042629237981"
+            },
+            "vaultEquity": {
+              "6": {
+                "teaBalance": "13342813662471177338977",
+                "apeBalance": "0",
+                "teaEquitySIR": "510954220815459",
+                "apeEquitySIR": "0"
+              },
+              "16": {
+                "teaBalance": "76127622662003278765246",
+                "apeBalance": "242209715820020015",
+                "teaEquitySIR": "31268998170324982",
+                "apeEquitySIR": "515355569598372072"
+              }
+            },
+            "unclaimedLperRewards": "34224786370343576"
+          }
+        },
+        "hyperevm": {
+          "originalAddress": "0x17A779123dbC283eb0e0e87602cc783bdb1DC55a",
+          "percentage": "0.212286969564899098",
+          "totalSIR": "4182011359127061483",
+          "breakdown": {
+            "stakedSIR": {
+              "unlockedStake": "875014588036592597",
+              "lockedStake": "826313210400035086"
+            },
+            "unclaimedLperRewards": "1753383187849998558",
+            "unclaimedContributorRewards": "24424994836324110",
+            "unissuedContributorRewards": "702875378004111132"
+          }
+        }
+      },
+      "percentageBreakdown": {
+        "ethereumPercentage": "0.057072502604089917",
+        "hyperEVMPercentage": "0.212286969564899098",
+        "weightedPercentage": "0.07823811173510935"
       }
     },
     "0xdF58360e945F6a302FFFB012D114C9e2bE2F212a": {
@@ -2767,7 +2767,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.074400451856148744",
         "hyperEVMPercentage": "0.059404526770264281",
-        "weightedPercentage": "0.072427303818532367"
+        "weightedPercentage": "0.072355552980800862"
       }
     },
     "0x65a831D9fB2CC87A7956eB8E4720956f6bfC6eeA": {
@@ -2797,7 +2797,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.072859569403521877",
         "hyperEVMPercentage": "0.058174219825489641",
-        "weightedPercentage": "0.070927286564307109"
+        "weightedPercentage": "0.070857021733790208"
       }
     },
     "0x6422D607CA13457589A1f2dbf0ec63d5Adf87BFB": {
@@ -2831,7 +2831,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.068357775563398583",
         "hyperEVMPercentage": "0.054579793635609377",
-        "weightedPercentage": "0.06654488320447895"
+        "weightedPercentage": "0.066478959845972782"
       }
     },
     "0x1E6a29e9c42839e982a68DD6E42d465BA99323ff": {
@@ -2864,7 +2864,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.06752029523259679",
         "hyperEVMPercentage": "0.045819920414761361",
-        "weightedPercentage": "0.064664982756565812"
+        "weightedPercentage": "0.064561153211982867"
       }
     },
     "0xF613cfD07af6D011fD671F98064214aB5B2942CF": {
@@ -2894,7 +2894,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.06351985785715643",
         "hyperEVMPercentage": "0.050716991662142397",
-        "weightedPercentage": "0.061835270199917741"
+        "weightedPercentage": "0.061774012466927243"
       }
     },
     "0x5fbD6AdE9FF68644Ff9b612eCd00F201E154802A": {
@@ -2917,7 +2917,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.061792922806490317",
         "hyperEVMPercentage": "0.0",
-        "weightedPercentage": "0.053662275068794222"
+        "weightedPercentage": "0.053366615151059819"
       }
     },
     "0x7edB0CBfe1217Fe53Af0Fb871D92c1c627C6673C": {
@@ -2965,7 +2965,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.052271587593337148",
         "hyperEVMPercentage": "0.054590286232598499",
-        "weightedPercentage": "0.052576679519555746"
+        "weightedPercentage": "0.052587773771418241"
       }
     },
     "0xc4Ab0e3F12309f37A5cdf3A4b3B7C70A53eeBBa9": {
@@ -2995,7 +2995,39 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.052643040529023996",
         "hyperEVMPercentage": "0.042032472014961086",
-        "weightedPercentage": "0.051246913092963086"
+        "weightedPercentage": "0.051196144822560871"
+      }
+    },
+    "0x8851A0af3a12121E335761Fe7B6Aa58198C12751": {
+      "allocation": "22",
+      "allocationPerc": "0.010%",
+      "type": "weighted",
+      "sources": {
+        "ethereum": {
+          "originalAddress": "0x8851A0af3a12121E335761Fe7B6Aa58198C12751",
+          "percentage": "0.036902594063594814",
+          "totalSIR": "1181337117765398079",
+          "breakdown": {
+            "stakedSIR": {
+              "unlockedStake": "241567482972450892",
+              "lockedStake": "939769634792947187"
+            }
+          }
+        },
+        "hyperevm": {
+          "originalAddress": "0x8851A0af3a12121E335761Fe7B6Aa58198C12751",
+          "percentage": "0.11881886901246196",
+          "totalSIR": "2340708244633152000",
+          "breakdown": {
+            "unclaimedContributorRewards": "124981914834616584",
+            "unissuedContributorRewards": "2215726329798535416"
+          }
+        }
+      },
+      "percentageBreakdown": {
+        "ethereumPercentage": "0.036902594063594814",
+        "hyperEVMPercentage": "0.11881886901246196",
+        "weightedPercentage": "0.048072995192985788"
       }
     },
     "0xAacc079965F0F9473BF4299d930eF639690a9792": {
@@ -3025,39 +3057,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.049096744880442156",
         "hyperEVMPercentage": "0.039200956751487865",
-        "weightedPercentage": "0.047794667495053433"
-      }
-    },
-    "0x8851A0af3a12121E335761Fe7B6Aa58198C12751": {
-      "allocation": "21",
-      "allocationPerc": "0.0096%",
-      "type": "weighted",
-      "sources": {
-        "ethereum": {
-          "originalAddress": "0x8851A0af3a12121E335761Fe7B6Aa58198C12751",
-          "percentage": "0.036902594063594814",
-          "totalSIR": "1181337117765398079",
-          "breakdown": {
-            "stakedSIR": {
-              "unlockedStake": "241567482972450892",
-              "lockedStake": "939769634792947187"
-            }
-          }
-        },
-        "hyperevm": {
-          "originalAddress": "0x8851A0af3a12121E335761Fe7B6Aa58198C12751",
-          "percentage": "0.11881886901246196",
-          "totalSIR": "2340708244633152000",
-          "breakdown": {
-            "unclaimedContributorRewards": "124981914834616584",
-            "unissuedContributorRewards": "2215726329798535416"
-          }
-        }
-      },
-      "percentageBreakdown": {
-        "ethereumPercentage": "0.036902594063594814",
-        "hyperEVMPercentage": "0.11881886901246196",
-        "weightedPercentage": "0.047681051293708912"
+        "weightedPercentage": "0.047747319226493843"
       }
     },
     "0xBC10d1926BF88367422e4343bFdC5515204aF3E2": {
@@ -3087,7 +3087,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.048209037966890965",
         "hyperEVMPercentage": "0.038492173299978754",
-        "weightedPercentage": "0.046930503142297253"
+        "weightedPercentage": "0.046884010966857481"
       }
     },
     "0x81B55FBe66C5FFbb8468328E924AF96a84438F14": {
@@ -3117,7 +3117,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.047208408537295339",
         "hyperEVMPercentage": "0.037693227645107275",
-        "weightedPercentage": "0.04595641105148112"
+        "weightedPercentage": "0.045910883870178784"
       }
     },
     "0xb1f55485d7ebA772F0d454Ceb0EA9a27586Ad86f": {
@@ -3147,7 +3147,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.044564737658663013",
         "hyperEVMPercentage": "0.035582406898095444",
-        "weightedPercentage": "0.043382852032272543"
+        "weightedPercentage": "0.043339874373131071"
       }
     },
     "0x193641EA463C3B9244cF9F00b77EE5220d4154e9": {
@@ -3188,7 +3188,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.043766039191458753",
         "hyperEVMPercentage": "0.005660668381618602",
-        "weightedPercentage": "0.038752174611216627"
+        "weightedPercentage": "0.038569852262844186"
       }
     },
     "0x49a47bd22881c6E1173cdEA2697725c959FCE28d": {
@@ -3236,7 +3236,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.013468998129320984",
         "hyperEVMPercentage": "0.193323862932866387",
-        "weightedPercentage": "0.037134111919261168"
+        "weightedPercentage": "0.037994661511622629"
       }
     },
     "0xeeFbdAe2b62F9A1639bCBa81A7E76e84B2C6813B": {
@@ -3280,7 +3280,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.036585960823930461",
         "hyperEVMPercentage": "0.029051753211078202",
-        "weightedPercentage": "0.035594617716976216"
+        "weightedPercentage": "0.035558568876723334"
       }
     },
     "0xD84129917fB529c9621364C6294ceA6a4CE3e88D": {
@@ -3312,7 +3312,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.035051483586071058",
         "hyperEVMPercentage": "0.027986614905330215",
-        "weightedPercentage": "0.034121895601763052"
+        "weightedPercentage": "0.03408809240233367"
       }
     },
     "0xF2684832BDd60D89769fCe3bd784fBfA0Ba80435": {
@@ -3342,7 +3342,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.03393189338806652",
         "hyperEVMPercentage": "0.027092685847101691",
-        "weightedPercentage": "0.0330319976589922"
+        "weightedPercentage": "0.032999274177934952"
       }
     },
     "0xCdd60e7B7ADe44053a67349A6E856c0aE33d2B91": {
@@ -3371,7 +3371,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.035168312915105063",
         "hyperEVMPercentage": "0.010473011259396687",
-        "weightedPercentage": "0.031918931118301329"
+        "weightedPercentage": "0.031800771780235739"
       }
     },
     "0x47bc8346c92261fF4a03d51425947Df78d098F79": {
@@ -3412,7 +3412,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.029892681100970601",
         "hyperEVMPercentage": "0.038498063806811897",
-        "weightedPercentage": "0.031024968299107613"
+        "weightedPercentage": "0.031066142379039868"
       }
     },
     "0x1C5EB68630cCd90C3152FB9Dee3a1C2A7201631D": {
@@ -3442,7 +3442,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.031724050537677183",
         "hyperEVMPercentage": "0.025329848978549426",
-        "weightedPercentage": "0.030882708227265636"
+        "weightedPercentage": "0.030852113961432488"
       }
     },
     "0xDABc594e331F3cC74D97dA9C2ad3cAB557bC3FbB": {
@@ -3472,7 +3472,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.031623779876697289",
         "hyperEVMPercentage": "0.025249788561654",
-        "weightedPercentage": "0.030785096808928435"
+        "weightedPercentage": "0.030754599242827749"
       }
     },
     "0xcf88FA6eE6D111b04bE9b06ef6fAD6bD6691B88c": {
@@ -3505,7 +3505,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.031546269290085521",
         "hyperEVMPercentage": "0.02518790077092028",
-        "weightedPercentage": "0.030709641853353252"
+        "weightedPercentage": "0.030679219037472079"
       }
     },
     "0x8957aaEE26aC91ca4628390800771F68b858E17C": {
@@ -3534,7 +3534,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.031198202972957312",
         "hyperEVMPercentage": "0.02490998962032098",
-        "weightedPercentage": "0.030370806479189373"
+        "weightedPercentage": "0.030340719333961448"
       }
     },
     "0x0D55E988161e80c94322fA5833602e92BAEb129f": {
@@ -3567,7 +3567,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.030766021292859757",
         "hyperEVMPercentage": "0.024564917147365737",
-        "weightedPercentage": "0.029950086536873701"
+        "weightedPercentage": "0.029920416182110572"
       }
     },
     "0xC2789bABe1a5cd95E81AE5f2444E82E1391bF7ce": {
@@ -3597,7 +3597,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.03064996482675684",
         "hyperEVMPercentage": "0.024472252662171641",
-        "weightedPercentage": "0.029837107962995629"
+        "weightedPercentage": "0.029807549531586131"
       }
     },
     "0x3d707c2717DE2B0F25202809D9874721E6Ca9e62": {
@@ -3642,12 +3642,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.011168431873492623",
         "hyperEVMPercentage": "0.145309730514730494",
-        "weightedPercentage": "0.028818602747339711"
+        "weightedPercentage": "0.029460427142752332"
       }
     },
     "0x19baFA77aaB2e1Fe6cbe4B2c60597b9060B105EE": {
-      "allocation": "13",
-      "allocationPerc": "0.0060%",
+      "allocation": "12",
+      "allocationPerc": "0.0055%",
       "type": "weighted",
       "sources": {
         "ethereum": {
@@ -3662,7 +3662,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.032692493614612411",
         "hyperEVMPercentage": "0.0",
-        "weightedPercentage": "0.028390849717952883"
+        "weightedPercentage": "0.0282344263035289"
       }
     },
     "0xAEe989FdA15dfA276bEbF116B81d26ba233235Ce": {
@@ -3693,7 +3693,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.028025091904849997",
         "hyperEVMPercentage": "0.022376441010172311",
-        "weightedPercentage": "0.027281848366076617"
+        "weightedPercentage": "0.027254821328303039"
       }
     },
     "0xE48c64Ec6cf456a28F91e5B2bdA3A626DEDCC8E5": {
@@ -3718,12 +3718,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.184113521577126921",
-        "weightedPercentage": "0.024225463365411436"
+        "weightedPercentage": "0.025106389305971852"
       }
     },
     "0x50812D1D77027DA036D5F768BEfEd24f2595a6dA": {
-      "allocation": "10",
-      "allocationPerc": "0.0046%",
+      "allocation": "11",
+      "allocationPerc": "0.0050%",
       "type": "weighted",
       "sources": {
         "hyperevm": {
@@ -3739,7 +3739,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.180778131692369697",
-        "weightedPercentage": "0.023786596275311802"
+        "weightedPercentage": "0.024651563412595867"
       }
     },
     "0xe4F047C5DEB2659f3659057fe5cAFB5bC6bD4307": {
@@ -3769,7 +3769,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.023415370635515133",
         "hyperEVMPercentage": "0.018695840912395827",
-        "weightedPercentage": "0.022794379882473119"
+        "weightedPercentage": "0.022771798400544318"
       }
     },
     "0x4cbB2af44186C3fa8151a75d46D17DCacE9eB7Cb": {
@@ -3798,7 +3798,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.023129025477663514",
         "hyperEVMPercentage": "0.018467210597938264",
-        "weightedPercentage": "0.022515628782962823"
+        "weightedPercentage": "0.02249332344861007"
       }
     },
     "0xc867F80f97Df7753b7bc24d95CFd436ec90a5AF1": {
@@ -3828,7 +3828,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.023005979315112751",
         "hyperEVMPercentage": "0.01836896524131033",
-        "weightedPercentage": "0.022395845884349274"
+        "weightedPercentage": "0.022373659214139693"
       }
     },
     "0x3Aa9bd87EB687EBaa7c6f23701075C61846c6641": {
@@ -3858,7 +3858,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.021932837771907377",
         "hyperEVMPercentage": "0.017512122790167688",
-        "weightedPercentage": "0.02135116474799426"
+        "weightedPercentage": "0.021330013001670146"
       }
     },
     "0x562dB95A5547c841C3784F5EE0c1d29d12f89Fc3": {
@@ -3888,7 +3888,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.021850883975237205",
         "hyperEVMPercentage": "0.017446687346347578",
-        "weightedPercentage": "0.021271384418804359"
+        "weightedPercentage": "0.021250311707661346"
       }
     },
     "0x64E8f7C2B4fd33f5E8470F3C6Df04974F90fc2cA": {
@@ -3918,7 +3918,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.020989236103622778",
         "hyperEVMPercentage": "0.016758710554197485",
-        "weightedPercentage": "0.020432588005014186"
+        "weightedPercentage": "0.020412346255973874"
       }
     },
     "0x07bfeB5488ad97aA3920cf241E59d2A817054eA3": {
@@ -3948,7 +3948,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.020016365218441935",
         "hyperEVMPercentage": "0.015981928519950269",
-        "weightedPercentage": "0.019485518284429873"
+        "weightedPercentage": "0.019466214759556707"
       }
     },
     "0xC3632CD03BEd246719965bB74279af79bE4bd813": {
@@ -3978,7 +3978,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.020016365218441935",
         "hyperEVMPercentage": "0.015981928519950269",
-        "weightedPercentage": "0.019485518284429873"
+        "weightedPercentage": "0.019466214759556707"
       }
     },
     "0x940A7c15C8c3b8183DF903788e62b26339640256": {
@@ -4008,7 +4008,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.019633410608835523",
         "hyperEVMPercentage": "0.015676161056238841",
-        "weightedPercentage": "0.019112719878230696"
+        "weightedPercentage": "0.019093785669845066"
       }
     },
     "0x9052B4031CBf0A2E297566B26311Aa50Cfc67532": {
@@ -4037,7 +4037,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.019174967163238694",
         "hyperEVMPercentage": "0.015310120056177371",
-        "weightedPercentage": "0.018666434649151677"
+        "weightedPercentage": "0.018647942557730331"
       }
     },
     "0xa330fC3D0B11E7B1C729406E2Cb1A72eB7764E88": {
@@ -4065,7 +4065,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.021314318911902013",
         "hyperEVMPercentage": "0.0",
-        "weightedPercentage": "0.018509803265599116"
+        "weightedPercentage": "0.018407820878460829"
       }
     },
     "0x0C0aB132F5a8d0988e88997cb2604F494052BDEF": {
@@ -4095,7 +4095,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.01888336341373599",
         "hyperEVMPercentage": "0.015077291054200922",
-        "weightedPercentage": "0.018382564419060323"
+        "weightedPercentage": "0.018364353546526662"
       }
     },
     "0xd5f20543784F105F93ec06e918ae2D5e195B4438": {
@@ -4125,7 +4125,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.01888336341373599",
         "hyperEVMPercentage": "0.015077291054200922",
-        "weightedPercentage": "0.018382564419060323"
+        "weightedPercentage": "0.018364353546526662"
       }
     },
     "0xfAB22550fcD520A7eCED27414CD74Bc70a6ac1a9": {
@@ -4157,7 +4157,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.018602098213808401",
         "hyperEVMPercentage": "0.01485271679826879",
-        "weightedPercentage": "0.018108758553868978"
+        "weightedPercentage": "0.018090818929871181"
       }
     },
     "0x608a7a10EC8AE5cA837b4B265808bfd172047907": {
@@ -4186,7 +4186,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.017754019102533637",
         "hyperEVMPercentage": "0.014175573892960068",
-        "weightedPercentage": "0.017283171048642377"
+        "weightedPercentage": "0.01726604930122815"
       }
     },
     "0x8f3093416640d0e4Ef12cD9e9be9115D6dFf6C6E": {
@@ -4216,7 +4216,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.017713350217462123",
         "hyperEVMPercentage": "0.01414310210389086",
-        "weightedPercentage": "0.017243580728834325"
+        "weightedPercentage": "0.017226498201975132"
       }
     },
     "0xE6428cA7f162f02B265087aC5D71A149fDbe19bB": {
@@ -4238,7 +4238,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.123806997678494635",
-        "weightedPercentage": "0.016290394431380873"
+        "weightedPercentage": "0.016882772410703813"
       }
     },
     "0xfDB3ca034f6E34F46BCA5d0399eaBaF87c17b48e": {
@@ -4266,7 +4266,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.01816469206831044",
         "hyperEVMPercentage": "0.0",
-        "weightedPercentage": "0.015774601006690645"
+        "weightedPercentage": "0.015687688604449925"
       }
     },
     "0xF18e30936b6144b36CAC59913D43eaFC71F255ec": {
@@ -4290,7 +4290,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.106912136277261918",
-        "weightedPercentage": "0.014067386352271305"
+        "weightedPercentage": "0.014578927674172079"
       }
     },
     "0x5340359a59b9793F92C63d32bac6a97C2bAef4f0": {
@@ -4320,7 +4320,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.012696795891477861",
         "hyperEVMPercentage": "0.010137668956641391",
-        "weightedPercentage": "0.012360068663209904"
+        "weightedPercentage": "0.012347824036727433"
       }
     },
     "0x040b32bd66d8D56aB23052a8CF0275eE2e512427": {
@@ -4349,7 +4349,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.013184597708736466",
         "hyperEVMPercentage": "0.003929871044894094",
-        "weightedPercentage": "0.011966870516125627"
+        "weightedPercentage": "0.011922589527303415"
       }
     },
     "0xDf29Ee8F6D1b407808Eb0270f5b128DC28303684": {
@@ -4378,7 +4378,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.01219173348852591",
         "hyperEVMPercentage": "0.00973440537194191",
-        "weightedPercentage": "0.011868400841606962"
+        "weightedPercentage": "0.01185664329080991"
       }
     },
     "0x9B228B4F71B3Bc7e4b478251f218060D7B70Dc25": {
@@ -4408,7 +4408,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.011839113526630598",
         "hyperEVMPercentage": "0.009452858399439396",
-        "weightedPercentage": "0.011525132588842281"
+        "weightedPercentage": "0.011513715100195434"
       }
     },
     "0x0A2C439F7f702E29262a11DA97E178C202d5ce6a": {
@@ -4428,12 +4428,12 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.013024184425317418",
         "hyperEVMPercentage": "0.0",
-        "weightedPercentage": "0.011310475948301968"
+        "weightedPercentage": "0.011248159276410497"
       }
     },
     "0x95aa6CF80aa61c3433215c7b8330C065eD29CE97": {
-      "allocation": "4",
-      "allocationPerc": "0.0018%",
+      "allocation": "5",
+      "allocationPerc": "0.0023%",
       "type": "weighted",
       "sources": {
         "ethereum": {
@@ -4464,7 +4464,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.009371396236173281",
         "hyperEVMPercentage": "0.02073797828957846",
-        "weightedPercentage": "0.01086699913793712"
+        "weightedPercentage": "0.010921384698001259"
       }
     },
     "0x1ccD2496090C53687572EDc2b62c3b58B6799BBD": {
@@ -4496,7 +4496,28 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.010987309953191723",
         "hyperEVMPercentage": "0.008772741723559885",
-        "weightedPercentage": "0.010695919396661218"
+        "weightedPercentage": "0.010685323376423745"
+      }
+    },
+    "0x6Ebb68EdA17b6df17468F9A018B1cA0773747fA5": {
+      "allocation": "4",
+      "allocationPerc": "0.0018%",
+      "type": "weighted",
+      "sources": {
+        "hyperevm": {
+          "originalAddress": "0x6Ebb68EdA17b6df17468F9A018B1cA0773747fA5",
+          "percentage": "0.077329227376932997",
+          "totalSIR": "1523370501475776000",
+          "breakdown": {
+            "unclaimedContributorRewards": "81340236534627192",
+            "unissuedContributorRewards": "1442030264941148808"
+          }
+        }
+      },
+      "percentageBreakdown": {
+        "ethereumPercentage": "0.0",
+        "hyperEVMPercentage": "0.077329227376932997",
+        "weightedPercentage": "0.010544894642309045"
       }
     },
     "0xbC769E783796BaB3d614683d1F2f5E1446B3724D": {
@@ -4525,28 +4546,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.010530296493806667",
         "hyperEVMPercentage": "0.008407842480621242",
-        "weightedPercentage": "0.010251026228913847"
-      }
-    },
-    "0x6Ebb68EdA17b6df17468F9A018B1cA0773747fA5": {
-      "allocation": "4",
-      "allocationPerc": "0.0018%",
-      "type": "weighted",
-      "sources": {
-        "hyperevm": {
-          "originalAddress": "0x6Ebb68EdA17b6df17468F9A018B1cA0773747fA5",
-          "percentage": "0.077329227376932997",
-          "totalSIR": "1523370501475776000",
-          "breakdown": {
-            "unclaimedContributorRewards": "81340236534627192",
-            "unissuedContributorRewards": "1442030264941148808"
-          }
-        }
-      },
-      "percentageBreakdown": {
-        "ethereumPercentage": "0.0",
-        "hyperEVMPercentage": "0.077329227376932997",
-        "weightedPercentage": "0.010174898339070131"
+        "weightedPercentage": "0.010240870946554109"
       }
     },
     "0xC814FF20b94A6B2f18e5bcAd2B231222f43795d9": {
@@ -4567,7 +4567,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.067420474367329885",
-        "weightedPercentage": "0.008871115048332879"
+        "weightedPercentage": "0.009193701050090438"
       }
     },
     "0x307E2701D27032E0663a704B3396163331DD6F72": {
@@ -4597,7 +4597,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.008290363037852328",
         "hyperEVMPercentage": "0.006619383088275797",
-        "weightedPercentage": "0.00807049725501331"
+        "weightedPercentage": "0.008062502135637346"
       }
     },
     "0xA83212A83D6d2Bec3FFAD40Aeb2bd0860824906f": {
@@ -4627,7 +4627,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.00823446828311892",
         "hyperEVMPercentage": "0.00657475430861719",
-        "weightedPercentage": "0.008016084865421323"
+        "weightedPercentage": "0.00800814365023232"
       }
     },
     "0xa9c2902484f382b6989926093d94199BF53F0172": {
@@ -4657,7 +4657,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.008079435871027873",
         "hyperEVMPercentage": "0.006450969751305825",
-        "weightedPercentage": "0.007865164013169708"
+        "weightedPercentage": "0.007857372309247593"
       }
     },
     "0xABD3A577073Cc10A3489B466A1d2e06202e6bb0E": {
@@ -4677,7 +4677,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.008452478263705049",
         "hyperEVMPercentage": "0.0",
-        "weightedPercentage": "0.007340310071112279"
+        "weightedPercentage": "0.007299867591381633"
       }
     },
     "0x947489282699D1A097d3a485F69a58914241f865": {
@@ -4707,7 +4707,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.006653553096916573",
         "hyperEVMPercentage": "0.005312483499963911",
-        "weightedPercentage": "0.006477096571001749"
+        "weightedPercentage": "0.006470679970059391"
       }
     },
     "0xe0D209b7324d982BACb757F724EbE00a9792aC28": {
@@ -4739,7 +4739,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.006050568378347521",
         "hyperEVMPercentage": "0.009033658033360613",
-        "weightedPercentage": "0.006443080175059769"
+        "weightedPercentage": "0.006457353331303851"
       }
     },
     "0xdA5571A3511b0d38269B4bB093C1Ed5a59487594": {
@@ -4768,7 +4768,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.006023613145679449",
         "hyperEVMPercentage": "0.004809512298091461",
-        "weightedPercentage": "0.005863863034154713"
+        "weightedPercentage": "0.005858053939190177"
       }
     },
     "0xA0Ab8713b5832C63AF478F4051eeD12FBff6230c": {
@@ -4798,7 +4798,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.005905960739058107",
         "hyperEVMPercentage": "0.00471557354561637",
-        "weightedPercentage": "0.005749330845184194"
+        "weightedPercentage": "0.005743635212679688"
       }
     },
     "0xd9Aa5AB0C282e6555028aF36369229fBfC58eaAc": {
@@ -4827,7 +4827,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.005710817281390812",
         "hyperEVMPercentage": "0.004559762600877904",
-        "weightedPercentage": "0.005559362718165429"
+        "weightedPercentage": "0.005553855279502688"
       }
     },
     "0xB1fE8d7274EFCaD6571F11465709a7dF0521B2A9": {
@@ -4857,7 +4857,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.005378548401087963",
         "hyperEVMPercentage": "0.004294464811385192",
-        "weightedPercentage": "0.005235905823495493"
+        "weightedPercentage": "0.005230718820673948"
       }
     },
     "0x3168A9334C9106bCc947B4Ac0818EB1613b91e64": {
@@ -4886,7 +4886,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.001638872637175481",
         "hyperEVMPercentage": "0.023923222298989064",
-        "weightedPercentage": "0.004571023908466741"
+        "weightedPercentage": "0.004677647591059151"
       }
     },
     "0x349BE9963b502Fc7d938602890887BaCeEE17891": {
@@ -4915,7 +4915,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.00468569811838431",
         "hyperEVMPercentage": "0.003741263288526098",
-        "weightedPercentage": "0.004561430377613492"
+        "weightedPercentage": "0.004556911550676372"
       }
     },
     "0x1BF83156AcF506b667E59b6d1335570453ea00f9": {
@@ -4945,7 +4945,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.004518788864903476",
         "hyperEVMPercentage": "0.003607995749705385",
-        "weightedPercentage": "0.004398947665535306"
+        "weightedPercentage": "0.004394589803740099"
       }
     },
     "0x95deE61Be3F9Ae2b2Fa93a16033AD730639c5713": {
@@ -4970,7 +4970,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.030844124362596938",
-        "weightedPercentage": "0.004058437416131176"
+        "weightedPercentage": "0.004206016958535946"
       }
     },
     "0x5c63c6f305Be2db6c5176Ed6dFAD2733a1DD96D4": {
@@ -4992,7 +4992,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.030685586926319497",
-        "weightedPercentage": "0.004037577227147302"
+        "weightedPercentage": "0.004184398217225385"
       }
     },
     "0x09a72958044f48E117235ad88AF8a75818f81384": {
@@ -5017,7 +5017,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.030685586926319497",
-        "weightedPercentage": "0.004037577227147302"
+        "weightedPercentage": "0.004184398217225385"
       }
     },
     "0xf3e9bf5aeB81C5CbE2a3508b90E4aC7E325F84a8": {
@@ -5042,7 +5042,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.030685586926319497",
-        "weightedPercentage": "0.004037577227147302"
+        "weightedPercentage": "0.004184398217225385"
       }
     },
     "0x536ce8281C78a2531b448605dD9c9ef6E1a77876": {
@@ -5063,7 +5063,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.0",
         "hyperEVMPercentage": "0.030685586926319497",
-        "weightedPercentage": "0.004037577227147302"
+        "weightedPercentage": "0.004184398217225385"
       }
     },
     "0x7A4538B44577699119Bf27c0f1F26331CD22B401": {
@@ -5096,7 +5096,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.003474507382543746",
         "hyperEVMPercentage": "0.006598478126857215",
-        "weightedPercentage": "0.003885556164690255"
+        "weightedPercentage": "0.003900503393131946"
       }
     },
     "0x00007ae72F868Ac963813f7DFa974a7e51E00000": {
@@ -5126,7 +5126,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.003827468930637623",
         "hyperEVMPercentage": "0.003056016123031503",
-        "weightedPercentage": "0.003725961982268396"
+        "weightedPercentage": "0.003722270820509515"
       }
     },
     "0xc276564BcB6515d3eFDAAAF57563435B37656200": {
@@ -5156,7 +5156,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.003626549942773993",
         "hyperEVMPercentage": "0.002895593746028085",
-        "weightedPercentage": "0.003530371495833741"
+        "weightedPercentage": "0.003526874097763187"
       }
     },
     "0x14747B8bE932B3bf759062a0fdb14E2331b1fDcd": {
@@ -5192,7 +5192,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.001583275406273803",
         "hyperEVMPercentage": "0.015622411796221898",
-        "weightedPercentage": "0.003430530194424868"
+        "weightedPercentage": "0.003497703095812179"
       }
     },
     "0xE0F76f608E9f060d3782d79a4dab4D49ef02E6F8": {
@@ -5222,7 +5222,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.003471328694775661",
         "hyperEVMPercentage": "0.00277165840990671",
-        "weightedPercentage": "0.003379266815187641"
+        "weightedPercentage": "0.003375919110475349"
       }
     },
     "0xa7C4baa91E13427D2bc71B28E8a9F6246C93d223": {
@@ -5253,7 +5253,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.003345187827766287",
         "hyperEVMPercentage": "0.002670942107659792",
-        "weightedPercentage": "0.003256471285647011"
+        "weightedPercentage": "0.003253245229569946"
       }
     },
     "0xd643cB0B2A1e5a0207A86FB98e00424a9a8FEfb0": {
@@ -5283,7 +5283,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.003040788009874011",
         "hyperEVMPercentage": "0.002427896174842952",
-        "weightedPercentage": "0.002960144347369924"
+        "weightedPercentage": "0.002957211850551593"
       }
     },
     "0x38B8F3BAae2C65C0D4937B2D4156B8b4ab8fc21f": {
@@ -5313,7 +5313,28 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.002935041175556219",
         "hyperEVMPercentage": "0.002343463345346677",
-        "weightedPercentage": "0.002857201987370752"
+        "weightedPercentage": "0.002854371471436736"
+      }
+    },
+    "0xEE18Db6F714EA7a6e068D1491545967B9074b9cD": {
+      "allocation": "1",
+      "allocationPerc": "0.00046%",
+      "type": "weighted",
+      "sources": {
+        "hyperevm": {
+          "originalAddress": "0xEE18Db6F714EA7a6e068D1491545967B9074b9cD",
+          "percentage": "0.020191250752228607",
+          "totalSIR": "397763650655856000",
+          "breakdown": {
+            "unclaimedContributorRewards": "21238555819402302",
+            "unissuedContributorRewards": "376525094836453698"
+          }
+        }
+      },
+      "percentageBreakdown": {
+        "ethereumPercentage": "0.0",
+        "hyperEVMPercentage": "0.020191250752228607",
+        "weightedPercentage": "0.0027533523753039"
       }
     },
     "0x50fa50Fa2032d85EB2Dda303929bF56886aA9AFB": {
@@ -5348,28 +5369,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.001850947279764325",
         "hyperEVMPercentage": "0.008464313210317067",
-        "weightedPercentage": "0.002721127007468633"
-      }
-    },
-    "0xEE18Db6F714EA7a6e068D1491545967B9074b9cD": {
-      "allocation": "1",
-      "allocationPerc": "0.00046%",
-      "type": "weighted",
-      "sources": {
-        "hyperevm": {
-          "originalAddress": "0xEE18Db6F714EA7a6e068D1491545967B9074b9cD",
-          "percentage": "0.020191250752228607",
-          "totalSIR": "397763650655856000",
-          "breakdown": {
-            "unclaimedContributorRewards": "21238555819402302",
-            "unissuedContributorRewards": "376525094836453698"
-          }
-        }
-      },
-      "percentageBreakdown": {
-        "ethereumPercentage": "0.0",
-        "hyperEVMPercentage": "0.020191250752228607",
-        "weightedPercentage": "0.002656743520030079"
+        "weightedPercentage": "0.00275276990665788"
       }
     },
     "0xb9839FD6E4110575d01d47866dd4d1c3946bf29f": {
@@ -5399,7 +5399,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.002570214594352244",
         "hyperEVMPercentage": "0.002052170085505524",
-        "weightedPercentage": "0.002502050843188201"
+        "weightedPercentage": "0.002499572161327691"
       }
     },
     "0xeaE9870e408327733aACBa4BdC33FC14822a48Da": {
@@ -5429,7 +5429,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.002514319836663473",
         "hyperEVMPercentage": "0.002007541301044432",
-        "weightedPercentage": "0.002447638450397809"
+        "weightedPercentage": "0.002445213672715421"
       }
     },
     "0xe80a6A7B4FdADF0AA59F3f669a8d394D1d4dA86b": {
@@ -5459,7 +5459,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.002457103245355889",
         "hyperEVMPercentage": "0.00196185710813563",
-        "weightedPercentage": "0.00239193927993217"
+        "weightedPercentage": "0.00238956968118949"
       }
     },
     "0x93721d340C48A77d247aC83D915e4719283AD0dB": {
@@ -5492,7 +5492,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.002447579643667319",
         "hyperEVMPercentage": "0.001629209311465135",
-        "weightedPercentage": "0.00233989933679861"
+        "weightedPercentage": "0.002335983689276112"
       }
     },
     "0x2c6b15f9b2dADef3198ccd476Cf525AAe9DA5752": {
@@ -5522,7 +5522,7 @@
       "percentageBreakdown": {
         "ethereumPercentage": "0.002393277477088154",
         "hyperEVMPercentage": "0.001910895863383311",
-        "weightedPercentage": "0.00232980621212699"
+        "weightedPercentage": "0.002327498166128402"
       }
     }
   }

@@ -9,7 +9,16 @@
       "Bash(npm run build:*)",
       "Bash(timeout 15 npm run dev:*)",
       "Bash(node generate-allocations.js:*)",
-      "Bash(pnpm add:*)"
+      "Bash(pnpm add:*)",
+      "WebFetch(domain:www.megaeth.com)",
+      "WebFetch(domain:app.sir.trading)",
+      "WebFetch(domain:www.fluffle.tools)",
+      "WebFetch(domain:blackhaven.xyz)",
+      "WebFetch(domain:euphoria.finance)",
+      "WebFetch(domain:cap.app)",
+      "WebFetch(domain:www.showdown.game)",
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:thecryptoanalyst.medium.com)"
     ],
     "deny": [],
     "ask": []

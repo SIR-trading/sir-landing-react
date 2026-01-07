@@ -6,12 +6,48 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
+  body {
+    @apply bg-background text-text-primary antialiased;
+  }
+
+  /* Selection highlight - warm gold */
+  ::selection {
+    @apply bg-accent/40 text-text-primary;
+  }
 }
 
 @layer components {
+  /* Hero headline - sentence case, tight tracking */
+  .hero-headline {
+    @apply font-geist font-extrabold text-text-primary;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  /* Section headers - sentence case, medium weight */
+  .section-header-new {
+    @apply font-geist font-bold text-text-primary;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* Small uppercase labels only */
+  .label-caps {
+    @apply font-inter font-semibold text-text-secondary uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Legacy title - remove uppercase */
   .title {
-    @apply font-geist font-bold uppercase leading-13 text-black dark:text-white;
+    @apply font-geist font-bold leading-13 text-black dark:text-white;
+    letter-spacing: -0.02em;
   }
 
   .subtitle {
@@ -24,6 +60,7 @@
 
   .section-header {
     @apply font-inter leading-8 font-semibold text-black dark:text-white;
+    letter-spacing: -0.01em;
   }
 
   .section-main p {

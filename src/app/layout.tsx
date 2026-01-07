@@ -3,7 +3,6 @@ import { GeistSans } from "geist/font/sans";
 import "~/styles/globals.css";
 import { Header } from "~/components/layout/Header";
 import type { ReactNode } from "react";
-import Script from "next/script";
 import AOSInitializer from "~/components/AOSInitializer";
 
 const inter = Inter({
@@ -42,18 +41,15 @@ export const metadata = {
 
 async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <Script id="theme-toggle" src="/theme.js" strategy="beforeInteractive" />
-      </head>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head />
       <body
-        className={`relative ${GeistSans.variable} ${inter.className} bg-background-light dark:bg-background text-black dark:text-white`}
+        className={`relative ${GeistSans.variable} ${inter.className} bg-background text-white`}
       >
-        <div className="gradient-bg absolute top-0 left-0 z-[-1] h-full w-full opacity-100"></div>
         <div className="font-inter flex min-h-screen flex-col">
           <Header />
-          <main className="content h-80">{children}</main>
-        </div>{" "}
+          <main className="flex-1 pt-[72px]">{children}</main>
+        </div>
         <AOSInitializer />
       </body>
     </html>
