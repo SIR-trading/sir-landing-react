@@ -90,7 +90,7 @@ const values: ValueItem[] = [
       </svg>
     ),
     title: "Constant Leverage*",
-    description: "Perfect leverage, always",
+    description: "Gains compound as price rises",
   },
 ];
 
