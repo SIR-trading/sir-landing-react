@@ -8,10 +8,12 @@ export default function AuditPage({
 }) {
   const [slug, setSlug] = useState<string | null>(null);
   const [status, setStatus] = useState<"pending" | "success" | "error">("pending");
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   useEffect(() => {
     const fetchPdf = async () => {
       try {
+        setIframeLoaded(false);
         const { slug } = await params;
         const response = await fetch(`/api/audit/${slug}`);
         if (!response.ok) {
@@ -61,10 +63,21 @@ export default function AuditPage({
   }
 
   return (
-    <iframe
-      className="h-[700px] w-full md:h-[800px]"
-      src={`/audit/${slug}.pdf`}
-      title="Audit Report"
-    />
+    <div className="relative h-[700px] w-full md:h-[800px]">
+      {!iframeLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-background">
+          <div className="flex flex-col items-center gap-4">
+            <div className="h-10 w-10 animate-spin rounded-full border-4 border-accent/20 border-t-accent" />
+            <p className="text-text-secondary">Loading PDF...</p>
+          </div>
+        </div>
+      )}
+      <iframe
+        className="h-full w-full"
+        src={`/audit/${slug}.pdf`}
+        title="Audit Report"
+        onLoad={() => setIframeLoaded(true)}
+      />
+    </div>
   );
 }

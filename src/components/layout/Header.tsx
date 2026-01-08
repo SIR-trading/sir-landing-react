@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 const links = [
   { label: "Allocations", to: "/allocations" },
   { label: "Docs", to: "https://docs.sir.trading/" },
-  { label: "Audits", to: "/audits/egis" },
+  { label: "Audits", to: "/audits" },
 ];
 
 const Header: FC = () => {
