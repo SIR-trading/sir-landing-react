@@ -22,7 +22,7 @@ const Header: FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-4 backdrop-blur-md bg-background/90 border-b border-accent/10">
       <div className="container mx-auto max-w-5xl">
         <nav className="flex w-full flex-col items-center justify-start gap-6 text-sm md:flex-row md:justify-center">
-          <div className="flex w-full justify-between md:w-auto">
+          <div className="flex w-full items-center justify-between md:w-auto">
             <Link
               href={"/"}
               className="flex items-center gap-x-2"
@@ -41,21 +41,21 @@ const Header: FC = () => {
                   </h1>
                 </div>
               </div>
-              <div
-                className={cn("block rounded-lg md:hidden", {
-                  "bg-card": isMenuOpen,
-                  "bg-transparent": !isMenuOpen,
-                })}
-              >
-                <button
-                  className="text-white"
-                  onClick={toggleMenu}
-                  aria-label="Toggle Menu"
-                >
-                  {isMenuOpen ? <XIcon /> : <MenuIcon />}
-                </button>
-              </div>
             </Link>
+            <div
+              className={cn("block rounded-lg md:hidden", {
+                "bg-card": isMenuOpen,
+                "bg-transparent": !isMenuOpen,
+              })}
+            >
+              <button
+                className="text-white"
+                onClick={toggleMenu}
+                aria-label="Toggle Menu"
+              >
+                {isMenuOpen ? <XIcon /> : <MenuIcon />}
+              </button>
+            </div>
           </div>
           {isMenuOpen && (
             <div className="bg-card flex w-full flex-auto flex-col items-center justify-between gap-4 rounded-lg p-4 md:hidden">
