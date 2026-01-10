@@ -264,7 +264,7 @@ export default function MegaETHAllocationsPage() {
 
           <p className="mb-2 text-sm text-text-secondary">
             <span className="text-text-muted">Snapshot:</span>{" "}
-            {new Date(allocationsData.metadata.generatedAt).toLocaleString()}
+            {new Date(allocationsData.metadata.generatedAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
           </p>
 
           <p className="mb-6 text-xs text-text-muted">
