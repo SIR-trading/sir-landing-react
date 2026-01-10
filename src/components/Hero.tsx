@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Content overlay */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-end px-4 pb-24 pt-32">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 pb-24 pt-32 md:justify-end">
         <div className="flex max-w-4xl flex-col items-center text-center">
           {/* Decorative gold line */}
           <div className="mb-8 h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent" />
