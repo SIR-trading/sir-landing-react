@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata = {
   title: "SIR Trading",
-  metadataBase: new URL('https://app.sir.trading'),
+  metadataBase: new URL('https://sir.trading'),
   description:
     "SIR is a DeFi protocol designed to address the key challenges of leveraged trading, such as volatility decay and liquidation risks, making it safer for long-term investing.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
@@ -46,6 +46,19 @@ async function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={`relative ${GeistSans.variable} ${inter.className} bg-background text-white`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "SIR",
+              url: "https://sir.trading",
+              description: "DeFi protocol for leveraged trading without liquidation risk",
+              sameAs: ["https://x.com/leveragesir"],
+            }),
+          }}
+        />
         <div className="font-inter flex min-h-screen flex-col">
           <Header />
           <main className="flex-1 pt-[72px]">{children}</main>

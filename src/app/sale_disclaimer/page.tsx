@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Disclaimer | SIR Trading",
+  description: "Important disclaimers about participating in SIR.",
+  robots: { index: false, follow: false },
+};
+
 export default function DisclaimerPage() {
   const disclaimerItems = [
     {
