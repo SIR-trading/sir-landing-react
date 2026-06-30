@@ -8,6 +8,7 @@ export const metadata = {
   title: "SIR Trading | Leverage You Can Sleep On",
   description:
     "Safer leverage for long-term investors. One-time fee. No funding rates. No volatility decay.",
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {

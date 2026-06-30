@@ -5,6 +5,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 export const metadata = {
   title: "MegaSIR Allocations | SIR Trading",
   description: "Check your MegaSIR token allocation for the MegaETH chain.",
+  alternates: { canonical: "/allocations" },
 };
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

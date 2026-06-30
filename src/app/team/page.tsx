@@ -4,6 +4,7 @@ import Team from "~/components/Team";
 export const metadata = {
   title: "Team | SIR Trading",
   description: "Meet the team behind SIR Trading",
+  alternates: { canonical: "/team" },
 };
 
 export default function TeamPage() {

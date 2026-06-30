@@ -10,6 +10,7 @@ export async function generateMetadata({ params }: AuditPageProps) {
   return {
     title: `${title} Audit | SIR Trading`,
     description: `Security audit report: ${title}`,
+    alternates: { canonical: `/audits/${slug}` },
   };
 }
 

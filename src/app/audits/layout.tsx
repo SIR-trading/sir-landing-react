@@ -3,6 +3,7 @@ import AuditLayoutClient from "./AuditLayoutClient";
 export const metadata = {
   title: "Security Audits | SIR Trading",
   description: "Independent security audit reports for the SIR protocol.",
+  alternates: { canonical: "/audits" },
 };
 
 export default function AuditLayout({ children }: { children: React.ReactNode }) {
