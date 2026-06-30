@@ -22,6 +22,7 @@ const socialLinks = [
 
 const footerLinks = [
   { name: "Docs", href: "https://docs.sir.trading" },
+  { name: "For agents", href: "https://app.sir.trading/sir-trading.md" },
   { name: "Audits", href: "/audits" },
   { name: "Team", href: "/team" },
 ];
@@ -89,6 +90,9 @@ const FooterCTA: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
+                  {...(link.href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
                   className="text-sm text-text-secondary transition-colors duration-300 hover:text-accent"
                 >
                   {link.name}
